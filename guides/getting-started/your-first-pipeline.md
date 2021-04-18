@@ -14,7 +14,11 @@ import TabItem from '@theme/TabItem';
 import Alert from '@site/src/components/Alert';
 import Jump from '@site/src/components/Jump';
 
-In this tutorial, we will give an overview of federated learning, definitions, and implemntation.
+Federated Learning is a fascinating and upsurging Machine Learning technique for learning on decentralized data. The core idea is that a training dataset can remain in the hands of its producers (also known as *workers*), which helps improve privacy and ownership while the model is shared between workers.
+
+In this tutorial, we will give an overview of federated learning, definitions, and implementation.
+
+**Summary:** Simple code examples make learning easy. Here, we use the MNIST training task to introduce Federated Learning the easy way.
 
 ## Prerequisites
 

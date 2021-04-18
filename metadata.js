@@ -2,7 +2,7 @@ module.exports = {
   "team": [
     {
       "avatar": "https://avatars.githubusercontent.com/u/9943427",
-      "bio": "Fullstack Software Engineer",
+      "bio": "Deep-tech R&D",
       "github": "https://github.com/ituni",
       "id": "hung.manh.nguyen",
       "keybase": "",
@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/28615858",
-      "bio": "Fullstack Software Engineer",
+      "bio": "Deep-tech R&D",
       "github": "https://github.com/phatle157",
       "id": "phat.quang.le",
       "keybase": "",
@@ -18,7 +18,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/13200226",
-      "bio": "Fullstack Software Engineer",
+      "bio": "Deep-tech R&D",
       "github": "https://github.com/nth193",
       "id": "huong.thanh.nguyen",
       "keybase": "",
@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/39934401",
-      "bio": "Fullstack Software Engineer",
+      "bio": "Deep-tech R&D",
       "github": "https://github.com/K17-VP-1752035",
       "id": "nam.huy.tran",
       "keybase": "",
@@ -34,7 +34,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/55283274",
-      "bio": "Fullstack Software Engineer",
+      "bio": "FDeep-tech R&D",
       "github": "https://github.com/nicpho",
       "id": "pho.nic.huynh",
       "keybase": "",
@@ -42,7 +42,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/55283274",
-      "bio": "Fullstack Software Engineer",
+      "bio": "Deep-tech R&D",
       "github": "https://github.com/LeManhTruong",
       "id": "truong.manh.le",
       "keybase": "",
@@ -50,7 +50,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/28746224",
-      "bio": "Fullstack Software Engineer",
+      "bio": "Deep-tech R&D",
       "github": "https://github.com/ChienDuong",
       "id": "chien.duy.duong",
       "keybase": "",
@@ -58,7 +58,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/2772152",
-      "bio": "Fullstack R&D. Deep-tech Lover",
+      "bio": "Deep-tech R&D",
       "github": "https://github.com/quangduytran",
       "id": "quangduytran",
       "keybase": "",
@@ -66,7 +66,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/23730599",
-      "bio": "AI Researcher. Love research and academic papers.",
+      "bio": "Researcher. Love research and academic papers.",
       "github": "https://github.com/Gazeal",
       "id": "tuong.do",
       "keybase": "",
@@ -74,7 +74,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/53331110",
-      "bio": "AI Researcher. Love research and academic papers.",
+      "bio": "Researcher. Love research and academic papers.",
       "github": "https://github.com/xuanbinh-nguyen96",
       "id": "binh.xuan.nguyen",
       "keybase": "",
@@ -82,7 +82,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/30286786",
-      "bio": "AI Researcher. Love research and academic papers.",
+      "bio": "Researcher. Love research and academic papers.",
       "github": "https://github.com/trqminh",
       "id": "minh.quang.tran",
       "keybase": "",
@@ -98,7 +98,7 @@ module.exports = {
     },
     {
       "avatar": "https://avatars.githubusercontent.com/u/82648649",
-      "bio": "Postdoc, Senior AI Researcher. Love research and academic papers.",
+      "bio": "Deep-tech R&D",
       "github": "https://github.com/KimTran-95",
       "id": "kim.xuan.tran",
       "keybase": "",
