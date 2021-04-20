@@ -1,5 +1,5 @@
 ---
-last_modified_on: "2021-04-15"
+last_modified_on: "2021-04-21"
 id:  intro-federated-learning
 title: Introduction to Federated Learning
 description: "Building better product with on-device data and privacy by default."
@@ -16,3 +16,6 @@ The idea behind federated learning is as conceptually simple as its technologica
 **Blockchain:** large, distributed dataset, where no-one can edit/delete an old entry, nor fake a new entry. The data is enforced by fundamental limits of computations (i.e., Proof of Work).
 
 **Smart Contract:** dataset stored on the Blockchain, which includes: Data (i.e., ledgers, events, statistics), State (today's ledger, today's events), Code (rules for changing state).
+
+## References
+[1] J.Rodriguez. Whats New in Deep Learning Research: Understanding Federated Learning.
