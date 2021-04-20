@@ -4,7 +4,7 @@ id:  gps-reid
 title: Graph-based Person Signature for Person Re-Identifications
 description: "We introduce a new Light-weight Deformable Registration network."
 author_github: https://github.com/xuanbinh-nguyen96
-tags: ["type: post", "AI", "Computer Vision", "Person ReID", "Re-identification"]
+tags: ["type: post", "AI", "Computer Vision", "Person ReID", "Re-identification", "Graph-based"]
 ---
 
 # Abstract
