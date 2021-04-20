@@ -49,10 +49,17 @@ Fig. 2 and Fig. 3 visualize several failed results from our model in the testing
 
 ## Reference
 [1] Hamidreza Sadeghi Gandomani, Mohammad Aghajani, et al., “Colorectal cancer in the world: incidence, mortality and risk factors,”Biomedical Research and Therapy, 2017.
+
 [2] Florence  B ́enard,  Alan  N  Barkun,  et  al., “Systematic  review  of  colorectal  cancer  screening  guidelines for average-risk adults: Summarizing the current global recommendations,”World journal of gastroenterology, 2018.
+
 [3] Jorge  Bernal,   Nima  Tajkbaksh,   et  al., “Comparative  validation  of  polyp  detection  methods  in  video colonoscopy:  results from the miccai 2015 endoscopic vision challenge,”IEEE Transactions on Medical Imaging, pp. 1231–1249, 2017.
+
 [4] Barret Zoph, Ekin D Cubuk, et al.,  “Learning data augmentation strategies for object detection,”arXiv, 2019.
+
 [5] Shaoqing  Ren,  Kaiming  He,  Ross  Girshick,  and  Jian Sun,   “Faster R-CNN: Towards real-time object detection with region proposal networks,” inNIPS, 2015.
+
 [6] Ekin  D  Cubuk,  Barret  Zoph,  et  al.,“Autoaugment: Learning augmentation strategies from data,”  in CVPR, 2019.
+
 [7] Younghak  Shin,  Hemin  Ali  Qadir,  et  al.,   “Automatic colon polyp detection using region based deep cnn and post learning approaches,”IEEE Access, 2018
+
 [8] Yangqing Jia, Evan Shelhamer, et al.,  “Caffe: Convolutional architecture for fast feature embedding,”  in ACMMM, 2014.
