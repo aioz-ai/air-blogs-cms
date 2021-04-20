@@ -16,8 +16,24 @@ The colonoscopy is performed by an experienced doctor who uses a colonoscope to 
 
 Previous research shows that automatic polyp detection using deep learning-based methods outperforms hand-craft-based methods demonstrated by both top two results in the MICCAI 2015 challenge [3]. For deep learning-based approaches and model architectures, data augmentation is also a critical factor in making significant improvements due to the lack of annotated data. The recent work [4]shows that learning an optimal policy from data for auto augmentation instead of hand-crafted defining data augmentation strategies can generalize objects better. Thus, studying auto augmentation for polyp detection problems is necessary. In this research, we adapt Faster R-CNN [5] together withAutoAugment [6] to detect polyp from colonoscopy video frames. Besides, we also evaluate traditional data augmentation [7] to see the effectiveness of different augmentation strategies.
 
+## Methodology
+### 1. Polyp Detector
+Thanks to the power of deep learning, recent works [5, 12,11] show that deep-based detection methods give impressive detection performance. In this work, we use the Faster RCNN object detector [5] with Resnet101 [13] backbone pre-trained on COCO dataset.  Our experiments show that this architecture gives a competitive performance on the Polyp detection problem. The experimental setting for the detector is set as follows. The network is trained using stochastic gradient descent  (SGD)with 0.9 momentum; learning rate with initial value is set to3e-4 and will be decreased to 3e-5 from the iteration 900k.The number of anchor boxes per location used in our model is 12 (4 scales, i.e.,64×64, 128×128, 256×256, 512×512 and 3 aspect ratios, i.e.,1 : 2,1 : 1,2 : 1).
+
+### 2. Data Augmentation
+![autoaugment_figure_small](https://vision.aioz.io/thumbnail/74b6b1addd4d470291c3/1024/research/2021-04-20-polyb-detection/autoaugment_figure_small.jpg)
+*<center>**Fig. 1.** Example of applying learned augmentation policies tocolonoscopy image.</center>*
+
+## Experiments
+![fp_figure](https://vision.aioz.io/thumbnail/303cb0ccda7e4d1e98ef/1024/fp_figure.jpg)
+*<center>**Fig. 2.** Examples of false positive detection on testing dataset. Green boxes and blues boxes are ground truths and predictions, respectively.</center>*
+
+![fn_figure](https://vision.aioz.io/thumbnail/e7906e10899a4cb4881e/1024/fn_figure.jpg)
+*<center>**Fig. 3.** Examples of false-negative detection on the testing dataset. Green boxes and blues boxes are ground truths and predictions, respectively.</center>*
+
 ## Open Source
 Github: https://github.com/aioz-ai
+Blog post: https://ai.aioz.io/blog/polyb-detection/
 
 ## Reference
 [1] Hamidreza Sadeghi Gandomani, Mohammad Aghajani, et al., “Colorectal cancer in the world: incidence, mortality and risk factors,”Biomedical Research and Therapy, 2017.
