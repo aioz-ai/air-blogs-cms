@@ -4,7 +4,7 @@ id:  polyb-detection
 title: "Data Augmentation for Colon Polyp Detection: A systematic Study"
 description: "A systematic study on the performance of different data augmentation methods for colon polyp detection."
 author_github: https://github.com/quangduytran
-tags: ["type: post", "AI", "Medical", "Image Processing"]
+tags: ["type: post", "AI", "Medical", "Image Processing", "Polyp detection", "Deep Learning"]
 ---
 
 *Colorectal cancer (CRC), also known as bowel cancer or colon cancer, is a cancer development from the colon or rectum called a polyp. Detecting polyps is a common approach in screening colonoscopies to prevent CRC at an early stage. Early colon polyp detection from medical images is still an unsolved problem due to the considerable variation of polyps in shape, texture, size, color, illumination, and the lack of publicly annotated datasets. At AIOZ, we adopt a recently proposed auto-augmentation method for polyp detection. We also conduct a systematic study on the performance of different data augmentation methods for colon polyp detection. The experimental results show that the auto-augmentation achieves the best performance comparing to other augmentation strategies.*

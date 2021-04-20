@@ -4,7 +4,7 @@ id:  intro-federated-learning
 title: Introduction to Federated Learning
 description: "Building better product with on-device data and privacy by default."
 author_github: https://github.com/quangduytran
-tags: ["type: post", "AI", "Federated Learning"]
+tags: ["type: post", "AI", "Federated Learning", "Distributed Computing"]
 ---
 
 **Federated Learning:** machine learning over a distributed dataset, where user devices (e.g., desktop, mobile phones, etc.) are utilized to collaboratively learn a shared prediction model while keeping all training data locally on the device. This approach decouples the ability to do machine learning from storing the data in the cloud.
