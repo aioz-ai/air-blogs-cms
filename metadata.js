@@ -41,7 +41,7 @@ module.exports = {
       "name": "Pho Huynh"
     },
     {
-      "avatar": "https://avatars.githubusercontent.com/u/55283274",
+      "avatar": "https://avatars.githubusercontent.com/u/32242086",
       "bio": "Deep-tech R&D",
       "github": "https://github.com/LeManhTruong",
       "id": "truong.manh.le",
