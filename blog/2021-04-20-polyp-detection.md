@@ -9,7 +9,7 @@ tags: ["type: post", "AI", "Medical", "Image Processing", "Polyp detection", "De
 
 import Steps from '@site/src/components/Steps';
 
-*Colorectal cancer (CRC), also known as bowel cancer or colon cancer, is a cancer development from the colon or rectum called a polyp. Detecting polyps is a common approach in screening colonoscopies to prevent CRC at an early stage. Early colon polyp detection from medical images is still an unsolved problem due to the considerable variation of polyps in shape, texture, size, color, illumination, and the lack of publicly annotated datasets. At AIOZ, we adopt a recently proposed auto-augmentation method for polyp detection. We also conduct a systematic study on the performance of different data augmentation methods for colon polyp detection. The experimental results show that the auto-augmentation achieves the best performance comparing to other augmentation strategies.*
+*Colorectal cancer (CRC):cancer:, also known as bowel cancer or colon cancer, is a cancer development from the colon or rectum called a polyp. Detecting polyps is a common approach in screening colonoscopies to prevent CRC at an early stage. Early colon polyp detection from medical images is still an unsolved problem due to the considerable variation of polyps in shape, texture, size, color, illumination, and the lack of publicly annotated datasets. At AIOZ, we adopt a recently proposed auto-augmentation method for polyp detection. We also conduct a systematic study on the performance of different data augmentation methods for colon polyp detection. The experimental results show that the auto-augmentation achieves the best performance comparing to other augmentation strategies.*
 
 <Steps headingDepth={3}>
 </Steps>
@@ -63,13 +63,13 @@ Table 3 presents the comparative results between the auto augmentation in our mo
 This study adopts a deep learning-based object detection method with auto data augmentation for polyp detection problems. Different augmentation strategies are evaluated. The experimental results show that the learned auto augmentation policies learned from the general object detection dataset are well transferred to the polyp detection problem. Although auto augmentation achieves competitive results, it still has a high FP compared to the state of the art. This weakness can be improved by several post-processing, such as false-positive learning.
 
 ## Open Source
-- Github: https://github.com/aioz-ai/polyp-detection
-- Blog post: https://ai.aioz.io/blog/polyp-detection
+:1st_place_medal: Github: https://github.com/aioz-ai/polyp-detection
+:2nd_place_medal: Blog post: https://ai.aioz.io/blog/polyp-detection
 
 ## Acknowledgements
 *This research was conducted by Phong Nguyen, Quang Tran, Erman Tjiputra, and Toan Do. We’d like to give special thanks to the other AIOZ AI team members for their supports and feedbacks.*
 
-All the above contributions were incredibly enabling for this research.
+:tada: All the above contributions were incredibly enabling for this research. :tada:
 
 
 ## Reference
