@@ -1,13 +1,18 @@
 ---
 last_modified_on: "2021-04-20"
-id:  polyb-detection
+id:  polyp-detection
 title: "Data Augmentation for Colon Polyp Detection: A systematic Study"
 description: "A systematic study on the performance of different data augmentation methods for colon polyp detection."
 author_github: https://github.com/quangduytran
 tags: ["type: post", "AI", "Medical", "Image Processing", "Polyp detection", "Deep Learning"]
 ---
 
+import Steps from '@site/src/components/Steps';
+
 *Colorectal cancer (CRC), also known as bowel cancer or colon cancer, is a cancer development from the colon or rectum called a polyp. Detecting polyps is a common approach in screening colonoscopies to prevent CRC at an early stage. Early colon polyp detection from medical images is still an unsolved problem due to the considerable variation of polyps in shape, texture, size, color, illumination, and the lack of publicly annotated datasets. At AIOZ, we adopt a recently proposed auto-augmentation method for polyp detection. We also conduct a systematic study on the performance of different data augmentation methods for colon polyp detection. The experimental results show that the auto-augmentation achieves the best performance comparing to other augmentation strategies.*
+
+<Steps headingDepth={3}>
+</Steps>
 
 ## Introduction
 Colorectal cancer (CRC) is the third-largest cause of worldwide cancer deaths in men and the second cause in women, with the number of patients, died each year up to 700,000 [1]. Detection and removal of colon polyps at an early stage will reduce the mortality from CRC. There are several methods for colon screening, such as CT colonography or wireless capsule endoscopy, but the gold standard is colonoscopy [2].
@@ -21,7 +26,7 @@ Previous research shows that automatic polyp detection using deep learning-based
 Thanks to the power of deep learning, recent works [5, 12,11] show that deep-based detection methods give impressive detection performance. In this work, we use the Faster RCNN object detector [5] with Resnet101 [13] backbone pre-trained on COCO dataset.  Our experiments show that this architecture gives a competitive performance on the Polyp detection problem. The experimental setting for the detector is set as follows. The network is trained using stochastic gradient descent  (SGD)with 0.9 momentum; learning rate with initial value is set to3e-4 and will be decreased to 3e-5 from the iteration 900k.The number of anchor boxes per location used in our model is 12 (4 scales, i.e.,64×64, 128×128, 256×256, 512×512 and 3 aspect ratios, i.e.,1 : 2,1 : 1,2 : 1).
 
 ### 2. Data Augmentation
-![autoaugment_figure_small](https://vision.aioz.io/thumbnail/74b6b1addd4d470291c3/1024/research/2021-04-20-polyb-detection/autoaugment_figure_small.jpg)
+![autoaugment_figure_small](https://vision.aioz.io/thumbnail/74b6b1addd4d470291c3/1024/research/2021-04-20-polyp-detection/autoaugment_figure_small.jpg)
 *<center>**Fig. 1.** Example of applying learned augmentation policies tocolonoscopy image.</center>*
 
 Data augmentation can be split into two types: self-defined data augmentation (a.k.a traditional augmentation) and auto augmentation [6]. In this study, we adopt an automated data augmentation approach for object detection, i.e., Auto-augment [6], which finds optimal data augmentation policies during training. In Auto-augment, an augmentation policy consists of several sub-policies; each sub-policy consists of two operations. Each operation is an image transformation containing two parameters: probability and the magnitude of the shift. There are three types of transformations used in Auto-augment for object detection [4], which are
@@ -44,8 +49,8 @@ We  use  CVC-ClinicDB  [14]  for  training  and  ETIS-Larib[15] for testing.   T
 Fig. 2 and Fig. 3 visualize several failed results from our model in the testing dataset in which the blue boxes are the predicted locations, and green boxes are ground truths. These false-positive samples (Fig. 2) caused by a shortcoming in bowel preparation (i.e., leftovers of food and fluid in the colon), while false negative (Fig. 3) samples are caused by the variations of polyp type and appearance (i.e., small polyp, flat polyp, similarities of polyp and colon vein)
 
 ## Open Source
-- Github: https://github.com/aioz-ai/polyb_detection
-- Blog post: https://ai.aioz.io/blog/polyb-detection/
+- Github: https://github.com/aioz-ai/polyp_detection
+- Blog post: https://ai.aioz.io/blog/polyp-detection/
 
 ## Reference
 [1] Hamidreza Sadeghi Gandomani, Mohammad Aghajani, et al., “Colorectal cancer in the world: incidence, mortality and risk factors,”Biomedical Research and Therapy, 2017.
