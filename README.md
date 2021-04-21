@@ -8,7 +8,7 @@
 ## Contributing to Documentation
 The AIR Blog is a community-focused initiative, and we will review all pull requests and issues created in this repository. If you notice typos or grammatical errors, please feel free to create pull requests with these corrections directly. More significant contributions may start as issues to test the waters on the subject with the maintainers. It is generally preferable to create a pull request over an issue to propose a change to the blog content.
 
-To get detailed guide on how to contribute, please see detailed guide [here](CONTRIBUTING).
+To get detailed guide on how to contribute, please see detailed guide [here](CONTRIBUTING.md).
 
 ## Automated Deployments
 - Any updates to content (add, edit, remove) on this repo are automatically deployed and synced with our websites.
