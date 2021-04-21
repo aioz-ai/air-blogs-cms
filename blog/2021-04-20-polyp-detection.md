@@ -49,8 +49,12 @@ We  use  CVC-ClinicDB  [14]  for  training  and  ETIS-Larib[15] for testing.   T
 Fig. 2 and Fig. 3 visualize several failed results from our model in the testing dataset in which the blue boxes are the predicted locations, and green boxes are ground truths. These false-positive samples (Fig. 2) caused by a shortcoming in bowel preparation (i.e., leftovers of food and fluid in the colon), while false negative (Fig. 3) samples are caused by the variations of polyp type and appearance (i.e., small polyp, flat polyp, similarities of polyp and colon vein)
 
 ## Open Source
-- Github: https://github.com/aioz-ai/polyp_detection
-- Blog post: https://ai.aioz.io/blog/polyp-detection/
+- Github: https://github.com/aioz-ai/polyp-detection
+- Blog post: https://ai.aioz.io/blog/polyp-detection
+
+## Acknowledgements
+*This research was conducted by Phong Nguyen, Quang Tran, Erman Tjiputra, and Toan Do. We’d like to give special thanks to the other AIOZ AI team members for their support and feedbacks.*
+All the above contributions were incredibly enabling for this research.
 
 ## Reference
 [1] Hamidreza Sadeghi Gandomani, Mohammad Aghajani, et al., “Colorectal cancer in the world: incidence, mortality and risk factors,”Biomedical Research and Therapy, 2017.
