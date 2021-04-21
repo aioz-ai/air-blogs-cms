@@ -26,7 +26,7 @@ Previous research shows that automatic polyp detection using deep learning-based
 Thanks to the power of deep learning, recent works [5, 12,11] show that deep-based detection methods give impressive detection performance. In this work, we use the Faster RCNN object detector [5] with Resnet101 [13] backbone pre-trained on COCO dataset.  Our experiments show that this architecture gives a competitive performance on the Polyp detection problem. The experimental setting for the detector is set as follows. The network is trained using stochastic gradient descent  (SGD)with 0.9 momentum; learning rate with initial value is set to3e-4 and will be decreased to 3e-5 from the iteration 900k.The number of anchor boxes per location used in our model is 12 (4 scales, i.e.,64×64, 128×128, 256×256, 512×512 and 3 aspect ratios, i.e.,1 : 2,1 : 1,2 : 1).
 
 ### 2. Data Augmentation
-![autoaugment_figure_small](https://vision.aioz.io/thumbnail/74b6b1addd4d470291c3/1024/research/2021-04-20-polyp-detection/autoaugment_figure_small.jpg)
+![autoaugment_figure_small](https://vision.aioz.io/thumbnail/5a2c6412b7144569a9d2/1024/autoaugment_figure_small.jpg)
 *<center>**Fig. 1.** Example of applying learned augmentation policies tocolonoscopy image.</center>*
 
 Data augmentation can be split into two types: self-defined data augmentation (a.k.a traditional augmentation) and auto augmentation [6]. In this study, we adopt an automated data augmentation approach for object detection, i.e., Auto-augment [6], which finds optimal data augmentation policies during training. In Auto-augment, an augmentation policy consists of several sub-policies; each sub-policy consists of two operations. Each operation is an image transformation containing two parameters: probability and the magnitude of the shift. There are three types of transformations used in Auto-augment for object detection [4], which are
@@ -40,10 +40,10 @@ In addition to auto-augmentation, we also investigate the effect of traditional 
 ## Experiments
 We  use  CVC-ClinicDB  [14]  for  training  and  ETIS-Larib[15] for testing.   This allows us to make a fair comparison with  MICCAI2015  challenge  results  which  are  reported  on the same dataset.  The CVC-CLINIC database contains 612polyp  image  frames  of  31  unique  polyps  from  31  different colonoscopy videos.  The ETIS-LARIB dataset contains 196high resolution image frames of 44 different polyps.
 
-![fp_figure](https://vision.aioz.io/thumbnail/303cb0ccda7e4d1e98ef/1024/fp_figure.jpg)
+![fp_figure](https://vision.aioz.io/thumbnail/4dcf8c111cc9442cb080/1024/fp_figure.jpg)
 *<center>**Fig. 2.** Examples of false positive detection on testing dataset. Green boxes and blues boxes are ground truths and predictions, respectively.</center>*
 
-![fn_figure](https://vision.aioz.io/thumbnail/e7906e10899a4cb4881e/1024/fn_figure.jpg)
+![fn_figure](https://vision.aioz.io/thumbnail/105ef91b507140c78d0f/1024/fn_figure.jpg)
 *<center>**Fig. 3.** Examples of false-negative detection on the testing dataset. Green boxes and blues boxes are ground truths and predictions, respectively.</center>*
 
 Fig. 2 and Fig. 3 visualize several failed results from our model in the testing dataset in which the blue boxes are the predicted locations, and green boxes are ground truths. These false-positive samples (Fig. 2) caused by a shortcoming in bowel preparation (i.e., leftovers of food and fluid in the colon), while false negative (Fig. 3) samples are caused by the variations of polyp type and appearance (i.e., small polyp, flat polyp, similarities of polyp and colon vein)
