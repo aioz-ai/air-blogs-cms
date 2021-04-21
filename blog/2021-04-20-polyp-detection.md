@@ -53,11 +53,13 @@ Fig. 2 and Fig. 3 visualize several failed results from our model in the testing
 
 ![tab-3](https://vision.aioz.io/thumbnail/350d82d6210d4934a384/1024/polyp-tab3.png)
 *<center>**Table 2.** Comparison among traditional data augmentation (TDA), auto augmentation (AA) and their combinations.</center>*
+Table 2 shows the comparative results between different augmentation strategies. The results show that the third combination method (AA-TDA-3) achieves higher performance in Precision than AutoAugment, i.e., 75.90% and 74.51%, respectively. However, overall, Auto-augment (AA) achieves the best results because of its performance in covering polyp miss rate (i.e., 152) with an acceptable false-positive rate (i.e., 52). The competitive performance of auto augmentation (AA) confirms the transferable learned data augmentation policies on the COCO dataset [4].
 
 ![tab-4](https://vision.aioz.io/thumbnail/7ab3afe2f19345febcfe/1024/polyp-tab4.png)
 *<center>**Table 3.** Comparative results between our model and the state of the art.</center>*
+Table 3 presents the comparative results between the auto augmentation in our model and other state-of-the-art results. Among compared methods, CUMED, OUR, and UNS- UCLAN are end-to-end deep learning-based approaches. The results show that compared to methods from MICCAI challenge [3], auto augmentation achieves better performance on all metrics. Comparing to the recent method [10], auto augmentation also achieves better performance on all metrics but FP. These results confirm the effectiveness of auto augmentation for polyp detection problems.
 
-# Conclusion
+## Conclusion
 This study adopts a deep learning-based object detection method with auto data augmentation for polyp detection problems. Different augmentation strategies are evaluated. The experimental results show that the learned auto augmentation policies learned from the general object detection dataset are well transferred to the polyp detection problem. Although auto augmentation achieves competitive results, it still has a high FP compared to the state of the art. This weakness can be improved by several post-processing, such as false-positive learning.
 
 ## Open Source
