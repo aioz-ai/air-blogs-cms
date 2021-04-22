@@ -63,8 +63,9 @@ Table 3 presents the comparative results between the auto augmentation in our mo
 This study adopts a deep learning-based object detection method with auto data augmentation for polyp detection problems. Different augmentation strategies are evaluated. The experimental results show that the learned auto augmentation policies learned from the general object detection dataset are well transferred to the polyp detection problem. Although auto augmentation achieves competitive results, it still has a high FP compared to the state of the art. This weakness can be improved by several post-processing, such as false-positive learning.
 
 ## Open Source
-:sparkles: Github: https://github.com/aioz-ai/polyp-detection
-:sparkles: Blog post: https://ai.aioz.io/blog/polyp-detection
+:tomato: Github: https://github.com/aioz-ai/polyp-detection
+
+:strawberry: Blog post: https://ai.aioz.io/blog/polyp-detection
 
 ## Acknowledgements
 *This research was conducted by Phong Nguyen, Quang Tran, Erman Tjiputra, and Toan Do. We’d like to give special thanks to the other AIOZ AI team members for their supports and feedbacks.*
