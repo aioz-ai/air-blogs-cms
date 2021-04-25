@@ -34,7 +34,7 @@ Large, distributed dataset, where no-one can edit/delete an old entry, nor fake 
 
 ### Smart Contract
 
-ataset stored on the Blockchain, which includes: **Data** (i.e. ledgers, events, statistics), **State** (todays ledger, todays events), **Code** (rules for changing state)
+Dataset stored on the Blockchain, which includes: **Data** (i.e. ledgers, events, statistics), **State** (todays ledger, todays events), **Code** (rules for changing state)
 
 ## Advanced
 TBD
