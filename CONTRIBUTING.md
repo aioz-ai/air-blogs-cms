@@ -3,8 +3,12 @@ id: wiki-contribute
 title: How to contribute
 sidebar_label: How to contribute
 ---
+# 👨‍💻 Contributing to AIOZ AIR Blogs
+We welcome and appreciate any contribution made by the community.
+If you want to contribute to AIOZ, this document may make the process easier for you.
 
-Wiki content are written in GitHub Flavored Markdown (GFM), you can visit here to view [syntax reference](https://guides.github.com/features/mastering-markdown/).  You need some basic `git` skills to submit your contribution.
+## 😎 Get Involved
+Wiki/Blog contents are written in GitHub Flavored Markdown (GFM), you can visit here to view [syntax reference](https://guides.github.com/features/mastering-markdown/).  You need some basic `git` skills to submit your contribution.
 
 For light weight editing, you can use github's interface to edit existing article or create new article.  If you need more control over assets or write multiple articles and submit changes in bulk, you probably need to fork this repo and submit your contribution as PR (Pull Request).
 
@@ -42,7 +46,22 @@ git commit -m 'My arbitrary commit message'
 git push origin <branch>
 ```
 
-# How to write article
+## Summary ![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
+#### Pull Request
+
+- :fork_and_knife:  Fork it!
+- :twisted_rightwards_arrows:  Create your branch: `git checkout -b new-branch`
+- :wrench:  Make your changes
+- :memo:Commit your changes:   `git commit -am 'Add some feature'`
+- :rocket:Push to the branch:   `git push origin new-branch`
+- :tada:  Submit a pull request
+
+#### Issue
+
+- Submit an [issue][air-blogs-cms-issue]。Any helpful suggestions are welcomed.:stuck_out_tongue_winking_eye:
+
+# How to write blog/article
 
 ## Blog
 
@@ -79,7 +98,7 @@ Static assets should be placed in a cloud folder (such as Gdrive, or visit [here
 ![image alt text](https://<url>/image.png)
 ```
 
-## Semantic Commit Messages
+# Semantic Commit Messages
 
 See how a minor change to your commit message style can make you a better programmer.
 
@@ -110,7 +129,10 @@ The various types of commits:
 
 Use lower case not title case!
 
+### What Happens Next?
 
-# How to translate
+The AIOZ AI team is constantly monitoring pull requests and merges them if they seem correct.
+Kindly help us to keep pull requests consistent by following the guidelines above.
 
-TODO
+# 📄 License
+By contributing to AIOZ AI, you agree that your contributions will be licensed under its **MIT license**.
