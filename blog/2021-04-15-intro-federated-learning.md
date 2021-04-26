@@ -17,5 +17,19 @@ The idea behind federated learning is as conceptually simple as its technologica
 
 **Smart Contract:** dataset stored on the Blockchain, which includes: Data (i.e., ledgers, events, statistics), State (today's ledger, today's events), Code (rules for changing state).
 
+### Math Examples
+**Fundamental Theorem of Calculus**
+Let $f:[a,b] \to \R$ be Riemann integrable. Let $F:[a,b]\to\R$ be $F(x)=
+\int_{a}^{x}f(t)dt$.
+Then $$F$$ is continuous, and at all $x$ such that $f$ is continuous at $x$,
+$F$ is differentiable at $x$ with $F'(x)=f(x)$.
+
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following
+equation.
+
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+
 ## References
 [1] J.Rodriguez. Whats New in Deep Learning Research: Understanding Federated Learning.
