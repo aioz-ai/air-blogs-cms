@@ -2,6 +2,7 @@
 last_modified_on: "2021-05-19"
 title: Visual observations for pybullet agents.
 description: Obtaining visual observations for agents in pybullet.
+series_position: 6
 author_github: https://github.com/trqminh
 tags: ["type: tutorial", "level: medium"]
 ---
