@@ -1,7 +1,7 @@
 ---
 last_modified_on: "2021-05-25"
 id: deep-metric-learning-cbswr
-title: Deep Metric Learning Meets Deep Clustering: An Novel Unsupervised Approach for Feature Embedding
+title: Deep Metric Learning Meets Deep Clustering - An Novel Unsupervised Approach for Feature Embedding
 description: A new Unsupervised Deep Metric Learning method.
 author_github: https://github.com/xuanbinh-nguyen96
 tags: ["type: post", "AI", "Computer Vision", "Metric-learning", "Clustering", "Retrieval", "Similarity-measure"]
@@ -80,7 +80,7 @@ where $L_m$ is the center-based softmax loss (3) for deep metric learning, $L_{r
 
 ## Experimental Results
 
-## Ablation Study
+### Ablation Study
 
 We denote our model with:
 
