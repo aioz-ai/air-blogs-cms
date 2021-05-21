@@ -81,7 +81,8 @@ while True:
                             renderer=p.ER_BULLET_HARDWARE_OPENGL)
 ```
 
-![Fig 3](https://vision.aioz.io/seafhttp/files/3de18e19-ca88-4255-a597-fa2332758faa/demo.gif)
+![Fig 3](https://vision.aioz.io/f/7bb30d759cca4f9c9af9/?dl=1)
 *<center>**Figure 3**: Result of attaching the pybullet camera.</center>*
 
+## Summary
 To sum up, in this post, we introduce a problem occurred when using Pybullet for navigation problem, which is the lack of extrinsic observations for the agent, namely the visual one. We also provide a solution to work solely on Pybullet for training navigation models. Hopefully that this tutorial can help.
