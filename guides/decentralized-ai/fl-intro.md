@@ -44,7 +44,7 @@ In this tutorial, we will give an overview of federated learning, definitions, a
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 $ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 $ brew update
-$brew install python  # Python 3
+$ brew install python  # Python 3
 $ sudo pip3 install --user --upgrade virtualenv
 ```
 
