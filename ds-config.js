@@ -1,29 +1,25 @@
 {
   "index_name": "blog.ai.aioz.io",
   "start_urls": [
-    {
-      "url": "https://blog.ai.aioz.io"
-    },
-    {
-      "url": "https://ai.aioz.io/guides"
-      "selectors_key": "guides"
-    },
-    {
-      "url": "https://blog.ai.aioz.io/blog"
-      "selectors_key": "blog"
-    },
-    {
-      "url": "https://blog.ai.aioz.io/docs",
-      "selectors_key": "docs"
-    }
+    "https://blog.ai.aioz.io/"
   ],
+  "stop_urls": [],
   "selectors": {
-    "lvl0": "#content header h1",
-    "lvl1": "#content article h1",
-    "lvl2": "#content section h3",
-    "lvl3": "#content section h4",
-    "lvl4": "#content section h5",
-    "lvl5": "#content section h6",
-    "text": "#content header p,#content section p,#content section ol"
-  }
+    "lvl0": {
+      "selector": ".page-name",
+      "global": true,
+      "default_value": "Documentation"
+    },
+    "lvl1": "main h1",
+    "lvl2": "main h2",
+    "lvl3": "main h3",
+    "lvl4": "main h4",
+    "lvl5": "main h5",
+    "lvl6": "main h6",
+    "text": "main p, main li, .subheading"
+  },
+  "selectors_exclude": [
+    ".search-exclude"
+  ],
+  "nb_hits": 890
 }
