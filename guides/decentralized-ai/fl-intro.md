@@ -2,7 +2,7 @@
 last_modified_on: "2021-04-16"
 title: Introduction to Federated Learning.
 description: Introduction to decentralized federated learning.
-series_position: 1
+series_position: 2
 author_github: https://github.com/quangduytran
 tags: ["type: tutorial", "level: medium"]
 ---
