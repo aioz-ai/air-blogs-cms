@@ -73,9 +73,9 @@ A video file contains audio, text, and visual content in frames, as it is a seri
 **Classification**: multi-task supervised method may achieve better performance.  
 **Output**: the multiple labels of each input video.
 
-## 2. Correlated tasks to Video recognition and categorization  
+### 2. Correlated tasks to Video recognition and categorization  
 
-### 2.1. Video content filtering  
+#### 2.1. Video content filtering  
 **Main target**: Identify and avoid the unacceptable videos be added in the networks.  
 **Input**: Videos, their categories, and the output got from sub-task detections.  
 **Output**: {0,1} where 1 identify the acceptance of input video and  0 identify the rejection of input video.  
@@ -83,13 +83,13 @@ A video file contains audio, text, and visual content in frames, as it is a seri
 **Sub-task detections for video content filtering**:  
 - Negative content detection on video (porn video): skin segmentation, human navel area detection, sentiment analysis.  
 - Abnormal scenes: bleeding detection, abnormal action detection.  
-### 2.2. Video Recommendation  
+#### 2.2. Video Recommendation  
 It turns out that there are (generally) three approaches to construct a recommendation engine:   
 - **Engine for suggestion based on popularity**: This is the most basic type of recommendation engine you will encounter. This algorithm is used to generate the trending list that you see on YouTube or Netflix. It maintains track of the number of views for each movie/video and then lists movies in descending order depending on views (highest view count to lowest view count).  
 - **Engine for content-based recommendations**: This form of recommendation system uses a movie that a user is currently interested in as input. Then it examines the movie's content (storyline, genre, actor, director, etc.) to locate other films with similar material. The content can be extracted by the output of the **Video recognition and categorization** module. Then, based on their similarity ratings, it ranks comparable movies and recommends the most relevant movies to the viewer.   
 - **Recommendation engine based on collaborative filtering**: this algorithm initially attempts to locate people similar to them based on their behaviors and interests (for example, both the users watch the same type of movies or movies directed by the same director). If one of these users (say, A) has seen a movie that user B has not yet watched, that movie is recommended to user B, and vice versa. To put it another way, the recommendations are filtered based on the cooperation of comparable user preferences (thus the name "Collaborative Filtering"). This algorithm is often used on the Amazon e-commerce platform, where you can see the “Customers who saw this item also viewed” and “Customers who bought this item also purchased” lists.  
 
-### 2.3. Smart Ads  
+#### 2.3. Smart Ads  
 **Definition** Smart Ads contain outputs that answer four questions: **what, when, how many times, and how long** ads are added in the video.  
 **Criteria**:  
 - Add Ads which contents do not conflict with the current video context.  
@@ -115,13 +115,13 @@ To garner attention, users have a solid incentive to replicate a popular short v
 **Link research repo** github (not well-organized yet but allow to train model): [https://github.com/MKLab-ITI/ndvr-dml](https://github.com/MKLab-ITI/ndvr-dml)  
 **Link wrapped-up code** in docker (can be used directly but can not train/re-train model): [https://github.com/4ML-platform/ndvr](https://github.com/4ML-platform/ndvr)  
 
-## 4. Bot detection  
+### 4. Bot detection  
 ![BotDetection](https://datadome.co/wp-content/uploads/bot-detection-engine-1200x492.jpg)  
 *<center>**Figure 3**:  An overview of bot detection schematic [(Source)](https://datadome.co/bot-management-protection/bot-detection-how-to-identify-bot-traffic-to-your-website/#chapter3).</center>*
 
 **Main target**: Identify the abnormal action of users when they interact with the AIOZ network. For dealing with bots...  
 More detail about definitions and solutions can be found in: [DataDome](https://datadome.co/bot-management-protection/bot-detection-how-to-identify-bot-traffic-to-your-website/#chapter3)  
 
-## 5. Smart Routing for AIOZ Nodes
+### 5. Smart Routing for AIOZ Nodes
 Where each task is picked up which some best nodes.  
 This task is flexible to problems of different networks.  
