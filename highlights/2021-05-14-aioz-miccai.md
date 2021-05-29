@@ -5,7 +5,7 @@ description: '🏆 Publication @ #1 Top Conference under Biomedical & Medical In
 author_github: "https://github.com/aioz-ai"
 hide_on_release_notes: false
 pr_numbers: []
-year: "2021 - Q1"
+year: "2021 - Q2"
 tags: ["type: highlights","domain: research"]
 ---
 ## Overview
@@ -13,7 +13,7 @@ tags: ["type: highlights","domain: research"]
 
 :tada: The conference has reviewed 1630 papers this year and AIOZ paper is among the top 13% that received a provisional accept recommendation. :tada:
 
-Vist Conference Website at: https://www.miccai2021.org/en/
+Visit Conference Website at: https://www.miccai2021.org/en/
 
 ## AIOZ research @ MICCAI 2021
 ### ✨ Multiple Meta-model Quantifying for Medical Visual Question Answering

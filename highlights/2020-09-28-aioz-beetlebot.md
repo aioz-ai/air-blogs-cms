@@ -6,7 +6,7 @@ author_github: "https://github.com/aioz-ai"
 hide_on_release_notes: false
 pr_numbers: []
 year: "2020 - Q4"
-tags: ["type: news","domain: robotics"]
+tags: ["type: news","domain: robotics","tag: production"]
 ---
 
 ## Overview
