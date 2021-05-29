@@ -21,10 +21,28 @@ During the COVID-19 pandemic, technologies are playing a crucial role in keeping
 
 :hospital: In September 2020, together with the support of UNDP, AIOZ BeetleBot had been developed and successfully **deployed at the National Hospital of Tropical Diseases**.
 
-:clapper: **Interested in how AIOZ BeetleBot works in action?** See our [Videos HERE](https://www.youtube.com/watch?v=xD8JesvLKH4&list=PLmEsZL-2xl-EeUvs2XukzTNFRYX_Ku4s_).
+<center><YoutubeEmbed embedId="xD8JesvLKH4"/></center>
+
+*<center>BeetleBot, functioning at Vietnamese National Hospital of Tropical Diseases</center>*
+
+:clapper: **Interested in how AIOZ BeetleBot works in action?** Find out more [Videos HERE](https://www.youtube.com/watch?v=xD8JesvLKH4&list=PLmEsZL-2xl-EeUvs2XukzTNFRYX_Ku4s_).
 
 ## AIOZ BeetleBot
 Visit us at: https://beetle.aioz.io
 
 Please feel free to drop us an email upon interest in our technologies.
 ai.admin@aioz.io
+
+export const YoutubeEmbed = ({ embedId }) => (
+  <div className="video-responsive">
+    <iframe
+      width="693"
+      height="390"
+      src={`https://www.youtube.com/embed/${embedId}`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Embedded youtube"
+    />
+  </div>
+);
