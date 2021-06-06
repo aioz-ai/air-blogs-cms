@@ -5,7 +5,7 @@ description: "🤖 BeetleBot Deployment at Vietnamese Hospital of Tropical Disea
 author_github: "https://github.com/aioz-ai"
 hide_on_release_notes: false
 pr_numbers: []
-year: "2020 - Q4"
+year: "2020 "
 tags: ["type: news","domain: robotics","tag: production"]
 ---
 

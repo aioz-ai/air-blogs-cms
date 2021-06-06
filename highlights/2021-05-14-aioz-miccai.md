@@ -5,7 +5,7 @@ description: '🏆 Publication @ #1 Top Conference under Biomedical & Medical In
 author_github: "https://github.com/aioz-ai"
 hide_on_release_notes: false
 pr_numbers: []
-year: "2021 - Q2"
+year: "2021 "
 tags: ["type: highlights","domain: research"]
 ---
 ## Overview
