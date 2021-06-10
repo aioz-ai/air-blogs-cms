@@ -13,7 +13,7 @@ tags: ["type: highlights","domain: research"]
 
 In 2019, MICCAI has seen a record number of submissions, with a 70% increase from 2018, and it is a reflection of the high quality of your submitted work that it has been selected for publication. Finally the conference has accepted 540 papers (or 31% of the submissions).
 
-:tada: **We are very pleased to inform that our paper, entitled "Overcoming Data Limitation in Medical Visual Question Answering" has been accepted for MICCAI 2019.**  :tada:
+:tada: **We are very pleased to inform that our paper, entitled "Overcoming Data Limitation in Medical Visual Question Answering" has been accepted for MICCAI 2019.** :tada: (AIOZ affiliations in <Highlight color="#1877F2">blue</Highlight>)
 
 Visit Conference Website at: https://www.miccai2019.org/
 
