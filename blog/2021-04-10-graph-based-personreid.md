@@ -62,11 +62,11 @@ Our proposed method is a multi-branch multi-task framework for person ReID, wher
 
 ### Comparison to the state of the art
 
-<img src="https://vision.aioz.io/thumbnail/dcf6842fe65b47f89208/1024/GPS-Tab_5.PNG" alt="Tab-5" width="400"/>
+**GPS vs. Baseline.** The last two rows of Table 5 show the result of our GPS when being integrated into the baseline BoT. The results clearly show that our GPS significantly improves the performance of BoT in both Market-1501 and DukeMTMC-ReID dataset. This demonstrates the effectiveness of our GPS and confirms the usefulness of learning the attributes in the ReID task.
+
+<img src="https://vision.aioz.io/thumbnail/dcf6842fe65b47f89208/1024/GPS-Tab_5.PNG" alt="Tab-5" width="600"/>
 
 *<center>**Table 5**: Comparison with state-of-the-art methods on Market-1501 and DukeMTMC-ReID datasets. The cyan and yellow boxes are the best results corresponding to mask-guided/attribute-based and other approaches, respectively. Note that no post-processing is applied to our method [(Source)](https://arxiv.org/pdf/2104.06770.pdf).</center>*
-
-**GPS vs. Baseline.** The last two rows of Table 5 show the result of our GPS when being integrated into the baseline BoT. The results clearly show that our GPS significantly improves the performance of BoT in both Market-1501 and DukeMTMC-ReID dataset. This demonstrates the effectiveness of our GPS and confirms the usefulness of learning the attributes in the ReID task.
 
 **Evaluation on Market-1501.** We evaluate our GPS with other methods on Market-1501 dataset in Table 5. The results show that our method outperforms the state-of-the-art attribute-based methods AANet that use attribute and body part information in all evaluation metrics. Specifically, we outperforms AANet by 5.3% and 1.3% at mAP and R-1, respectively. Our GPS also outperforms the state-of-the-art mask-guided methods, and especially, we outperform P$^2$-Net by 2.2% at mAP. At the same time, we also get comparative results when comparing with other recent ReID approaches.
 
