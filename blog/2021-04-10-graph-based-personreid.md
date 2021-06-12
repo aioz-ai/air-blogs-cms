@@ -44,25 +44,25 @@ Our proposed method is a multi-branch multi-task framework for person ReID, wher
 
 **Loss Contribution.**  In Table 2, we show the contribution of each loss to the final performance on the Market1501 dataset. The person ID classification loss, triplet loss, center loss, and attribute recognition loss are denoted as $\mathbf{\mathcal{L}_{id}}$, $\mathbf{\mathcal{L}_{triplet}}$, $\mathbf{\mathcal{L}_{center}}$, and $\mathbf{\mathcal{L}_{a}}$, respectively. The performance is improved when we incorporate all losses to the framework, which justifies the effectiveness of our proposed method. By using only $\mathbf{\mathcal{L}_{id}}$, we still achieve comparative results with other mask-guided and attribute-based methods. While the triplet loss $\mathbf{\mathcal{L}_{triplet}}$ demonstrates its capability on improving the performance, the center loss $\mathbf{\mathcal{L}_{center}}$ shows a slight impact on the performance. Notably, the attribute loss $\mathbf{\mathcal{L}_{a}}$ shows stability when being incorporated with other loss functions.
 
-<img src="https://vision.aioz.io/thumbnail/f68e9cde75624ca7a7ef/1024/GPS-Tab_2.PNG" alt="Tab-1" width="400"/>
+<img src="https://vision.aioz.io/thumbnail/f68e9cde75624ca7a7ef/1024/GPS-Tab_2.PNG" alt="Tab-2" width="400"/>
 
 *<center>**Table 2**: The contribution of losses to the performance of person ReID task on Market1501 dataset. Note that the experiments are conducted with ResNet-50 as backbone CNN network [(Source)](https://arxiv.org/pdf/2104.06770.pdf).</center>*
 
 **Model Interpretability.** In this section, we conduct cross-dataset experiments to evaluate the effectiveness of GPS. The model is trained on the source dataset and test directly on the target dataset without finetuning. As shown in Table 3, our GPS archives a significant improvement over the Bag-of-Tricks baseline (BoT). This demonstrates the interpretability of our proposed method as well as confirms the effectiveness of learning the attributes for the person ReID task.
 
-<img src="https://vision.aioz.io/thumbnail/0b83f055393c42aeb1da/1024/GPS-Tab_3.PNG" alt="Tab-1" width="400"/>
+<img src="https://vision.aioz.io/thumbnail/0b83f055393c42aeb1da/1024/GPS-Tab_3.PNG" alt="Tab-3" width="400"/>
 
 *<center>**Table 3**: The transferable ability of our GPS evaluated on cross-dataset [(Source)](https://arxiv.org/pdf/2104.06770.pdf).</center>*
 
 **Training Parameters.** We also provide the number of training parameters of our GPS and the baseline BoT in Table 4 to show the complexity of each method. Overall, our GPS slightly increases about 3M parameters in comparison with the baseline BoT while achieving much better performance.
 
-<img src="https://vision.aioz.io/thumbnail/0776d4ba028242ebae65/1024/GPS-Tab_4.PNG" alt="Tab-1" width="400"/>
+<img src="https://vision.aioz.io/thumbnail/0776d4ba028242ebae65/1024/GPS-Tab_4.PNG" alt="Tab-4" width="400"/>
 
 *<center>**Table 4**: The number of parameters of our GPS in comparision with the baseline BoT on Market1501 and DukeMTMC-ReID datasets using ResNet-50 as the backbone network. #nParam indicates the number of parameters and 1K=1000 [(Source)](https://arxiv.org/pdf/2104.06770.pdf).</center>*
 
 ### Comparison to the state of the art
 
-<img src="https://vision.aioz.io/thumbnail/679824d7a78648eda0f2/1024/GPS-Tab_5.PNG" alt="Tab-1" width="400"/>
+<img src="https://vision.aioz.io/thumbnail/dcf6842fe65b47f89208/1024/GPS-Tab_5.PNG" alt="Tab-5" width="400"/>
 
 *<center>**Table 5**: Comparison with state-of-the-art methods on Market-1501 and DukeMTMC-ReID datasets. The cyan and yellow boxes are the best results corresponding to mask-guided/attribute-based and other approaches, respectively. Note that no post-processing is applied to our method [(Source)](https://arxiv.org/pdf/2104.06770.pdf).</center>*
 
