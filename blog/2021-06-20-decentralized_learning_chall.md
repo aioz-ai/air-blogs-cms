@@ -1,9 +1,9 @@
 ---
 last_modified_on: "2021-06-20"           
-id: FL-trends     
-title:Federated Learning, Challenges and Hot Trends for research.
-description:  Discussion about Challenges and Hot Trends in Federated Learning for research.      
-author_github: https://github.com/Gazeal  
+id: FL-trends
+title:Federated Learning, Challenges and Hot Trends for research. 
+description:  Discussion about Challenges and Hot Trends in Federated Learning for research.
+author_github: https://github.com/Gazeal
 tags: ["type: post", "AI", "Federated Learning"]
 ---
 
