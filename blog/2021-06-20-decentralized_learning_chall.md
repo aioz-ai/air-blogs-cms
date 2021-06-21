@@ -1,12 +1,11 @@
 ---
-last_modified_on: "2021-06-20"           
-id: FL-trends
-title:Federated Learning, Challenges and Hot Trends for research. 
-description:  Discussion about Challenges and Hot Trends in Federated Learning for research.
+last_modified_on: "2021-06-20"
+id: fl-trends
+title: Federated Learning, Challenges and Hot Trends for research
+description: Discussion about Challenges and Hot Trends in Federated Learning for research
 author_github: https://github.com/Gazeal
 tags: ["type: post", "AI", "Federated Learning"]
 ---
-
 ## Federated learning and its remaining challenge
 
 Federated learning is the process of training statistical models via a network of distant devices or siloed data centers, such as mobile phones or hospitals, while keeping data locally. In terms of federated learning, there are five major obstacles that have a direct impact on the paper publishing trend.
