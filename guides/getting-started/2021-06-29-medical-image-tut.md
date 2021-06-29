@@ -5,11 +5,11 @@ description: A guide on dealing with medical images
 author_github: https://github.com/trqminh
 tags: ["type: tutorial", "level: easy"]
 ---
-At AIOZ, we have been involved in several projects applying computer science to assist the medical field. Those kinds of projects are very demanding recently, due to the impact of deep learning. Besides the robotics project to help doctors transport medical equipment in isolation areas safely, we also participate in academic research which utilizes machine learning in general and deep learning in particular. With some articles published in this field, we believe we can share some helpful tutorial to assist the community. Thus, in this post, we will introduce a sample of a medical image and how to load, visualize and preprocess it.
+At AIOZ, we have been involved in several projects applying computer science to assist the medical field. Those kinds of projects are very demanding recently, due to the impact of deep learning. Besides the robotics project to help doctors transport medical equipment in isolation areas safely, we also participate in academic research which utilizes machine learning in general and deep learning in particular. With some articles published in this field, we believe we can share some helpful tutorials to assist the community. Thus, in this post, we will introduce a sample of a medical image and how to load, visualize and preprocess it.
 
 
 ## Understand the image
-Recently, we have worked on 2 types of medical imaging, namely Liver CT scan and Brain MRI, for the deformable registration problem. However, in this tutorial, we will introduce a sample of the Liver CT, belonged to the MSD dataset. MRI data might be introduced in another tutorial.
+Recently, we have worked on 2 types of medical imaging, namely Liver CT scan and Brain MRI, for the deformable registration problem. However, in this tutorial, we only introduce a sample of the Liver CT, which belongs to the MSD dataset. MRI data might be introduced in another tutorial.
 
 The MSD dataset is a labeled dataset for the medical image segmentation task (tumor segmentation for liver CT scan). Let's explore this CT image data. We prepare a sample that includes an image and its label (the segmentation of the tumors).
 
