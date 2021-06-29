@@ -3,8 +3,10 @@ last_modified_on: "2021-06-29"
 title: Get familiar with medical imaging datasets
 description: A guide on dealing with medical images
 author_github: https://github.com/trqminh
-tags: ["type: tutorial", "level: easy"]
+series_position: 1
+tags: ["type: tutorial", "level: basic"]
 ---
+
 At AIOZ, we have been involved in several projects applying computer science to assist the medical field. Those kinds of projects are very demanding recently, due to the impact of deep learning. Besides the robotics project to help doctors transport medical equipment in isolation areas safely, we also participate in academic research which utilizes machine learning in general and deep learning in particular. With some articles published in this field, we believe we can share some helpful tutorials to assist the community. Thus, in this post, we will introduce a sample of a medical image and how to load, visualize and preprocess it.
 
 
