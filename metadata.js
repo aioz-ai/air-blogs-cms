@@ -105,6 +105,14 @@ module.exports = {
       "name": "Kim Tran",
     },
     {
+      "avatar": "https://avatars.githubusercontent.com/u/82790711",
+      "bio": "Deep-tech R&D. Woman in Tech.",
+      "github": "https://github.com/thunguyen285",
+      "id": "thu.thi-anh.nguyen",
+      "keybase": "",
+      "name": "Thu Nguyen",
+    },
+    {
       "avatar": "https://avatars.githubusercontent.com/u/53249292",
       "bio": "AIOZ AI Department",
       "github": "https://github.com/aioz-ai",

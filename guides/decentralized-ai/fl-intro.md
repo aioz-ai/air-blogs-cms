@@ -2,7 +2,7 @@
 last_modified_on: "2021-04-16"
 title: Introduction to Federated Learning.
 description: Introduction to decentralized federated learning.
-series_position: 1
+series_position: 2
 author_github: https://github.com/quangduytran
 tags: ["type: tutorial", "level: medium"]
 ---
@@ -32,16 +32,20 @@ In this tutorial, we will give an overview of federated learning, definitions, a
   block={true}
   defaultValue="macOS"
   values={[
-    { label: 'macOS', value: 'macOS', },
     { label: 'ubuntu', value: 'ubuntu', },
-    { label: 'centos7', value: 'centos7', },
+    { label: 'macOS', value: 'macOS', },    
     { label: 'windows', value: 'windows', },
+    { label: 'centos7', value: 'centos7', },    
   ]
 }>
 <TabItem value="macOS">  
 
 ```
-$ brew install python
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+$ brew update
+$ brew install python  # Python 3
+$ sudo pip3 install --user --upgrade virtualenv
 ```
 
 </TabItem>
@@ -49,7 +53,8 @@ $ brew install python
 
 ```
 $ sudo apt update
-$ sudo apt install -y python
+$ sudo apt install python3-dev python3-pip  # Python 3
+$ sudo pip3 install --user --upgrade virtualenv
 ```
 
 </TabItem>
@@ -77,7 +82,11 @@ $ pip install numpy
 Let's implement a federated learning algorithm in Python with `Tensorflow`:
 
 ```
-pip install tensorflow
+$ virtualenv --python python3 "venv"
+$ source "venv/bin/activate"
+$ pip install --upgrade pip
+$ pip install tensorflow
+$ pip install --upgrade tensorflow-federated
 ```
 
 </li>
@@ -139,3 +148,6 @@ Your next step may be:
 <Jump to="/docs/next/dev/dev-overview/">View Deployment Guide</Jump>
 
 If you experienced any issues with this tutorial or want to provide feedback, feel free to open a GitHub issue or reach out on Slack.
+
+## References
+* [Tensorflow Federated Learning](https://www.tensorflow.org/federated)
