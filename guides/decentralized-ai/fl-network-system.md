@@ -16,7 +16,7 @@ Specifically, a network system is a geo-distributed machine learning system that
 In this part, we explore popular network systems listed below that are widely used for benchmarking in research:
 - [Gaia](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-hsieh.pdf): a generic geo-distributed machine learning system that decouples data center communication from data center communication, allowing for distinct communication and consistency models for each.
 - [The AWS Global Cloud Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/?nc1=h_ls): touted as the most secure, comprehensive, and dependable cloud platform, with over 200 fully featured services available from data centers all over the world.
-- [Géant](https://www.geant.org/Networks): the large-scale, high-speed networks required for sharing, accessing, and analyzing the massive amounts of data created by the research and education sectors, as well as for testing new technologies and applications.
+- [GÃ©ant](https://www.geant.org/Networks): the large-scale, high-speed networks required for sharing, accessing, and analyzing the massive amounts of data created by the research and education sectors, as well as for testing new technologies and applications.
 - [Exodus and Ebone](http://www.cs.umd.edu/~nspring/papers/sigcomm2002.pdf):  real topologies from Rocketfuel engine . The Ebone network connect European cities and Exodus network connect American cities.
 
 # Gaia
@@ -41,15 +41,15 @@ AWS offers the largest and most vibrant ecosystem in the world, with millions of
 ![Fig-3](https://vision.aioz.io/f/96615aeb2df54af3ad69/?dl=1)
 *<center>**Figure 3**:  The AWS Global Cloud Infrastructure statistical [(Sourcce)](https://aws.amazon.com/about-aws/global-infrastructure/?nc1=h_ls).</center>*
 
-# Géant
+# GÃ©ant
 ![Fig-4](https://vision.aioz.io/f/41e004f2994e40cb9364/?dl=1)
 *<center>**Figure 4**:  The Ge1ant live map [(Sourcce)](https://www.geant.org/Networks).</center>*
 
-Géant is a virtually lossless network, which means that whatever data it receives is sent to its destination without any packets being dropped. Géant actively controls capacity to handle bursts and periodic variations in traffic flow in order to achieve this. In order to maximize throughput of host data flows, transmission of traffic at line rate should be feasible at all times with minimum or no buffering. As a result, data is transmitted without loss, and protocols operating on hosts may be adjusted to function in a practically lossless environment.
+GÃ©ant is a virtually lossless network, which means that whatever data it receives is sent to its destination without any packets being dropped. GÃ©ant actively controls capacity to handle bursts and periodic variations in traffic flow in order to achieve this. In order to maximize throughput of host data flows, transmission of traffic at line rate should be feasible at all times with minimum or no buffering. As a result, data is transmitted without loss, and protocols operating on hosts may be adjusted to function in a practically lossless environment.
 
-Géant is a high-speed network with lines acquired to provide the shortest feasible latency between Géant PoPs in key European cities. This also provides the fastest reaction time between any two Géant network entry points.
+GÃ©ant is a high-speed network with lines acquired to provide the shortest feasible latency between GÃ©ant PoPs in key European cities. This also provides the fastest reaction time between any two GÃ©ant network entry points.
 
-Géant aims to connect all nations with sufficient capacity to enable high-speed networking. In nations where such resources are rare and the market is restricted, this allows the community to bridge the digital gap by providing appropriate connectivity.
+GÃ©ant aims to connect all nations with sufficient capacity to enable high-speed networking. In nations where such resources are rare and the market is restricted, this allows the community to bridge the digital gap by providing appropriate connectivity.
 
 # Exodus and Ebone
 Both Exodus and Ebone are formed by the original [ISP network](http://www.cs.umd.edu/~nspring/papers/sigcomm2002.pdf) and their comunntation policies follow the [Rocketfuel](http://www.cs.umd.edu/~nspring/papers/sigcomm2002.pdf).
