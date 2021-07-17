@@ -7,7 +7,7 @@ author_github: https://github.com/Gazeal
 tags: ["type: tutorial", "level: advance"]
 ---
 
-# Introduction for network system in federated learning
+## Introduction for network system in federated learning
 In previous parts, we have examined the learning algorithm for distributed data. However, to achieve a successful federated learning process, the network system is essential since it determines the stability of the whole process.
 Specifically, a network system is a geo-distributed machine learning system that satisfies the two following requirements: 
 1. We can employ an intelligent communication mechanism into the network over WANs to efficiently utilize the scarce WAN bandwidth. 
@@ -19,7 +19,7 @@ In this part, we explore popular network systems listed below that are widely us
 - [Géant](https://www.geant.org/Networks): the large-scale, high-speed networks required for sharing, accessing, and analyzing the massive amounts of data created by the research and education sectors, as well as for testing new technologies and applications.
 - [Exodus and Ebone](http://www.cs.umd.edu/~nspring/papers/sigcomm2002.pdf):  real topologies from Rocketfuel engine . The Ebone network connect European cities and Exodus network connect American cities.
 
-# Gaia
+## Gaia
 
 ![Fig-1](https://vision.aioz.io/f/4a31c2c6992b444eaea3/?dl=1)
 *<center>**Figure 1**:  Gaia system overview [(Sourcce)](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-hsieh.pdf).</center>*
@@ -30,7 +30,7 @@ The global model copy in each data center is only approximately correct to decre
 
 Worker machines and parameter servers in a data center, on the other hand, use the traditional BSP (Bulk Synchronous Parallel) or SSP (Stale Synchronous Parallel) architectures to synchronize with one another. These approaches enable worker computers to immediately notice recent modifications in a data center. Additionally, within a data center, worker machines and parameter servers might use more aggressive communication methods, such as delivering updates early and often, to fully exploit the plentiful (and cheap) network traffic on a LAN.
 
-# The AWS Global Cloud Infrastructure
+## The AWS Global Cloud Infrastructure
 ![Fig-2](https://vision.aioz.io/f/d8cae7ebdc664f02af46/?dl=1)
 *<center>**Figure 2**:  The AWS Global Cloud Infrastructure [(Sourcce)](https://aws.amazon.com/about-aws/global-infrastructure/?nc1=h_ls).</center>*
 
@@ -41,7 +41,7 @@ AWS offers the largest and most vibrant ecosystem in the world, with millions of
 ![Fig-3](https://vision.aioz.io/f/96615aeb2df54af3ad69/?dl=1)
 *<center>**Figure 3**:  The AWS Global Cloud Infrastructure statistical [(Sourcce)](https://aws.amazon.com/about-aws/global-infrastructure/?nc1=h_ls).</center>*
 
-# Géant
+## Géant
 ![Fig-4](https://vision.aioz.io/f/41e004f2994e40cb9364/?dl=1)
 *<center>**Figure 4**:  The Ge1ant live map [(Sourcce)](https://www.geant.org/Networks).</center>*
 
@@ -51,7 +51,7 @@ Géant is a high-speed network with lines acquired to provide the shortest feasi
 
 Géant aims to connect all nations with sufficient capacity to enable high-speed networking. In nations where such resources are rare and the market is restricted, this allows the community to bridge the digital gap by providing appropriate connectivity.
 
-# Exodus and Ebone
+## Exodus and Ebone
 Both Exodus and Ebone are formed by the original [ISP network](http://www.cs.umd.edu/~nspring/papers/sigcomm2002.pdf) and their comunntation policies follow the [Rocketfuel](http://www.cs.umd.edu/~nspring/papers/sigcomm2002.pdf).
 
 ![Fig-5](https://vision.aioz.io/f/6ea6d37b3cfa4ec6b10a/?dl=1)
