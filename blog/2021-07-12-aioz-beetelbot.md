@@ -1,7 +1,7 @@
 ---
-title: 'Beetlebot series - Part 01: Robots in daily life. A reality.'
+title: 'BeetleBot series - Part 01: Robots in daily life. A reality'
 author: Kim Tran
-authorURL: 'https://github.com/KimTran-95'
+authorURL: 'https://beetle.aioz.io'
 authorImageURL: 'https://beetle.aioz.io/images/members/kim-tran.jpg'
 tags: [beetlebot, robotics]
 ---
