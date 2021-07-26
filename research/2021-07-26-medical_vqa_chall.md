@@ -21,6 +21,7 @@ There are challenges that need to be addressed when using VQA in Medical domain:
 
 * Lack of large scale labeled datasets.
 * Using Transfer learning in medical domain.
+
 In this blog, we will analyze this challenges.
 
 ## Challenges in Medical VQA
@@ -38,7 +39,7 @@ The first attempt for building the dataset for medical VQA is by ImageCLEF-Med. 
 
 Well-annotated datasets for training Medical VQA systems are extremely lacking, but it is very laborious and expensive to obtain high-quality annotations by medical experts. The first manually constructed VQA-RAD dataset for medical VQA task is released. Unfortunately, it contains only 315 images, which prevents to directly apply the powerful deep learning models for the VQA problem.
 
-### 2. Using Transfer learning
+### 2. Using Transfer learning in a specific domain.
 
 Transfer learning is an important step to extract meaningful features and overcome the data limitation in the medical Visual Question Answering (VQA) task. Transfer learning, in which the pretrained deep learning models that are trained on the large scale labeled dataset such as ImageNet, is a popular way to initialize the feature extraction process. However, due to the difference in visual concepts between ImageNet images and medical images, finetuning process is not sufficient.
 Recently, Model Agnostic Meta-Learning (MAML) has been introduced to overcome the aforementioned problem by learning meta-weights that quickly adapt to visual concepts. However, MAML is heavily impacted by the meta-annotation phase for all images in the medical dataset. Different from normal images, transfer learning in medical images is more challenging due to:
