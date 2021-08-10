@@ -55,7 +55,7 @@ $$
 and the result is (the fact that columns in $D$ are orthonormal make the result more compact):
 
 $$
-C^{\*^{T}} = D^{T}X^{T}
+C^{*^{T}} = D^{T}X^{T}
 $$
 
 then:
@@ -65,7 +65,7 @@ $$
 now let optimize $$D$$:
 <!-- \\[ D^{*} = \arg \min_{D} \||X - DD^{T}X^{T}|\|_2 ~~~~~~(2) \\] -->
 $$
-D^{\*} = \arg{\min_D} \||X - DD^{T}X^{T}|\|_2
+D^{*} = \arg{\min_D} \||X - DD^{T}X^{T}|\|_2
 $$
 
 As a result, $D\in \mathbb{R}^{n\times{k}}$ has their columns as $k$ eigenvectors with the highest eigenvalues of the matrix $X^{T}X$.
@@ -119,13 +119,14 @@ plt.arrow(0, 0, t*d2[0], t*d2[1], fc='blue', ec='blue')
 plt.margins(x=0.5, y=0.5)
 plt.show()
 ```
-<img src="https://vision.aioz.io/thumbnail/8c9c196de3cb4a3a990f/1024/pca.png" class="fit image">
+<img src="https://vision.aioz.io/thumbnail/8c9c196de3cb4a3a990f/1024/pca.png" class="fit image"/>
 <br/>
 *Fig. 1: Two eigenvectors, the red one has the higher eigenvalue, project the data to this vector to get the new data with the dimension k=1*
 
-##Discussion
+## Discussion
 There are some questions that reader can working on to comprehend the algorithm:
 - Why the orthogonal basis is chosen. Why not another basis? Whether or not that generality is guaranteed and other bases can give better results.
+
 - Investigating the details of optimization procedure can help with solving the above question and gain more insights.
 
 Hopefully that this tutorial can help.
