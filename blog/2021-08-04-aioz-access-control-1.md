@@ -1,6 +1,5 @@
 ---
 title: 'Access Control System series - Part 1: An introduction to the future'
-date: '2022-05-19'
 author: Kim Tran
 image: 'https://github.com/aioz-ai/ai-docs-cms/blob/main/content/blog/assets/2021-04-16-access-control/Untitled.png?raw=true'
 authorURL: 'https://www.facebook.com/aiozai'
