@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2021-08-16"
-title: AI-driven routing (part 1): Centralized Routing.
+title: AI-driven routing (part 1) Centralized Routing.
 description: A series of Smart Routing based on AI.
 series_position: 5
 author_github: https://github.com/Gazeal
