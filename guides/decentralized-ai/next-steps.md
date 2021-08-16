@@ -3,7 +3,7 @@ last_modified_on: "2021-07-12"
 $schema: "/.meta/.schemas/guides.json"
 title: Next Steps
 description: Where to go after the basics
-series_position: 5
+series_position: 6
 author_github: https://github.com/quangduytran
 tags: ["type: post", "level: basic"]
 hide_pagination: true
