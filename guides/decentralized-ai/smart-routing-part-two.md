@@ -24,12 +24,12 @@ FORWARDING PHASE ($N_i$ receives a message with a list of other candidates)
 \textbf{then}
     $N_i$ discards the message
 \textbf{else}
-    1. $N_i$ selects the potential forwarding subset $\phi_{i}^{?}$
+    1. $N_i$ selects the potential forwarding subset $\phi_{i}^{*}$
     2. $N_i$ evaluates $P(T = 1|x)$ and makes decision $d_i$ whether to transmit or not
     \textbf{if} $d_i = 1$
     \textbf{then} 
-        Broadcast the message destined to $\phi_{i}^{?}$
-        Broadcast its expected $\hat{Q}_i(\phi_{i}^{?})$
+        Broadcast the message destined to $\phi_{i}^{*}$
+        Broadcast its expected $\hat{Q}_i(\phi_{i}^{*})$
         Listen to retransmissions and update candidate neighbor profiles 
         \textbf{if} no candidate nodes forward 
         \textbf{then}
