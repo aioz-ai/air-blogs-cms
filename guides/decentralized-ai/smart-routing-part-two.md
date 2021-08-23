@@ -18,7 +18,7 @@ In this part, I also introduce the most up-to-date Q-Probabilistic routing (Q-PR
 
 The Q-PR-algorithm identifies the next hop on the actual route (a) in the form of network packets (not previous phases), b) when message is sent (opportunistic approach), c) using location-based route position  and d) taking smart decisions on nodes receiving transmission requests, both based on local information and the importance of these packets. The Q-PR algorithm is summarized as follows,
 
-```
+
 FORWARDING PHASE ($N_i$ receives a message with a list of other candidates)
 \texbf{if} Candidate nodes with higher priority forward the message 
 \textbf{then}
@@ -42,7 +42,7 @@ INFORMATION UPDATING PHASE
 $N_i$ updates $\hat{Q}_i(j)$ via RL from any neighbor.
 $N_j$ that broadcasts its cost metric.
 $N_i$ updates $\hat{E}_i(j)$ when it hears a retransmission by $N_j$ or it knows $N_j$ receives a message.
-```
+
 
 ![Fig-1](https://vision.aioz.io/f/ee20e0f1dbf047309d63/?dl=1)
 *<center>**Figure 1**: Illustration of network topology and routing path between node N14 and the sink node (node N54). Discontinuous links show neighborhood relationships. Dead nodes have no discontinuous connection lines [12].</center>*
@@ -51,7 +51,7 @@ Stone et al. introduced the Team-Partitioned Opaque-Transition RL (TPOT-RL) rout
 
 Collaborative Reinforcement Learning [16] is one  of the most successive method belongs to the Multiagent group, which algorithm is then decribed as belows. In a multiagent system, the CRL technique may be used to address system optimization issues, which can be discretized into a collection of DOPs and described as absorbing MDPs in the following schema.
 
-```
+
 1. A dynamic set of agents $N = \{n_1, n_2, ..., n_M\}$, often corresponding to nodes in a distributed system.
 2. Each agent $n_i$ has a dynamic set $V_i$ of neighbors.
 3. Each agent $n_i$ has a fixed set $S_i$ of states, where $S$ is the system-wide set of states.
@@ -79,7 +79,7 @@ $$
 V_i(s) = max_{a}[(Q_i(s,a)]
 
 $$ 
-```
+
 
 ## Next section introduction
 In the next part of this series, I will introduce a three-layer logical functionality architecture for AI-driven networking. This is the most up-to-date group of methods that is a combination between Centralized and Decentralized Routing to maximize the transmition.
