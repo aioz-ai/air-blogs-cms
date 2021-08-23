@@ -18,7 +18,7 @@ In this part, I also introduce the most up-to-date Q-Probabilistic routing (Q-PR
 
 The Q-PR-algorithm identifies the next hop on the actual route (a) in the form of network packets (not previous phases), b) when message is sent (opportunistic approach), c) using location-based route position  and d) taking smart decisions on nodes receiving transmission requests, both based on local information and the importance of these packets. The Q-PR algorithm is summarized as follows,
 
-```latex
+```
 FORWARDING PHASE ($N_i$ receives a message with a list of other candidates)
 \texbf{if} Candidate nodes with higher priority forward the message 
 \textbf{then}
@@ -50,7 +50,8 @@ $N_i$ updates $\hat{E}_i(j)$ when it hears a retransmission by $N_j$ or it knows
 Stone et al. introduced the Team-Partitioned Opaque-Transition RL (TPOT-RL) routing algorithm in [13], [14], which allows a group of network nodes working toward a common objective to learn how to accomplish a collaborative job. Wolpert et al. created the Collective Intelligence (COIN) algorithm in [15], a sparse reinforcement learning method in which a global function is used to change the behavior of each network agent. In contrast, the author of [16] presented a routing algorithm based on Collaborative RL (CRL) that does not have a single global state. In [17], the CRL method was successfully utilized for delay-tolerant network routing.
 
 Collaborative Reinforcement Learning [16] is one  of the most successive method belongs to the Multiagent group, which algorithm is then decribed as belows. In a multiagent system, the CRL technique may be used to address system optimization issues, which can be discretized into a collection of DOPs and described as absorbing MDPs in the following schema.
-```latex
+
+```
 1. A dynamic set of agents $N = \{n_1, n_2, ..., n_M\}$, often corresponding to nodes in a distributed system.
 2. Each agent $n_i$ has a dynamic set $V_i$ of neighbors.
 3. Each agent $n_i$ has a fixed set $S_i$ of states, where $S$ is the system-wide set of states.
@@ -70,6 +71,7 @@ $$
 Q_i(s,a) = R(s,a) + \sum_{s'}P_i(s'|s,a) \dot (D_i(s'|s,a) + Decay(V_j(s')))
 
 $$ 
+
 10. The value function at agent $n_i$, $V_j$, can be calculated using the Bellman optimality equation:
 
 $$
@@ -78,6 +80,7 @@ V_i(s) = max_{a}[(Q_i(s,a)]
 
 $$ 
 ```
+
 ## Next section introduction
 In the next part of this series, I will introduce a three-layer logical functionality architecture for AI-driven networking. This is the most up-to-date group of methods that is a combination between Centralized and Decentralized Routing to maximize the transmition.
 ## References
