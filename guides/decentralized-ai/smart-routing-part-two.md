@@ -81,11 +81,22 @@ $$
 ## Next section introduction
 In the next part of this series, I will introduce a three-layer logical functionality architecture for AI-driven networking. This is the most up-to-date group of methods that is a combination between Centralized and Decentralized Routing to maximize the transmition.
 ## References
-[8] J. A. Boyan and M. L. Littman, ìPacket routing in dynamically changing networks: A reinforcement learning approach,î in Proc. Int. Conf. Neural Information Processing Systems, Denver, 1993, pp. 671ñ678. 
-[9] S. P. Choi and D.-Y. Yeung, ìPredictive Q-routing: A memory-based reinforcement learning approach to adaptive traffic control,î in Advances in Neural Information Processing Systems, Denver, Dec. 2ñ5, 1996, pp. 945ñ951. 
-[10] S. Kumar and R. Miikkulainen, ìDual reinforcement Q-routing: An on-line adaptive routing algorithm,î in Proc. Artificial Neural Networks in Engineering Conf., 1997, pp. 231ñ238. 
-[11] A. A. Bhorkar, M. Naghshvar, T. Javidi, and B. D. Rao, ìAdaptive opportunistic routing for wireless ad hoc networks,î IEEE Trans. Netw., vol. 20, no. 1, pp. 243ñ256, Feb. 2012. 
-[12] R. Arroyo-Valles, R. Alaiz-Rodriguez, A. Guerrero-Curieses, and J. Cid-Sueiro, ìQ-probabilistic routing in wireless sensor networks,î in Proc. Int. Conf. Intelligent Sensors, Sensor Networks and Information, Melbourne, Dec. 3ñ6, 2007, pp. 1ñ6. 
-[13] P. Stone, ìTPOT-RL applied to network routing,î in Proc. Int. Conf. Machine Learning, California, June 29ñJuly 2, 2000, pp. 935ñ942. [14] P. Stone and M. Veloso, ìTeam-partitioned, opaque-transition reinforcement learning,î in Robot Soccer World Cup, Springer, 1998, pp. 261ñ272. 
-[15] D. Wolpert, K. Tumer, and J. Frank, ìUsing collective intelligence to route internet traffic,î in Advances in Neural Information Processing Systems, Denver, Nov. 29ñDec. 4, 1999, pp. 952ñ960. [16] J. Dowling, E. Curran, R. Cunningham, and V. Cahill, ìUsing feedback in collaborative reinforcement learning to adaptively optimize MANET routing,î IEEE Trans. Syst., Man, Cybern., vol. 35, no. 3, pp. 360ñ372, May 2005. 
-[17] A. Elwhishi, P. H. Ho, K. Naik, and B. Shihada, ìARBR: Adaptive reinforcement based routing for DTN,î in Proc. IEEE Int. Conf. Wireless and Mobile Computing, Networking and Communications, Ontario, Oct. 10ñ13, 2010, pp. 376ñ385.
+[8] J. A. Boyan and M. L. Littman, ‚ÄúPacket routing in dynamically changing networks: A reinforcement learning approach,‚Äù in Proc. Int. Conf. Neural Information Processing Systems, Denver, 1993, pp. 671‚Äì678. 
+
+[9] S. P. Choi and D.-Y. Yeung, ‚ÄúPredictive Q-routing: A memory-based reinforcement learning approach to adaptive traffic control,‚Äù in Advances in Neural Information Processing Systems, Denver, Dec. 2‚Äì5, 1996, pp. 945‚Äì951. 
+
+[10] S. Kumar and R. Miikkulainen, ‚ÄúDual reinforcement Q-routing: An on-line adaptive routing algorithm,‚Äù in Proc. Artificial Neural Networks in Engineering Conf., 1997, pp. 231‚Äì238. 
+
+[11] A. A. Bhorkar, M. Naghshvar, T. Javidi, and B. D. Rao, ‚ÄúAdaptive opportunistic routing for wireless ad hoc networks,‚Äù IEEE Trans. Netw., vol. 20, no. 1, pp. 243‚Äì256, Feb. 2012. 
+
+[12] R. Arroyo-Valles, R. Alaiz-Rodriguez, A. Guerrero-Curieses, and J. Cid-Sueiro, ‚ÄúQ-probabilistic routing in wireless sensor networks,‚Äù in Proc. Int. Conf. Intelligent Sensors, Sensor Networks and Information, Melbourne, Dec. 3‚Äì6, 2007, pp. 1‚Äì6. 
+
+[13] P. Stone, ‚ÄúTPOT-RL applied to network routing,‚Äù in Proc. Int. Conf. Machine Learning, California, June 29‚ÄìJuly 2, 2000, pp. 935‚Äì942. 
+
+[14] P. Stone and M. Veloso, ‚ÄúTeam-partitioned, opaque-transition reinforcement learning,‚Äù in Robot Soccer World Cup, Springer, 1998, pp. 261‚Äì272. 
+
+[15] D. Wolpert, K. Tumer, and J. Frank, ‚ÄúUsing collective intelligence to route internet traffic,‚Äù in Advances in Neural Information Processing Systems, Denver, Nov. 29‚ÄìDec. 4, 1999, pp. 952‚Äì960. 
+
+[16] J. Dowling, E. Curran, R. Cunningham, and V. Cahill, ‚ÄúUsing feedback in collaborative reinforcement learning to adaptively optimize MANET routing,‚Äù IEEE Trans. Syst., Man, Cybern., vol. 35, no. 3, pp. 360‚Äì372, May 2005. 
+
+[17] A. Elwhishi, P. H. Ho, K. Naik, and B. Shihada, ‚ÄúARBR: Adaptive reinforcement based routing for DTN,‚Äù in Proc. IEEE Int. Conf. Wireless and Mobile Computing, Networking and Communications, Ontario, Oct. 10‚Äì13, 2010, pp. 376‚Äì385.
