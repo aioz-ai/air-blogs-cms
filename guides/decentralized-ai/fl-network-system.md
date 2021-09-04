@@ -3,14 +3,14 @@ last_modified_on: "2021-07-12"
 title: Network Sytem and data silos for Federated Learning.
 description: A detail description about network system for federated learning in reasearch.
 series_position: 3
-author_github: https://github.com/Gazeal  
+author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
 
 ## Introduction for network system in federated learning
 In previous parts, we have examined the learning algorithm for distributed data. However, to achieve a successful federated learning process, the network system is essential since it determines the stability of the whole process.
-Specifically, a network system is a geo-distributed machine learning system that satisfies the two following requirements: 
-1. We can employ an intelligent communication mechanism into the network over WANs to efficiently utilize the scarce WAN bandwidth. 
+Specifically, a network system is a geo-distributed machine learning system that satisfies the two following requirements:
+1. We can employ an intelligent communication mechanism into the network over WANs to efficiently utilize the scarce WAN bandwidth.
 2. The network is generic and flexible enough to run a wide range of machine learning algorithms, with minimal required modification to the learning algorithms.
 
 In this part, we explore popular network systems listed below that are widely used for benchmarking in research:

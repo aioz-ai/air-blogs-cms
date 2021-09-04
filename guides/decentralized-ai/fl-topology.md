@@ -3,7 +3,7 @@ last_modified_on: "2021-07-20"
 title: Topologies in Decentralized Federated Learning.
 description: A detail description about  topologies in Decentralized Federated Learning.
 series_position: 4
-author_github: https://github.com/Gazeal  
+author_github: https://github.com/aioz-ai  
 tags: ["type: tutorial", "level: advance"]
 ---
 

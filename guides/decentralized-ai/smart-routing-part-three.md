@@ -3,15 +3,15 @@ last_modified_on: "2021-08-30"
 title: AI-driven routing (part 3) Hybrid Routing.
 description: A series of Smart Routing based on AI.
 series_position: 7
-author_github: https://github.com/Gazeal
+author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
 
-In previous parts, we have mentioned about centralized and decentralized routing using the AI-powered reinforcement learning. In this section, we introduce a three-layer logical functionality design for AI-driven networking. Then we talk about how distant the intelligent control plane may be from the forwarding plane (if it should be centralized or dispersed). This introduced design can be understanded as a  combination between both afformentioned group of approaches, which leverage the advantages of each approaches to cover the other's weaknesses. 
+In previous parts, we have mentioned about centralized and decentralized routing using the AI-powered reinforcement learning. In this section, we introduce a three-layer logical functionality design for AI-driven networking. Then we talk about how distant the intelligent control plane may be from the forwarding plane (if it should be centralized or dispersed). This introduced design can be understanded as a  combination between both afformentioned group of approaches, which leverage the advantages of each approaches to cover the other's weaknesses.
 
 ![Fig-0](https://vision.aioz.io/f/ce0c34940f144eda900c/?dl=1)
 
-## Three-tier logical design: The closed-loop control paradigm 
+## Three-tier logical design: The closed-loop control paradigm
 
 ![Fig-1](https://vision.aioz.io/f/54137ae358744ce5af1d/?dl=1)
 *<center>**Figure 1**:The closed-loop control paradigm ([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*

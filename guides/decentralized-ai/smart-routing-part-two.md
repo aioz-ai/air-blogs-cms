@@ -3,7 +3,7 @@ last_modified_on: "2021-08-16"
 title: AI-driven routing (part 2) Decentralize Routing.
 description: A series of Smart Routing based on AI.
 series_position: 6
-author_github: https://github.com/Gazeal
+author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
 
