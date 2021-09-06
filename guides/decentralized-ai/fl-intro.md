@@ -3,7 +3,7 @@ last_modified_on: "2021-04-16"
 title: Introduction to Federated Learning.
 description: Introduction to decentralized federated learning.
 series_position: 2
-author_github: https://github.com/quangduytran
+author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: medium"]
 ---
 
