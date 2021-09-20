@@ -11,10 +11,11 @@ tags: ["type: tutorial", "level: advance"]
 The growth of the video streaming business has led in an increase in demand for transcoding services from a wide range of consumers. Recent advancements in blockchain technology enable certain businesses to implement decentralized collaborative transcoding using device-to-device (D2D) networks, which pick a set of transcoders to execute transcoding collaboratively. In order to offer efficient and trustworthy transcoding services for block chain-enabled D2D transcoding systems, it is critical to collaboratively develop transcoder selection, job scheduling, and resource allocation algorithms.
 
 ![Fig-0](https://vision.aioz.io/f/d95290a29cda419bb702/?dl=1)
+
 In this series, I want to introduce how AI-powered agents can burst the process of video transcoding task. Firstly, we need to investigate the Blockchain-enabled transcoding systems to understand the importance of transcoding in practice.
 ## Cloud-based video transcoding for dealing with computation intensive and time-consuming
 
-With the exponential rise of mobile devices, video streaming services and applications have grown immensely in popularity and consumer interest. Online videos are exploding in popularity, accounting approximately 80 percent of all consumer Internet traffic by 2019 [1]. To support a wide range of user devices (smartphones, laptop and desktop computers, TVs, and so on), the source video streams must be converted into multiple representations (bitrates, formats, resolutions, codecs, and so on) with various quality of service (QoS) types, which is extremely computationally intensive and time-consuming [2]. To address this issue, cloud-based video transcoding is seen as a viable solution and has been extensively used by well-known firms such as Netflix, Amazon Prime, Vimeo, and Youtube, among others. [3]ñ[5].
+With the exponential rise of mobile devices, video streaming services and applications have grown immensely in popularity and consumer interest. Online videos are exploding in popularity, accounting approximately 80 percent of all consumer Internet traffic by 2019 [1]. To support a wide range of user devices (smartphones, laptop and desktop computers, TVs, and so on), the source video streams must be converted into multiple representations (bitrates, formats, resolutions, codecs, and so on) with various quality of service (QoS) types, which is extremely computationally intensive and time-consuming [2]. To address this issue, cloud-based video transcoding is seen as a viable solution and has been extensively used by well-known firms such as Netflix, Amazon Prime, Vimeo, and Youtube, among others. [3]‚Äì[5].
 
 ![Fig-1](https://www.researchgate.net/profile/Adnan-Ashraf-10/publication/267052501/figure/fig6/AS:613856846032899@1523366285180/System-architecture-of-the-cloud-based-on-demand-video-transcoding-service.png)
 *<center>**Figure 1**: Cloud-based video transcoding system ([Source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FSystem-architecture-of-the-cloud-based-on-demand-video-transcoding-service_fig6_267052501&psig=AOvVaw2acMo1RwWbrZ44Gf4oS1dw&ust=1631760705206000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDH5rv8__ICFQAAAAAdAAAAABAI)).</center>*
@@ -26,7 +27,7 @@ Despite their ability to deliver high-quality transcoding services, today's clou
 
 ## Blockchain-Enabled video transcoding
 
-To address the drawbacks of centralized cloud-based transcoding systems, a number of firms (such as Transcodium [6], for example) are leveraging developing blockchain technology to enable ìcrowdsourcingî transcoding with flexible monetization methods. Meanwhile, with end-device storage and processing capability increasing, blockchain may be deployed via device-to-device (D2D) networks, which provide a decentralized platform [7ñ11].
+To address the drawbacks of centralized cloud-based transcoding systems, a number of firms (such as Transcodium [6], for example) are leveraging developing blockchain technology to enable ‚Äúcrowdsourcing‚Äù transcoding with flexible monetization methods. Meanwhile, with end-device storage and processing capability increasing, blockchain may be deployed via device-to-device (D2D) networks, which provide a decentralized platform [7‚Äì11].
 
 ![Fig-3](https://d3i71xaburhd42.cloudfront.net/e87768672ee1ccc4d31d02fe158b68d9b6a5bd0b/3-Figure1-1.png)
 *<center>**Figure 3**: The architecture of video transcoding and delivery with blockchain and mobile edge computing. ([Source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.semanticscholar.org%2Fpaper%2FVideo-Transcoding-and-Delivery-with-Blockchain-and-Liu-Li%2Fe87768672ee1ccc4d31d02fe158b68d9b6a5bd0b&psig=AOvVaw3-12T5ro7HCjqNOW3lSPNP&ust=1631763295276000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIDf7o-GgPMCFQAAAAAdAAAAABAN)).</center>*
@@ -43,32 +44,32 @@ As a result, it is critical to provide an efficient system for addressing the co
 In the next section, we will investigate how to deal with the Blockchain-Enabled video transcoding using deep reinforcement learning, an AI-powered optimization method.
 
 ## References
-[1] Cisco, ìCisco visual networking index: Global mobile data traffic forecast update, 2016-2021 white paper,î Feb. 2017.
-[2] G. Gao, Y. Wen, and J. Cai, ìvcache: Supporting cost-efficient adaptive bitrate streaming via nfv-based virtual caching,î IEEE MultiMedia, pp.1ñ1, June 2017.
-[3] Z. Huang, C. Mei, L. Li, and T. Woo, ìCloudstream: Delivering
-highquality streaming videos through a cloud-based svc proxy,î in IEEE INFOCOM Mini Conf. Shanghai, Apr. 2011, pp. 201ñ205.
-[4] M. Kim, Y. Cui, S. Han, and H. Lee, ìTowards efficient design and
-implementation of a hadoop-based distributed video transcoding system in cloud computing environment,î International Journal of Multimedia and Ubiquitous Engineering, vol. 8, no. 2, pp. 213ñ224, Mar. 2013.
-[5] Q. He, C. Zhang, X. Ma, and J. Liu, ìFog-based transcoding for
-crowdsourced video livecast,î IEEE Comm. Mag., vol. 55, no. 4, pp.
-28ñ33, April 2017.
-[6] Transcodium, ìTranscodium: A decentralized peer-to-peer
-media editing, transcoding & distribution platform,î 2017.
-[7] C. Wright and A. Serguieva, ìBlockchain-based payment collection
-supervision system using pervasive bitcoin digital wallet,î in Proc. IEEE
-Intíl Conf. on Big Data. Boston, MA, Dec. 2017, pp. 4255ñ4264.
-[8] D. Magazzeni, P. McBurney, and W. Nash, ìValidation and verification of smart contracts: A research agenda,î Computer, vol. 50, no. 9, pp.50ñ57, Spet. 2017.
-[9] F. R. Yu, J. M. Liu, Y. He, P. B. Si, and Y. H. Zhang, ìVirtualization for
-distributed ledger technology (vdlt),î IEEE Access, vol. 6, pp. 25 019ñ
+[1] Cisco, ‚ÄúCisco visual networking index: Global mobile data traffic forecast update, 2016-2021 white paper,‚Äù Feb. 2017.
+[2] G. Gao, Y. Wen, and J. Cai, ‚Äúvcache: Supporting cost-efficient adaptive bitrate streaming via nfv-based virtual caching,‚Äù IEEE MultiMedia, pp.1‚Äì1, June 2017.
+[3] Z. Huang, C. Mei, L. Li, and T. Woo, ‚ÄúCloudstream: Delivering
+highquality streaming videos through a cloud-based svc proxy,‚Äù in IEEE INFOCOM Mini Conf. Shanghai, Apr. 2011, pp. 201‚Äì205.
+[4] M. Kim, Y. Cui, S. Han, and H. Lee, ‚ÄúTowards efficient design and
+implementation of a hadoop-based distributed video transcoding system in cloud computing environment,‚Äù International Journal of Multimedia and Ubiquitous Engineering, vol. 8, no. 2, pp. 213‚Äì224, Mar. 2013.
+[5] Q. He, C. Zhang, X. Ma, and J. Liu, ‚ÄúFog-based transcoding for
+crowdsourced video livecast,‚Äù IEEE Comm. Mag., vol. 55, no. 4, pp.
+28‚Äì33, April 2017.
+[6] Transcodium, ‚ÄúTranscodium: A decentralized peer-to-peer
+media editing, transcoding & distribution platform,‚Äù 2017.
+[7] C. Wright and A. Serguieva, ‚ÄúBlockchain-based payment collection
+supervision system using pervasive bitcoin digital wallet,‚Äù in Proc. IEEE
+Int‚Äôl Conf. on Big Data. Boston, MA, Dec. 2017, pp. 4255‚Äì4264.
+[8] D. Magazzeni, P. McBurney, and W. Nash, ‚ÄúValidation and verification of smart contracts: A research agenda,‚Äù Computer, vol. 50, no. 9, pp.50‚Äì57, Spet. 2017.
+[9] F. R. Yu, J. M. Liu, Y. He, P. B. Si, and Y. H. Zhang, ‚ÄúVirtualization for
+distributed ledger technology (vdlt),‚Äù IEEE Access, vol. 6, pp. 25 019‚Äì
 25 028, April 2018.
-[10] V. Gatteschi, F. Lamberti, C. Demartini, C. Pranteda, and V. Santamar?a, ìTo blockchain or not to blockchain: That is the question,î IEEE Computer Society, Mar./Apr. 2018.
-[11] M. Liu, F. R. Yu, Y. Teng, V. C. M. Leung, and M. Song, ìJoint
+[10] V. Gatteschi, F. Lamberti, C. Demartini, C. Pranteda, and V. Santamar?a, ‚ÄúTo blockchain or not to blockchain: That is the question,‚Äù IEEE Computer Society, Mar./Apr. 2018.
+[11] M. Liu, F. R. Yu, Y. Teng, V. C. M. Leung, and M. Song, ‚ÄúJoint
 computation offloading and content caching for wireless blockchain
-networks,î in Proc. IEEE Conf. on Computer Commun. Workshops
-(INFOCOM WKSHPS). Honolulu, HI, April 2018, pp. 1ñ6.
-[12] A. Kosba, A. Miller, E. Shi, Z. Wen, and C. Papamanthou, ìHawk:
+networks,‚Äù in Proc. IEEE Conf. on Computer Commun. Workshops
+(INFOCOM WKSHPS). Honolulu, HI, April 2018, pp. 1‚Äì6.
+[12] A. Kosba, A. Miller, E. Shi, Z. Wen, and C. Papamanthou, ‚ÄúHawk:
 The blockchain model of cryptography and privacy-preserving smart
-contracts,î in Proc. IEEE Symposium on Security and Privacy (SP).
-San Jose, CA, May. 2016, pp. 839ñ858.
-[13] SLIVER.tv, ìTheta: A decentralized video streaming network, powered by a new blockchain and token v1.6,î Jan. 2018.
-[14] D. Petkanic and E. Tang, ìLivepeer whitepaper: Protocol and economic incentives for a decentralized live video streaming network,î Dec. 2017.
+contracts,‚Äù in Proc. IEEE Symposium on Security and Privacy (SP).
+San Jose, CA, May. 2016, pp. 839‚Äì858.
+[13] SLIVER.tv, ‚ÄúTheta: A decentralized video streaming network, powered by a new blockchain and token v1.6,‚Äù Jan. 2018.
+[14] D. Petkanic and E. Tang, ‚ÄúLivepeer whitepaper: Protocol and economic incentives for a decentralized live video streaming network,‚Äù Dec. 2017.
