@@ -45,31 +45,30 @@ In the next section, we will investigate how to deal with the Blockchain-Enabled
 
 ## References
 [1] Cisco, “Cisco visual networking index: Global mobile data traffic forecast update, 2016-2021 white paper,” Feb. 2017.
+
 [2] G. Gao, Y. Wen, and J. Cai, “vcache: Supporting cost-efficient adaptive bitrate streaming via nfv-based virtual caching,” IEEE MultiMedia, pp.1–1, June 2017.
-[3] Z. Huang, C. Mei, L. Li, and T. Woo, “Cloudstream: Delivering
-highquality streaming videos through a cloud-based svc proxy,” in IEEE INFOCOM Mini Conf. Shanghai, Apr. 2011, pp. 201–205.
-[4] M. Kim, Y. Cui, S. Han, and H. Lee, “Towards efficient design and
-implementation of a hadoop-based distributed video transcoding system in cloud computing environment,” International Journal of Multimedia and Ubiquitous Engineering, vol. 8, no. 2, pp. 213–224, Mar. 2013.
-[5] Q. He, C. Zhang, X. Ma, and J. Liu, “Fog-based transcoding for
-crowdsourced video livecast,” IEEE Comm. Mag., vol. 55, no. 4, pp.
-28–33, April 2017.
-[6] Transcodium, “Transcodium: A decentralized peer-to-peer
-media editing, transcoding & distribution platform,” 2017.
-[7] C. Wright and A. Serguieva, “Blockchain-based payment collection
-supervision system using pervasive bitcoin digital wallet,” in Proc. IEEE
-Int’l Conf. on Big Data. Boston, MA, Dec. 2017, pp. 4255–4264.
+
+[3] Z. Huang, C. Mei, L. Li, and T. Woo, “Cloudstream: Delivering highquality streaming videos through a cloud-based svc proxy,” in IEEE INFOCOM Mini Conf. Shanghai, Apr. 2011, pp. 201–205.
+
+[4] M. Kim, Y. Cui, S. Han, and H. Lee, “Towards efficient design and implementation of a hadoop-based distributed video transcoding system in cloud computing environment,” International Journal of Multimedia and Ubiquitous Engineering, vol. 8, no. 2, pp. 213–224, Mar. 2013.
+
+[5] Q. He, C. Zhang, X. Ma, and J. Liu, “Fog-based transcoding for crowdsourced video livecast,” IEEE Comm. Mag., vol. 55, no. 4, pp.28–33, April 2017.
+
+[6] Transcodium, “Transcodium: A decentralized peer-to-peer media editing, transcoding & distribution platform,” 2017.
+
+[7] C. Wright and A. Serguieva, “Blockchain-based payment collection supervision system using pervasive bitcoin digital wallet,” in Proc. IEEE Int’l Conf. on Big Data. Boston, MA, Dec. 2017, pp. 4255–4264.
+
 [8] D. Magazzeni, P. McBurney, and W. Nash, “Validation and verification of smart contracts: A research agenda,” Computer, vol. 50, no. 9, pp.50–57, Spet. 2017.
-[9] F. R. Yu, J. M. Liu, Y. He, P. B. Si, and Y. H. Zhang, “Virtualization for
-distributed ledger technology (vdlt),” IEEE Access, vol. 6, pp. 25 019–
-25 028, April 2018.
+
+[9] F. R. Yu, J. M. Liu, Y. He, P. B. Si, and Y. H. Zhang, “Virtualization for distributed ledger technology (vdlt),” IEEE Access, vol. 6, pp. 25 019–25 028, April 2018.
+
 [10] V. Gatteschi, F. Lamberti, C. Demartini, C. Pranteda, and V. Santamar?a, “To blockchain or not to blockchain: That is the question,” IEEE Computer Society, Mar./Apr. 2018.
-[11] M. Liu, F. R. Yu, Y. Teng, V. C. M. Leung, and M. Song, “Joint
-computation offloading and content caching for wireless blockchain
-networks,” in Proc. IEEE Conf. on Computer Commun. Workshops
-(INFOCOM WKSHPS). Honolulu, HI, April 2018, pp. 1–6.
-[12] A. Kosba, A. Miller, E. Shi, Z. Wen, and C. Papamanthou, “Hawk:
-The blockchain model of cryptography and privacy-preserving smart
-contracts,” in Proc. IEEE Symposium on Security and Privacy (SP).
-San Jose, CA, May. 2016, pp. 839–858.
+
+[11] M. Liu, F. R. Yu, Y. Teng, V. C. M. Leung, and M. Song, “Joint computation offloading and content caching for wireless blockchain networks,” in Proc. IEEE Conf. on Computer Commun. Workshops (INFOCOM WKSHPS). Honolulu, HI, April 2018, pp. 1–6.
+
+[12] A. Kosba, A. Miller, E. Shi, Z. Wen, and C. Papamanthou, “Hawk: The blockchain model of cryptography and privacy-preserving smart
+contracts,” in Proc. IEEE Symposium on Security and Privacy (SP). San Jose, CA, May. 2016, pp. 839–858.
+
 [13] SLIVER.tv, “Theta: A decentralized video streaming network, powered by a new blockchain and token v1.6,” Jan. 2018.
+
 [14] D. Petkanic and E. Tang, “Livepeer whitepaper: Protocol and economic incentives for a decentralized live video streaming network,” Dec. 2017.
