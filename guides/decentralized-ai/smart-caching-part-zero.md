@@ -17,7 +17,7 @@ Edge networking is a sophisticated and dynamic computing architecture aimed at b
 *<center>**Figure 0**: A general form of network caching. ([Source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fviblo.asia%2Fp%2Fcaching-la-gi-va-no-hoat-dong-nhu-the-nao-m68Z0QpXlkG&psig=AOvVaw1ohAHx1pymmpXYl-KZP8mQ&ust=1632284725828000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNiKs_Gcj_MCFQAAAAAdAAAAABAU)).</center>*
 
 ## Introduction
-Cloud data centers and content delivery networks (CDN) provide back-end data storage that is required by mobile apps, which have low latency, mobility, energy efficiency, and high bandwidth. The latency between mobile users and geographically dispersed cloud data centers/CDNs is greatly influenced by distance.  To deal with this problem, many networking technologies have been proposed and implemented to bring processing and caching capabilities closer to end-users. Mobile Edge Computing (MEC), fog computing, cloudlets, and information-centric networks are examples of these emerging technologies. Using in-network caching, edge networks have reduced the burden on backhaul networks while solving the problem of excessive content delay. Key research questions in the area of caching in mobile networks include: the popularity of multimedia, base stations and mobile users, and proactive and reactive to cache. Although the questions are clear, the solution for caching still needs to be optimized more.
+Cloud data centers and content delivery networks (CDN)Â provide back-end data storage that is required by mobile apps, which have low latency, mobility, energy efficiency, and high bandwidth. The latency between mobile users and geographically dispersed cloud data centers/CDNs is greatly influenced by distance.  To deal with this problem, many networking technologies have been proposed and implemented to bring processing and caching capabilities closer to end-users. Mobile Edge Computing (MEC), fog computing, cloudlets, and information-centric networks are examples of these emerging technologies. Using in-network caching, edge networks have reduced the burden on backhaul networks while solving the problem of excessive content delay. Key research questions in the area of caching in mobile networks include: the popularity of multimedia, base stations and mobile users, and proactive and reactive to cache. Although the questions are clear, the solution for caching still needs to be optimized more.
 
 To answer the question above, machine learning in wireless networks is used to estimate future user requests based on time-series dynamic mobility, popularity, and preference information. Given the limitations of user data available in edge networks, ML models that learn without prior information are frequently used to optimize caching options.
 
@@ -165,9 +165,9 @@ $
 
 > **NOTATION**
 * $r^0_k(t)$ and $r^1_k(t)$ are slice specific rewards.
-*$\alpha_1$ and $\alpha_2$ are their weights ranging from 0 to 1.
-*$g(t)$ is a cache-related function.
+* $\alpha_1$ and $\alpha_2$ are their weights ranging from 0 to 1.
+* $g(t)$ is a cache-related function.
 * $\rho$ is the weight to balance the short and long-term cache hit ratios, namely $g^s(t)$ and $g^l(t)$.
-*$g^s(t)$ is the number of requests for local content within the next request while $g^l(t)$ is within the next 10 requests.
+* $g^s(t)$ is the number of requests for local content within the next request while $g^l(t)$ is within the next 10 requests.
 
 </CodeExplanation>
