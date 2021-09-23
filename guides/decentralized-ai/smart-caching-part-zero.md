@@ -3,7 +3,7 @@ last_modified_on: "2021-09-20"
 title: Smart Caching.
 description: Edge based Intelligence for Edge Caching.
 series_position: 11
-author_github: https://github.com/Gazeal
+author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
 
@@ -45,16 +45,16 @@ In our system, we use the cloud-based architecture (master node) which leverages
 
 The Algorithm below conducts the training processes for the estimation model at the cloud data center in order to improve the prediction accuracy. This method takes as inputs the best model $m^*$ and a subset of raw data $d[t=1:t=j]$. This method produces an optimal trained model for predicting popularity scores. First, the accuracy measurement metrics $m_{tacc}$, $m_{vacc}$, and $m_{pacc}$ are set to zero. The learning rate lm and the regularization rate $m$ are then set to fixed values of $0.001$.
 
-<Highlight name="Alg.1 Training process">
+<Highlight name="Alg.1 Training process" color="#0649c7">
 
 **INPUT** model $m^*$ , train dataset $d[t=1:t=j]$<br/>
 **OUTPUT** Trained model $m^*$<br/>
 **INITIALIZED** $m_{tacc}, m_{vacc},m_{pacc} = 0 , l_m,\gamma_m = 0.001$<br/>
 **for** $i$ **in** range($n$) **do**<br/>
-    &emsp;$l_{m,i},\gamma_{m,i} \leftarrow rand(0,1)$<$br/>
+    &emsp;$l_{m,i},\gamma_{m,i} \leftarrow rand(0,1)$ <br/>
     &emsp;Train the model $m$ with small dataset by minimizing loss<br/>
     &emsp;**if** $m^{i-1}_{vacc}<m^i_{vacc}$ **then**<br/>
-        &emsp;&emsp;$l^*_m,\gamma^*_m \leftarrow l_{m,i},r_{mi}$<$br/>
+        &emsp;&emsp;$l^*_m,\gamma^*_m \leftarrow l_{m,i},r_{mi}$ <br/>
     &emsp;**end if**<br/>
     &emsp;Reset model $m$<br/>
 Train model $m$ with $l^*_m,\gamma^*_m$<br/>
@@ -63,12 +63,12 @@ Train model $m$ with $l^*_m,\gamma^*_m$<br/>
     &emsp;**if** Current validation accuracy of model $m_{tacc}$ is better than the previous **then**<br/>
         &emsp;&emsp;Update and store the parameters of m<br/>
     &emsp;**end if**<br/>
-    
+
 </Highlight>
 
 Alg. 2 depicts the caching procedure at the BS in order to optimize cache hit. This algorithm's inputs include user requests, BS log files, and learned models from the cloud data center, which are utilized to forecast popularity scores. This algorithm's result is a decision on whether to save the predicted popular content.
 
-<Highlight name="Alg.2 Cache Decision Process">
+<Highlight name="Alg.2 Cache Decision Process" color="#0649c7">
 
 **INPUT** Contents request history<br/>
 **OUTPUT** Contents list to store<br/>
@@ -98,7 +98,7 @@ Send the predicted information to **Slave Node**<br/>
 </Highlight>
 
 ### 2. Mobility Prediction for Caching.
-Caching for mobile users is important since wearable high-tech devices are more and more popular. Thus, mobility prediction is essential for optimizing the cache hit of mobile devices. Here, we utilize Temporal Dependency, Spatial Dependency, and Geographic Restriction to forecast user locations in mobile networks. 
+Caching for mobile users is important since wearable high-tech devices are more and more popular. Thus, mobility prediction is essential for optimizing the cache hit of mobile devices. Here, we utilize Temporal Dependency, Spatial Dependency, and Geographic Restriction to forecast user locations in mobile networks.
 
 The mobility models depict the movement of mobile nodes as well as the changes in position, velocity, and acceleration over time. Based on the Temporal Dependency mobility model, prediction systems presume that mobile node trajectories may be restricted by physical properties such as acceleration, velocity, direction, and movement history. The estimation is based on the premise that mobile nodes tend to travel in a correlated way and that the mobility pattern of one node is influenced by the mobility pattern of other adjacent nodes.
 
@@ -117,7 +117,7 @@ As shown in Figure 6, we describe a system model of the F-RAN RAN's slice instan
 
 Here, we have employed a deep reinforcement learning (DRL)-based approach, in which a DQN is built using historical data (visit Algorithm below for the process of DRL).
 
-<Highlight name="Alg.3 DRL process">
+<Highlight name="Alg.3 DRL process" color="#0649c7">
 
 1. To create the system state $s$, the cloud server obtains the channel state of each UE and the cache status of the F-AP  $s(t)$<br/>
 2. The cloud then transmits the system state $s(t)$ to the agent DQN in order to receive the action $a(t)$<br/>
@@ -126,38 +126,30 @@ Here, we have employed a deep reinforcement learning (DRL)-based approach, in wh
 5. The DRL-based method would result in a maximum discounted cumulative reward<br/>
 6. The current system state $s(t)$ is defined as an vector with $\{(4 + M1) * (K0 + K1) + K1 + 4C + 3\}$ dimensions:
 
-$
+  $
+  s(t) =\{||h_{m,k}(t)||^2|m = 0, 1, ..., M_1, k = 1, 2, ..., K_0 + K_1\}
+  \times \{B^{res0}_k(t), B^{res1}_k(t)|k = 1, 2, ..., K_0 + K_1\}
+  \times \{T_k(t)|k = 1, 2, ..., K_1\} \times C(t) \times Req(t)
+  \times \{f_{z,c}(t)|z = 0, 1, 2, c = 0, 1, ..., C\}
+  $
 
-s(t) =\{||h_{m,k}(t)||^2|m = 0, 1, ..., M_1, k = 1, 2, ..., K_0 + K_1\} 
-\times \{B^{res0}_k(t), B^{res1}_k(t)|k = 1, 2, ..., K_0 + K_1\} 
-\times \{T_k(t)|k = 1, 2, ..., K_1\} \times C(t) \times Req(t)
-\times \{f_{z,c}(t)|z = 0, 1, 2, c = 0, 1, ..., C\}
-
-$
-
-Here, the cache features $f_{z,c}$ represents the total number of requests for content $A_c$ in a specific short (z = 0), medium ($z = 1$), long ($z = 2$)-term, respectively.
+  Here, the cache features $f_{z,c}$ represents the total number of requests for content $A_c$ in a specific short (z = 0), medium ($z = 1$), long ($z = 2$)-term, respectively.
 
 7.  System Action: the system action space is denoted as $\mathbb{A}$, wherein its element $a(t)$ is defined as follows:
 
-$
-
-a(t) = \{s_k(t)|k = 1, 2, ..., K_0 + K_1\} \times \{c(t)\}
-
-$
+  $
+  a(t) = \{s_k(t)|k = 1, 2, ..., K_0 + K_1\} \times \{c(t)\}
+  $
 
 8. The reward function is defined as weighted reward sum of hotspot UEs and V2I UEs:
 
-$
+  $
+  r(t) = g(t) + \alpha_1 \sum_{k \in \mathbb{K}_0}r^0_k(t) + \alpha_2\sum_{k \in \mathbb{K}_1}r^1_k(t),
+  $
 
-r(t) = g(t) + \alpha_1 \sum_{k \in \mathbb{K}_0}r^0_k(t) + \alpha_2\sum_{k \in \mathbb{K}_1}r^1_k(t),
-
-$
-
-$
-
-g(t) = g^s(t) + \rho g^l(t)
-
-$
+  $
+  g(t) = g^s(t) + \rho g^l(t)
+  $
 
 </Highlight>
 

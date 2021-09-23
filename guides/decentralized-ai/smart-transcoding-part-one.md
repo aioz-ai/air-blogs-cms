@@ -3,7 +3,7 @@ last_modified_on: "2021-09-20"
 title: Smart Transcoding (part 1) Introduction.
 description: A series of Smart Transcoding based on AI.
 series_position: 10
-author_github: https://github.com/Gazeal
+author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
 

@@ -21,7 +21,7 @@ In this part, I also introduce the most up-to-date Q-Probabilistic routing (Q-PR
 
 The Q-PR-algorithm identifies the next hop on the actual route (a) in the form of network packets (not previous phases), b) when message is sent (opportunistic approach), c) using location-based route position  and d) taking smart decisions on nodes receiving transmission requests, both based on local information and the importance of these packets. The Q-PR algorithm is summarized as follows,
 
-<Highlight name="Q-PR Algorithm">
+<Highlight name="Q-PR Algorithm" color="#0649c7">
 
 FORWARDING PHASE ($N_i$ receives a message with a list of other candidates)<br/>
 **if** Candidate nodes with higher priority forward the message<br/>
@@ -60,7 +60,7 @@ Stone et al. introduced the Team-Partitioned Opaque-Transition RL (TPOT-RL) rout
 
 Collaborative Reinforcement Learning [16] is one  of the most successive method belongs to the Multiagent group, which algorithm is then decribed as belows. In a multiagent system, the CRL technique may be used to address system optimization issues, which can be discretized into a collection of DOPs and described as absorbing MDPs in the following schema.
 
-<Highlight name="CRL Algorithm">
+<Highlight name="CRL Algorithm" color="#0649c7">
 
 1. A dynamic set of agents $N = \{n_1, n_2, ..., n_M\}$, often corresponding to nodes in a distributed system.
 2. Each agent $n_i$ has a dynamic set $V_i$ of neighbors.
