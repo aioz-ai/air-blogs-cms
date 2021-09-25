@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2021-09-27"
-title: Smart routing.
+title: Smart Routing.
 description: Smart Routing based on AI-driven.
 series_position: 12
 author_github: https://github.com/aioz-ai
@@ -57,8 +57,8 @@ where the first term on the right side represents the expected immediate reward 
 
 In the context of the learning routing strategy, each node can be considered as a state $s$, and for each of its neighbor $s$ , there is a corresponding action $a$. Executing action $a$ at $s$ means forwarding the packet to the corresponding neighbor $s$. The fixed $Q$-values of $s$ can be regarded as its routing table, telling to which neighbor to forward the data. This scheme is illustrated in Figure. 2. With the help of this routing table, the optimal routing path can be trivially constructed by a sequence of table look-up operations. Thus the task of learning optimal routing strategy is equivalent to finding the $Q$-fixed points.
 
-![Fig-2](https://vision.aioz.io/f/5e50b138735444e196cb/?dl=1)
-*<center>**Figure 2**:  The routing table ($Q$-values) of a state $s$. The action $a^?$ with the maximum $Q$-value is selected [(Source)](https://ieeexplore.ieee.org/document/4019984).</center>*
+![Fig-4](https://vision.aioz.io/f/5e50b138735444e196cb/?dl=1)
+*<center>**Figure 4**:  The routing table ($Q$-values) of a state $s$. The action $a^?$ with the maximum $Q$-value is selected [(Source)](https://ieeexplore.ieee.org/document/4019984).</center>*
 
 **$Q$-Learning.** The $Q$-fixed points can be solved deterministically if the underlying transition model $P$ and reward mechanism $R$ are known. Q-learning is a temporal difference (TD) control technique that operates outside of policy and directly approximates the best action-value function. When the agent performs an action $a$, he or she receives an immediate reward $r$ from the environment. It then utilizes this reward, as well as the predicted long-term reward, to update the $Q$-values, which impacts future action selection. In its most basic form, one-step $Q$-learning is defined as:
 
@@ -73,8 +73,8 @@ where $\alpha$ is the learning rate, which models the rate of updating $Q$-value
 ### AI Routers
 #### Architecture
 The hybrid AI-based hop-by-hop routing paradigm is introduced in Figure 4. We move the duty for intelligent control to the AI routers and use the network mind to promote global convergence in the design to reduce the overhead imposed by centralized control.
-![Fig-4](https://vision.aioz.io/f/6ba56b8d15c34ba7acf0/?dl=1)
-*<center>**Figure 4**: The decentralized intelligent control scheme([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
+![Fig-5](https://vision.aioz.io/f/6ba56b8d15c34ba7acf0/?dl=1)
+*<center>**Figure 5**: The decentralized intelligent control scheme([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
 
 
 With the duty for intelligent control moved to each router, each router functions as an autonomous intelligent agent, and the dispersed AI agents form a Multi-Agent System (MAS). Each AI agent tries to maximize the predicted cumulative reward by optimizing its local policy by interacting with its uncertain environment. In contrast to a single-agent system, where the environment's state transitions are entirely determined by the activities of the single agent, the state transitions of a MAS are determined by the combined actions of all actors.
