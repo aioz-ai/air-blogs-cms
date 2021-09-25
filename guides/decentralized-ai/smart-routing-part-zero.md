@@ -58,7 +58,7 @@ where the first term on the right side represents the expected immediate reward 
 In the context of the learning routing strategy, each node can be considered as a state $s$, and for each of its neighbor $s$ , there is a corresponding action $a$. Executing action $a$ at $s$ means forwarding the packet to the corresponding neighbor $s$. The fixed $Q$-values of $s$ can be regarded as its routing table, telling to which neighbor to forward the data. This scheme is illustrated in Figure 4. With the help of this routing table, the optimal routing path can be trivially constructed by a sequence of table look-up operations. Thus the task of learning optimal routing strategy is equivalent to finding the $Q$-fixed points.
 
 ![Fig-4](https://vision.aioz.io/f/5e50b138735444e196cb/?dl=1)
-*<center>**Figure 4**: The routing table ($Q$-values) of a state $s$. The action $a^*$ with the maximum $Q$-value is selected [(Source)](https://ieeexplore.ieee.org/document/4019984).</center>*
+*<center>**Figure 4**: The routing table ($Q$-values) of a state $s$. The action $a*$ with the maximum $Q$-value is selected [(Source)](https://ieeexplore.ieee.org/document/4019984).</center>*
 
 **$Q$-Learning.** The $Q$-fixed points can be solved deterministically if the underlying transition model $P$ and reward mechanism $R$ are known. Q-learning is a temporal difference (TD) control technique that operates outside of policy and directly approximates the best action-value function. When the agent performs an action $a$, he or she receives an immediate reward $r$ from the environment. It then utilizes this reward, as well as the predicted long-term reward, to update the $Q$-values, which impacts future action selection. In its most basic form, one-step $Q$-learning is defined as:
 
