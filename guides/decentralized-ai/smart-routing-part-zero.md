@@ -19,7 +19,7 @@ Centralized and decentralized routing using AI-powered reinforcement learning is
 ## Three-tier logical design: The closed-loop control paradigm
 
 ![Fig-1](https://vision.aioz.io/f/54137ae358744ce5af1d/?dl=1)
-*<center>**Figure 1**:The closed-loop control paradigm ([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
+*<center>**Figure 1**: The closed-loop control paradigm ([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
 
 The advancing plane, the awareness plane, and the intelligent control plane are the three layers of the paradigm, as shown in Figure 1.
 
@@ -33,7 +33,7 @@ The combination of these three abstract planes creates a closed-loop architectur
 ## Hybrid architecture
 A hybrid AI-driven control architecture illustrated in Figure 2 is specially designed to fit our system. It combines a "network mind" (centralized intelligence) with "AI routers" (distributed intelligence) to support various network services.
 ![Fig-2](https://vision.aioz.io/f/fd55cfadf5cf464d8114/?dl=1)
-*<center>**Figure 2**:The hybrid architecture ([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
+*<center>**Figure 2**: The hybrid architecture ([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
 ### Network Mind
 #### Architecture
 The network mind, as depicted in Figure 3, is in charge of centralized intelligent traffic control and optimization. The network mind uses an upload link to obtain the fine-grained network status and a download link to issue actions.
@@ -55,10 +55,10 @@ $$
 
 where the first term on the right side represents the expected immediate reward of executing action $a$ at $s$, and the second term is the maximum expected future reward. The discount factor $\gamma$ models the fact that immediate reward is more valuable than future reward.
 
-In the context of the learning routing strategy, each node can be considered as a state $s$, and for each of its neighbor $s$ , there is a corresponding action $a$. Executing action $a$ at $s$ means forwarding the packet to the corresponding neighbor $s$. The fixed $Q$-values of $s$ can be regarded as its routing table, telling to which neighbor to forward the data. This scheme is illustrated in Figure. 2. With the help of this routing table, the optimal routing path can be trivially constructed by a sequence of table look-up operations. Thus the task of learning optimal routing strategy is equivalent to finding the $Q$-fixed points.
+In the context of the learning routing strategy, each node can be considered as a state $s$, and for each of its neighbor $s$ , there is a corresponding action $a$. Executing action $a$ at $s$ means forwarding the packet to the corresponding neighbor $s$. The fixed $Q$-values of $s$ can be regarded as its routing table, telling to which neighbor to forward the data. This scheme is illustrated in Figure 4. With the help of this routing table, the optimal routing path can be trivially constructed by a sequence of table look-up operations. Thus the task of learning optimal routing strategy is equivalent to finding the $Q$-fixed points.
 
 ![Fig-4](https://vision.aioz.io/f/5e50b138735444e196cb/?dl=1)
-*<center>**Figure 4**:  The routing table ($Q$-values) of a state $s$. The action $a^?$ with the maximum $Q$-value is selected [(Source)](https://ieeexplore.ieee.org/document/4019984).</center>*
+*<center>**Figure 4**: The routing table ($Q$-values) of a state $s$. The action $a^*$ with the maximum $Q$-value is selected [(Source)](https://ieeexplore.ieee.org/document/4019984).</center>*
 
 **$Q$-Learning.** The $Q$-fixed points can be solved deterministically if the underlying transition model $P$ and reward mechanism $R$ are known. Q-learning is a temporal difference (TD) control technique that operates outside of policy and directly approximates the best action-value function. When the agent performs an action $a$, he or she receives an immediate reward $r$ from the environment. It then utilizes this reward, as well as the predicted long-term reward, to update the $Q$-values, which impacts future action selection. In its most basic form, one-step $Q$-learning is defined as:
 
@@ -72,7 +72,7 @@ where $\alpha$ is the learning rate, which models the rate of updating $Q$-value
 
 ### AI Routers
 #### Architecture
-The hybrid AI-based hop-by-hop routing paradigm is introduced in Figure 4. We move the duty for intelligent control to the AI routers and use the network mind to promote global convergence in the design to reduce the overhead imposed by centralized control.
+The hybrid AI-based hop-by-hop routing paradigm is introduced in Figure 5. We move the duty for intelligent control to the AI routers and use the network mind to promote global convergence in the design to reduce the overhead imposed by centralized control.
 ![Fig-5](https://vision.aioz.io/f/6ba56b8d15c34ba7acf0/?dl=1)
 *<center>**Figure 5**: The decentralized intelligent control scheme([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
 
