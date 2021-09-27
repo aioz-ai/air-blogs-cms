@@ -2,10 +2,12 @@
 last_modified_on: "2021-09-27"
 title: Smart Routing.
 description: Smart Routing based on AI-driven.
-series_position: 12
+series_position: 5
 author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
+
+import Highlight from '@site/src/components/Highlight';
 
 With the introduction of Software-Defined Networking (SDN), Network Function Virtualization (NFV), and 5th-generation wireless technologies, networks throughout the world have recently undergone substantial reorganization and transformation (5G). The dominance of conventional ossified architectures is being eroded by emerging networking paradigms, which are lowering reliance on proprietary hardware. However, the associated increases in network flexibility and scalability pose new problems for network administration. Because network complexity is rising all the time, effective network control is becoming increasingly challenging. Current control techniques, in particular, rely heavily on manual procedures, which have inadequate scalability and resilience for the control of complex systems. As a result, there is an urgent need for more effective techniques of tackling networking issues.
 
@@ -33,12 +35,15 @@ The combination of these three abstract planes creates a closed-loop architectur
 ## Hybrid architecture
 A hybrid AI-driven control architecture illustrated in Figure 2 is specially designed to fit our system. It combines a "network mind" (centralized intelligence) with "AI routers" (distributed intelligence) to support various network services.
 ![Fig-2](https://vision.aioz.io/f/fd55cfadf5cf464d8114/?dl=1)
+
 *<center>**Figure 2**: The hybrid architecture ([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
+
 ### Network Mind
 #### Architecture
 The network mind, as depicted in Figure 3, is in charge of centralized intelligent traffic control and optimization. The network mind uses an upload link to obtain the fine-grained network status and a download link to issue actions.
 
 ![Fig-3](https://vision.aioz.io/f/344eeceb90d24dcf9d6a/?dl=1)
+
 *<center>**Figure 3**: The centralized intelligent control scheme ([Source](https://ieeexplore.ieee.org/abstract/document/8870277/)).</center>*
 
 To capture device statuses, traffic characteristics, configuration data, and service-level information, the upload connection uses a network monitoring protocol like INT, Kafka, or IPFIX; the download link uses a standard southbound interface like OpenFlow or P4 to allow efficient network control. The upload and download links provide an interaction structure that gives the network mind a global view and control capabilities, and the current and historical data from closed-loop operations is fed into AI&ML algorithms for knowledge generation and learning.
@@ -58,7 +63,8 @@ where the first term on the right side represents the expected immediate reward 
 In the context of the learning routing strategy, each node can be considered as a state $s$, and for each of its neighbor $s$ , there is a corresponding action $a$. Executing action $a$ at $s$ means forwarding the packet to the corresponding neighbor $s$. The fixed $Q$-values of $s$ can be regarded as its routing table, telling to which neighbor to forward the data. This scheme is illustrated in Figure 4. With the help of this routing table, the optimal routing path can be trivially constructed by a sequence of table look-up operations. Thus the task of learning optimal routing strategy is equivalent to finding the $Q$-fixed points.
 
 ![Fig-4](https://vision.aioz.io/f/5e50b138735444e196cb/?dl=1)
-*<center>**Figure 4**: The routing table ($Q$-values) of a state $s$. The action $a^{*}$ with the maximum $Q$-value is selected [(Source)](https://ieeexplore.ieee.org/document/4019984).</center>*
+
+*<center>**Figure 4**: The routing table ($Q$-values) of a state $s$. The action $a^{\ast}$ with the maximum $Q$-value is selected [(Source)](https://ieeexplore.ieee.org/document/4019984).</center>*
 
 **$Q$-Learning.** The $Q$-fixed points can be solved deterministically if the underlying transition model $P$ and reward mechanism $R$ are known. Q-learning is a temporal difference (TD) control technique that operates outside of policy and directly approximates the best action-value function. When the agent performs an action $a$, he or she receives an immediate reward $r$ from the environment. It then utilizes this reward, as well as the predicted long-term reward, to update the $Q$-values, which impacts future action selection. In its most basic form, one-step $Q$-learning is defined as:
 
@@ -79,7 +85,7 @@ The hybrid AI-based hop-by-hop routing paradigm is introduced in Figure 5. We mo
 
 With the duty for intelligent control moved to each router, each router functions as an autonomous intelligent agent, and the dispersed AI agents form a Multi-Agent System (MAS). Each AI agent tries to maximize the predicted cumulative reward by optimizing its local policy by interacting with its uncertain environment. In contrast to a single-agent system, where the environment's state transitions are entirely determined by the activities of the single agent, the state transitions of a MAS are determined by the combined actions of all actors.
 
-The ability to exchange experiences across AI routers is critical for improving the overall value of this MAS. However, in this geo-distributed system, how to perform such information exchange is a crucial challenge for high-efficiency operations. The centralized network mind is included in our design to act as a point of global knowledge convergence and experience exchange. The centralized network mind may use the network monitoring system to obtain global network information and use the download connection to exchange knowledge. 
+The ability to exchange experiences across AI routers is critical for improving the overall value of this MAS. However, in this geo-distributed system, how to perform such information exchange is a crucial challenge for high-efficiency operations. The centralized network mind is included in our design to act as a point of global knowledge convergence and experience exchange. The centralized network mind may use the network monitoring system to obtain global network information and use the download connection to exchange knowledge.
 
 #### Collaborative Reinforcement Learning
 Collaborative Reinforcement Learning (CRL) is one of the most successful methods belongs to the Multiagent group, which algorithm is then described as below. In a MAS, the CRL technique is used to address system optimization issues, which can be discretized into a collection of DOPs and described as absorbing MDPs in the following schema.

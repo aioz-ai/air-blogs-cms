@@ -2,7 +2,7 @@
 last_modified_on: "2021-08-30"
 title: AI-driven routing (part 3) Hybrid Routing.
 description: A series of Smart Routing based on AI.
-series_position: 7
+series_position: 8
 author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---

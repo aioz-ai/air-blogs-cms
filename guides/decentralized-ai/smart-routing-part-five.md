@@ -2,7 +2,7 @@
 last_modified_on: "2021-09-13"
 title: AI-driven routing (part 5) Challenges and Open Issues.
 description: A series of Smart Routing based on AI.
-series_position: 9
+series_position: 10
 author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---

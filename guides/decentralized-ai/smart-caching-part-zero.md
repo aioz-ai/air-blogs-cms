@@ -2,7 +2,7 @@
 last_modified_on: "2021-09-20"
 title: Smart Caching.
 description: Edge based Intelligence for Edge Caching.
-series_position: 11
+series_position: 12
 author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---

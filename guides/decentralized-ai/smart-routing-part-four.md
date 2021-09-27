@@ -2,7 +2,7 @@
 last_modified_on: "2021-09-06"
 title: AI-driven routing (part 4) Smart Routing Effectiveness.
 description: A series of Smart Routing based on AI.
-series_position: 8
+series_position: 9
 author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
