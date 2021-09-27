@@ -90,7 +90,7 @@ The ability to exchange experiences across AI routers is critical for improving 
 #### Collaborative Reinforcement Learning
 Collaborative Reinforcement Learning (CRL) is one of the most successful methods belongs to the Multiagent group, which algorithm is then described as below. In a MAS, the CRL technique is used to address system optimization issues, which can be discretized into a collection of DOPs and described as absorbing MDPs in the following schema.
 
-<Highlight name="CRL Algorithm">
+<Highlight name="CRL Algorithm" color="#0649c7">
 
 1. A dynamic set of agents $N = \{n_1, n_2, ..., n_M\}$, often corresponding to nodes in a distributed system.
 2. Each agent $n_i$ has a dynamic set $V_i$ of neighbors.
