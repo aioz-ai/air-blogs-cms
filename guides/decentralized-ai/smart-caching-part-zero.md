@@ -14,7 +14,7 @@ import Highlight from '@site/src/components/Highlight';
 Edge networking is a sophisticated and dynamic computing architecture aimed at bringing cloud services closer to the end-user, boosting responsiveness, and decreasing backhaul traffic. Edge networks' primary dynamic aspects include user mobility, preferences, and content popularity. Temporal and social characteristics of the material, such as the number of views and likes, are used to assess the worldwide popularity of content. Such estimations, however, are not always successful to be mapped to an edge network with specific social and geographic features. Machine learning techniques are employed in next-generation edge networks to forecast content popularity based on user preferences, cluster users based on comparable content interests, and improve cache placement and replacement tactics. Our work is to examine the use of machine learning techniques for edge network caching within the network itself.
 
 ![Fig-1](https://images.viblo.asia/d838c5ca-42a6-4904-9cab-9ba1e3ec0690.png)
-*<center>**Figure 0**: A general form of network caching. ([Source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fviblo.asia%2Fp%2Fcaching-la-gi-va-no-hoat-dong-nhu-the-nao-m68Z0QpXlkG&psig=AOvVaw1ohAHx1pymmpXYl-KZP8mQ&ust=1632284725828000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNiKs_Gcj_MCFQAAAAAdAAAAABAU)).</center>*
+*<center>**Figure 1**: A general form of network caching.</center>*
 
 ## Introduction
 Cloud data centers and content delivery networks (CDN) provide back-end data storage that is required by mobile apps, which have low latency, mobility, energy efficiency, and high bandwidth. The latency between mobile users and geographically dispersed cloud data centers/CDNs is greatly influenced by distance. To deal with this problem, many networking technologies have been proposed and implemented to bring processing and caching capabilities closer to end-users. Mobile Edge Computing (MEC), fog computing, cloudlets, and information-centric networks are examples of these emerging technologies. Using in-network caching, edge networks have reduced the burden on backhaul networks while solving the problem of excessive content delay. Key research questions in the area of caching in mobile networks include the popularity of multimedia, base stations and mobile users, and proactive and reactive to cache. Although the questions are clear, the solution for caching still needs to be optimized more.
@@ -29,19 +29,19 @@ Edge caching refers to a user-centric cache on the edge that has limited storage
 
 Although mentioned tasks can also output caching decisions, we further leverage Deep Heuristic to anticipate the mentioned input characteristics to optimum caching issues through Edge-based Intelligence for Edge Caching.
 
-![Fig-2](https://vision.aioz.io/f/b9ba67d871f141569594/?dl=1)
-*<center>**Figure 2**:  Edge-based Intelligence for Edge Caching. ([Source](https://arxiv.org/pdf/2006.16864.pdf)).</center>*
+![Fig-2](https://drive.google.com/uc?export=view&id=1KEcdeQ0_lKQ6ClzvQ9ywee-pyByTOID7)
+*<center>**Figure 2**:  Edge-based Intelligence for Edge Caching.</center>*
 
 A high-level conceptual framework of ML-based edge caching is depicted in Figure 2. Social awareness, mobility patterns, and user preferences are fed into an ML framework, which may be federated across multiple nodes and stored at dispersed MEC servers, F-RAN, or CDN. The social networks, D2D communications, and V2I communications are used to provide the inputs for the ML-based caching decision framework. Intelligent and optimum decisions are sent back to caches handled by network virtualization methods. Caching placement strategies are being innovated with the aid of UAV-mounted caches that could also be directed towards user populations and real-time events. For more details, let examine three mentioned optimum tasks in the Smart Edge Caching System that play an important role in giving out caching decisions.
 
 ### 1. Content Popularity Prediction for Caching.
 In our system, we use the cloud-based architecture (master node) which leverages supervised and deep learning in two phases to estimate video popularity. Then, the system automatically pushes the learned cache decisions to the BSs (slave nodes). To begin, a data collector module gathers information on the number of video IDs that have been requested to make predictions about the future popularity and class of videos based on supervised learning. Deep learning algorithms are used to estimate future video content request numbers. See Figure 3 and Figure 4 for more details about the system model and the architecture of the master node.
 
-![Fig-3](https://vision.aioz.io/f/89bd0de473af433ca5d7/?dl=1)
-*<center>**Figure 3**: System model of learning-based caching at the edge. ([Source](https://ieeexplore.ieee.org/document/8576500)).</center>*
+![Fig-3](https://drive.google.com/uc?export=view&id=1-_5F2agjDhtftc8hxRIfcCzKqb5F3Mkx)
+*<center>**Figure 3**: System model of learning-based caching at the edge.</center>*
 
-![Fig-4](https://vision.aioz.io/f/513fca1d7ba84c08acc2/?dl=1)
-*<center>**Figure 4**: Master Node Design. ([Source](https://ieeexplore.ieee.org/document/8576500)).</center>*
+![Fig-4](https://drive.google.com/uc?export=view&id=1JltoD7N4-bxVhAEbID22c3Wfx_nbzVe8)
+*<center>**Figure 4**: Master Node Design.</center>*
 
 The Algorithm below conducts the training processes for the estimation model at the cloud data center in order to improve the prediction accuracy. This method takes as inputs the best model $m^*$ and a subset of raw data $d[t=1:t=j]$. This method produces an optimal trained model for predicting popularity scores. First, the accuracy measurement metrics $m_{tacc}$, $m_{vacc}$, and $m_{pacc}$ are set to zero. The learning rate lm and the regularization rate $m$ are then set to fixed values of $0.001$.
 
@@ -104,16 +104,16 @@ The mobility models depict the movement of mobile nodes as well as the changes i
 
 For Geographic Restriction, node trajectories are affected by the environment, and mobile node mobility is restricted by geographic constraints. Similarly, buildings and other barriers may obstruct pedestrians. To address this issue, we employ a completely cloudified mobility prediction service that enables on-demand mobility prediction life-cycle management. The mobility prediction method is based on the Dynamic Bayesian Network (DBN) model, and the rationale for adopting DBN is that the next place visited by a user is determined by its present position, (ii) the movement duration, and (iii) the day that user is in motion. Figure 5 illustrates how to relocate content for mobile users. The output relocation contents are considered to access cache hit.
 
-![Fig-5](https://vision.aioz.io/f/155fb0f9dc134898ab32/?dl=1)
-*<center>**Figure 5**: Content relocation architecture for cache hit. ([Source](https://ieeexplore.ieee.org/document/7335295)).</center>*
+![Fig-5](https://drive.google.com/uc?export=view&id=1Fjhh-yee3QSBqSa9i_VTVwUAyfk40x3l)
+*<center>**Figure 5**: Content relocation architecture for cache hit.</center>*
 
 ### 3.Joint Content Identification for Caching.
 Optimization for the joint content caching and mode selection for slice instances is essential in fog radio access networks (F-RANs). A fog-computing layer is established at the network's edge in F-RANs, and a portion of the service needs may be met locally without engaging with the cloud computing center via the fronthaul connections. Hotspot and vehicle-to-infrastructure situations, in particular, are addressed, and related network slice instances are coordinated in F-RANs. When various users' expectations and restricted resources are taken into account, there is a substantial high complexity in addressing the initial optimization issue using standard optimization techniques. We adopt a deep reinforcement learning-based method because of the benefits of deep reinforcement learning in tackling complicated network optimizations. In this case, the cloud server uses intelligent operations to enhance the hit ratio and total transmission rate.
 
 As shown in Figure 6, we describe a system model of the F-RAN RAN's slice instances. Customized RAN slice instances are deployed to enable $K_0$ hotspot UEs and $K_1$ V2I UEs. Set $\mathbb{K_0}$ to represent hotspot UEs and $\mathbb{K_1}$ to represent V2I UEs. High rates are required by the hotspot UEs in the hotspot slice instance. As a result, $M 0$ remote radio units (RRUs) are spread across $K 0$ UEs and linked to the cloud server through fronthaul. $M 1$ F-APs with popular content stored are situated in specific zones to reduce the strain on fronthaul. F-APs communicate with the cloud server through the $X n$ interface. In the V2I slice instance, the F-AP mode and RRU mode are also accessible when V2I UEs require delay assured data transfer.
 
-![Fig-6](https://vision.aioz.io/f/2d730e1d1bde4b97a12e/?dl=1)
-*<center>**Figure 6**: A system model of RAN slice instances in F-RANs, wherein the deep Q-network (DQN) is utilized to make a decision to perform the content caching in F-APs and mode selection for UEs. ([Source](https://ieeexplore.ieee.org/document/8891508)).</center>*
+![Fig-6](https://drive.google.com/uc?export=view&id=14MVCyq40mgaurD3NanTJAqTSV_QSNf5L)
+*<center>**Figure 6**: A system model of RAN slice instances in F-RANs, wherein the deep Q-network (DQN) is utilized to make a decision to perform the content caching in F-APs and mode selection for UEs.</center>*
 
 Here, we have employed a deep reinforcement learning (DRL)-based approach, in which a DQN is built using historical data (visit Algorithm below for the process of DRL).
 
