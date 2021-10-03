@@ -21,7 +21,7 @@ As shown in Figure 1, we envision a virtual P2P blockchain network to be the bac
 
 $
 
-\mathbf{R}_{mn} = w_{mn} log_2 \left( 1 + \frac{\rho_{mn}|h_{mn}|^2}{\delta^2}\right)
+\mathbf{R}_{mn} = w_{mn} log_2 \left( 1 + \frac{\rho_{mn}|h_{mn}|^2}{\delta^2}\right)
 
 $
 
@@ -33,7 +33,7 @@ We use a video transcoding and distribution strategy that includes a number of t
 
 During the video transcoding and distribution process, consumers initially request a collection of materials based on their preferences. When a request comes on the blockchain, a content brokering contract (CBC) is produced and broadcast that defines the needed contents. The CP is then alerted of the new CBC, which is used to construct a content licensing contract (CLC). The CLC defines the user's content pricing, a reference to the CBC, and the maximum payment to SBSs for transcoding and delivery. When the CLC becomes public on the blockchain, SBSs respond by posting content delivery contracts (CDCs) that define the resource pricing for providing content as well as a reference to the CLC. Finally, the original CBC gathers all relevant CDCs, chooses the cheapest one to carry out the content distribution, and cancels all other contracts. Following content trading, a user pays for the content transaction using a CP's address and the delivery transaction using an SBS's address. CP pays a group of SBSs for a content processing transaction through SBS addresses. The payees (CPs or SBSs) then produce transaction records, which the payers (CPs or users) check and digitally sign before uploading for audit.
 
-We use a proof-of-stake (PoS) consensus mechanism, with the CP and SBSs acting as consensus nodes to participate in the consensus process. Users act as user nodes, sending just requests for content delivery. To validate transactions and produce blocks, CP and SBSs who function as forgers first ‘stake' their own currencies before participating in the consensus process. We calculate each SBS's stake based on the amount of transcoding and delivery rewards obtained, and we consider the CP's stakes to be proportionate to the amount of unconfirmed payment for contents in the most recent time slot. They are typically encouraged to authenticate the proper transactions since they have staked their own money. If they verify a fraudulent transaction, they forfeit their holdings as well as their future rights to participate as a forger.
+We use a proof-of-stake (PoS) consensus mechanism, with the CP and SBSs acting as consensus nodes to participate in the consensus process. Users act as user nodes, sending just requests for content delivery. To validate transactions and produce blocks, CP and SBSs who function as forgers first â€˜stake' their own currencies before participating in the consensus process. We calculate each SBS's stake based on the amount of transcoding and delivery rewards obtained, and we consider the CP's stakes to be proportionate to the amount of unconfirmed payment for contents in the most recent time slot. They are typically encouraged to authenticate the proper transactions since they have staked their own money. If they verify a fraudulent transaction, they forfeit their holdings as well as their future rights to participate as a forger.
 This prevents CPs and SBSs from abusing the content transcoding and delivery environment.
 
 ## Next section introduction
