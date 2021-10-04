@@ -3,7 +3,7 @@ last_modified_on: "2021-09-20"
 title: Smart Transcoding (part 2) Video Transcoding and Delivery with Blockchain.
 description: A series of Smart Transcoding based on AI.
 series_position: 13
-author_github: https://github.com/Gazeal
+author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
 
@@ -19,11 +19,9 @@ In this part, we will investigate how to deal with the Blockchain-Enabled video 
 
 As shown in Figure 1, we envision a virtual P2P blockchain network to be the backbone of the distributed content delivery network. There are $M$ SBSs equipped with MEC servers, which have minimal caching and processing resources but are sufficient to fulfill the CP's expectations. We suppose that the $N$ consumers serviced by these SBSs enjoy video material from a single CP (e.g. Youtube or Netflix). All content files $f \in \mathbb{F}$ are chunked into $l$ fixed-length chunks, and each segment has distinct bitrate versions in different formats. Then, we examine a rate $n$, where $0 < \beta_n \leq 6$ represents the multiple video quality levels requested by user $n$, to scale down the original movies. Each single user can only pick one quality level of a movie at a time. Finally, the total bandwidth of the accessible spectrum is $W$. During packet transmission, the channel does not change, and perfect instantaneous Channel Quality Information (CQI) is provided. Assume that SBSs have cached a collection of popular items proactively. It charges the CP for allocating computing resources $f_m$ (Mbps) and the user for allocating power pmn ($W$) for an arbitrary SBS $m$. We examine a split spectrum method, in which the same spectrum is divided among its neighboring interfering SBSs and spectrum inside one SBS is orthogonally allotted to each user. Assume that SBS $m$ sends the needed video content to user $n$ through wireless access connections. The data rate of user $n$ when connected to the $m$-th SBS is indicated as follows:
 
-$
-
+$$
 \mathbf{R}_{mn} = w_{mn} log_2 \left( 1 + \frac{\rho_{mn}|h_{mn}|^2}{\delta^2}\right)
-
-$
+$$
 
 where $|h_{mn}|^2$ denotes the channel gain between SBS $m$ and user $n$; $w_{mn}$ denotes the allocated bandwidth of SBS $m$ to user $n$; $\delta^2$ denotes the power spectrum density of the additive white Gaussian noise (AWGN).
 
