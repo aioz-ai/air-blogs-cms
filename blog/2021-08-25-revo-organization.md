@@ -2,7 +2,7 @@
 title: 'AI in Logistics and Supply Chain - Part 2: Revolution your organization'
 author: Thu Nguyen
 authorURL: 'https://github.com/thunguyen285'
-authorImageURL: 'https://media-exp1.licdn.com/dms/image/C5103AQHIPClOk1d0Jw/profile-displayphoto-shrink_400_400/0/1556119647993?e=1632960000&v=beta&t=JgOibhNUIm7FpklsyGWpomRRTMefA5fMm4TbPQYhpbE'
+authorImageURL: 'https://avatars.githubusercontent.com/u/82790711?v=4'
 tags: [smart-warehouse, ai, logistics, supply-chain]
 ---
 
