@@ -113,6 +113,30 @@ module.exports = {
       "name": "Thu Nguyen",
     },
     {
+      "avatar": "https://avatars.githubusercontent.com/u/32817741",
+      "bio": "Deep-tech R&D",
+      "github": "https://github.com/HoSyTuyen",
+      "id": "tuyen.sy.ho",
+      "keybase": "",
+      "name": "Tuyen Ho"
+    },
+    {
+      "avatar": "https://avatars.githubusercontent.com/u/17172232",
+      "bio": "Deep-tech R&D",
+      "github": "https://github.com/phamtrongthang123",
+      "id": "thang.trong.pham",
+      "keybase": "",
+      "name": "Thang Pham"
+    },
+    {
+      "avatar": "https://avatars.githubusercontent.com/u/37999344",
+      "bio": "Deep-tech R&D",
+      "github": "https://github.com/minhnhatvt",
+      "id": "nhat.minh.le",
+      "keybase": "",
+      "name": "Nhat Le"
+    },
+    {
       "avatar": "https://avatars.githubusercontent.com/u/53249292",
       "bio": "AIOZ AI Department",
       "github": "https://github.com/aioz-ai",

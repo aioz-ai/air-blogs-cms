@@ -14,13 +14,13 @@ In this blog, I will present a survey on Geometry-Aware Neural Style Transfer (N
 
 ##  1. Problem statement
 
-Input: A content image and a style image
+**Input:** A content image and a style image
 
-Output: A stylized version of the content image
+**Output:** A stylized version of the content image
 
 ## 2. Experiment Setting
 
- 
+
 |                    | NST | AdaIN |    DST    | FastDST |
 |--------------------|:---:|:-----:|:---------:|:-------:|
 | Optimize Epoch     | 450 |  None |    450    |   450   |
