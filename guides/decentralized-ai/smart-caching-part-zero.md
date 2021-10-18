@@ -4,7 +4,7 @@ title: Smart Caching.
 description: Edge based Intelligence for Edge Caching.
 series_position: 11
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: insight", "level: advance"]
 ---
 
 import CodeExplanation from '@site/src/components/CodeExplanation';

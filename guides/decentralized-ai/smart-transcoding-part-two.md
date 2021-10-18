@@ -4,7 +4,7 @@ title: Smart Transcoding (part 2) Video Transcoding and Delivery with Blockchain
 description: A series of Smart Transcoding based on AI.
 series_position: 13
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: insight", "level: advance"]
 ---
 
 

@@ -4,7 +4,7 @@ title: AI-driven routing (part 5) Challenges and Open Issues.
 description: A series of Smart Routing based on AI.
 series_position: 10
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: insight", "level: advance"]
 ---
 
 In previous parts, we have mentioned about hybrid smart routing and its effectiveness. Although AI&ML-driven networking control is a potential paradigm for future networks, numerous problems remain, and much more effort is required. In this part, I'll go through the key problems and unresolved concerns surrounding AI&ML-powered networking. The Challenges and Open Issues, including:

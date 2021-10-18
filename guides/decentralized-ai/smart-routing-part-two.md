@@ -4,7 +4,7 @@ title: AI-driven routing (part 2) Decentralize Routing.
 description: A series of Smart Routing based on AI.
 series_position: 7
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: insight", "level: advance"]
 ---
 
 import CodeExplanation from '@site/src/components/CodeExplanation';

@@ -4,7 +4,7 @@ title: AI-driven routing (part 3) Hybrid Routing.
 description: A series of Smart Routing based on AI.
 series_position: 8
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: insight", "level: advance"]
 ---
 
 In previous parts, we have mentioned about centralized and decentralized routing using the AI-powered reinforcement learning. In this section, we introduce a three-layer logical functionality design for AI-driven networking. Then we talk about how distant the intelligent control plane may be from the forwarding plane (if it should be centralized or dispersed). This introduced design can be understanded as a  combination between both afformentioned group of approaches, which leverage the advantages of each approaches to cover the other's weaknesses.

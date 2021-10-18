@@ -3,7 +3,7 @@ title: 'AIOZ AI Application: Food Waste Analysis'
 author: Thu Nguyen
 authorURL: 'https://github.com/thunguyen285'
 authorImageURL: 'https://avatars.githubusercontent.com/u/82790711?v=4'
-tags: [smart-warehouse, ai, logistics, supply-chain]
+tags: [aioz-ai, food-waste, analytics]
 ---
 
 ### A product help you fight against food waste

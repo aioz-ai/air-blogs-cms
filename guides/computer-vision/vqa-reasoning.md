@@ -4,7 +4,7 @@ title: Visual Question Reasoning
 description: Reasoning task in Visual Question Answering
 author_github: https://github.com/Gazeal
 series_position: 1
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: survey", "level: advance"]
 ---
 
 The Visual Question Answering (VQA) task aims to predict the correct answer of a given question such that the answer is consistent with the visual image content. Visual Question Reasoning task  is a VQA task that focus on learning the relations between visual regions and words in questions implicitly or explicitly (See Figure 1 for examples of visual question reasoning). In this part, we explore four different methods:

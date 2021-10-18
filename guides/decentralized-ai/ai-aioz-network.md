@@ -4,7 +4,7 @@ title: Intelligent Agents in AIOZ Network
 description: Transforming the AIOZ Network with AI & Robotics
 series_position: 1
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: medium"]
+tags: ["type: insight", "level: medium"]
 ---
 
 Decentralized AI and robotics have the potential to transform a wide range of applications, from conventional use cases like sensing & perception, data (image/video/text) analytics; to more sophisticated tasks like targeted material delivery, assisted living, and disaster relief.

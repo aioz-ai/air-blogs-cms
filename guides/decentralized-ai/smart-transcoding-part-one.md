@@ -4,7 +4,7 @@ title: Smart Transcoding (part 1) Introduction.
 description: A series of Smart Transcoding based on AI.
 series_position: 12
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: insight", "level: advance"]
 ---
 
 
