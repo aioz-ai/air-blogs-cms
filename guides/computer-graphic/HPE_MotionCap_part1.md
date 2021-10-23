@@ -56,7 +56,7 @@ Existing 2D HPE methods are categorized into *Single-person* and *Multi-person* 
     * Obtaining joint coordinates from heatmap is normally a non-diﬀerentiable process that prevent the network from end-to-end training. 
     * Luvizon *et. al* proposes a soft-argmax function to convert heatmap into 2D coordinates in a differentiable way, which can be trained end-to-end with regression loss. [[Paper]](https://arxiv.org/pdf/1710.02322.pdf)
 
-### 2. Multi-person 2D HPE - Summary
+### Multi-person 2D HPE - Summary
 ![Figure-3](https://i.imgur.com/uxb6hSE.png)*<center>**Figure 3**: Multi-person 2D HPE [(Source)](https://arxiv.org/abs/2012.13392)</center>*
 
 ![Table-2](https://i.imgur.com/JKRQ36Y.png)*<center>**Table 2**: Multi-person 2D HPE Methods [(Source)](https://arxiv.org/abs/2006.01423)</center>*
