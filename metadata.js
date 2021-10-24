@@ -194,139 +194,123 @@ module.exports = {
   "impactStudies": {
     "Beetlebot-H": {
       "beta": false,
-      "config_examples": {
-      },
       "delivery_guarantee": null,
       "description": "BeelteBot is an intelligent mobile delivery robot, which can flexibly function in both indoor and outdoor environments. Our ambition is to change the way of food and packages delivery with advancing AI & Robotics technologies.",
       "major_fields": [
         "Computer Vision", "Robotics", "Machine Learning"
       ],
-      "features": [
-      ],
       "function_category": "robotics",
       "id": "beetlebot-H",
-      "input_types": [
-        "log"
-      ],
       "logo_path": "/img/logos1/docker.svg",
       "name": "BeetleBot-H",
-      "noun": "BeetleBot-H",
-      "operating_systems": [
+      "tech_stack": [
         "ROS",
         "Tensorflow",
         "Deepstream"
       ],
-      "service_providers": [
+      "computing_solutions": [
         "On-Edge", "Cloud", "NVIDIA Jetson", "Qualcomm RB5"
       ],
       "short_description": "",
       "status": "prod-ready",
       "title": "BeetleBot-H (Healthcare)",
       "type": "impact-studies",
-      "unsupported_operating_systems": [
-      ],
-      "write_to_description": ""
     },
     "NEA-Foodwaste": {
       "beta": false,
-      "config_examples": {
-      },
       "delivery_guarantee": null,
       "description": "A Foodwaste analytics solution, designed for Singapore National Environmental Agency.",
       "major_fields": [
         "Computer Vision", "Machine Learning"
       ],
-      "features": [
-      ],
       "function_category": "robotics",
       "id": "NEA-Foodwaste",
-      "input_types": [
-        "log"
-      ],
       "logo_path": "/img/logos1/docker.svg",
       "name": "NEA-Foodwaste",
-      "noun": "NEA-Foodwaste",
-      "operating_systems": [
+      "tech_stack": [
         "Tensorflow",
         "Pytorch",
         "TensorRT"
       ],
-      "service_providers": [
+      "computing_solutions": [
         "Cloud"
       ],
       "short_description": "",
       "status": "prod-ready",
       "title": "NEA Foodwaste Analysis",
       "type": "impact-studies",
-      "unsupported_operating_systems": [
-      ],
-      "write_to_description": ""
     },
   },
   "inhouse": {
     "onekyc": {
       "beta": true,
-      "config_examples": {
-      },
       "delivery_guarantee": "best_effort",
       "description": "Digital Know Your Customer with 3 steps: Facial Verification, Liveness Detection, and Information Extraction",
       "major_fields": [
         "Computer Vision", "NLP"
       ],
-      "features": [
-      ],
       "function_category": "kyc",
       "id": "OneKYC",
-      "input_types": [
-      ],
       "logo_path": "/img/logos1/docker.svg",
-      "name": "OneKYC",
-      "noun": "OneKYC",
-      "operating_systems": [
+      "name": "onekyc",
+      "tech_stack": [
         "Tensorflow",
         "Tensorflow Lite"
       ],
-      "service_providers": [
+      "computing_solutions": [
         "On-Edge", "Cloud", "Mobile"
       ],
       "short_description": "",
       "status": "prod-ready",
-      "title": "OneKYC",
+      "title": "OneKYC: Digital KYC Solution",
       "type": "in-house",
-      "unsupported_operating_systems": [
+    },
+    "aicx": {
+      "beta": true,
+      "delivery_guarantee": "best_effort",
+      "description": "Enhacing customer experience with Intelligent Video Analytics.",
+      "major_fields": [
+        "Computer Vision", "Machine Learning", "Federated Learning"
       ],
+      "function_category": "video-analytics",
+      "id": "aicx",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "aicx",
+      "tech_stack": [
+        "Tensorflow",
+        "TensorRT",
+        "PyTorch Lightning"
+      ],
+      "computing_solutions": [
+        "On-Edge", "Cloud"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "AICX: AI-powered Customer Experience",
+      "type": "in-house",
     },
   },
   "caseStudies": {
     "sml-traffic-nalysis":  {
       "beta": true,
-      "config_examples": {
-      },
       "delivery_guarantee": null,
       "description": "Smart Traffic Analysis with IVA (Intelligent Video Analytics).",
       "major_fields": [
         "Computer Vision"
       ],
-      "features": [
-      ],
       "function_category": "video-analytics",
       "id": "sml-traffic-nalysis",
-      "input_types": [
-      ],
       "logo_path": "/img/logos1/docker.svg",
-      "name": "BeetleBot-H",
-      "noun": "BeetleBot-H",
-      "operating_systems": [
+      "name": "traffic-analysis",
+      "tech_stack": [
       ],
-      "service_providers": [
+      "computing_solutions": [
         "On-Edge", "Cloud"
       ],
       "short_description": "",
       "status": "prod-ready",
       "title": "Smart Traffic Analysis",
       "type": "case-studies",
-      "unsupported_operating_systems": [
-      ],
     },
   }
 };
