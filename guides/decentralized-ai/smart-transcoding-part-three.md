@@ -28,7 +28,7 @@ INIT: Initialize the maximum number of iterations $\mathbb{T}$ and set iteration
     &emsp;1. The CP determines the content price $y$ to their users and the amount of computing resources based on $z_m$<br/>
     &emsp;2. Each user selects the quality level of required contents $\beta_n$ and decides the amount of power resource $p_{mn}$<br/>
     &emsp;3. SBSs update their prices: $z_m(\tau) = \mathcal{G}_m(z_m(\tau -1))$<br/>
-    &emsp;**if** $||z(\tau)-z(\tau-1)||/||z(\tau-1)||\leq \epsilon$ **then**
+    &emsp;**if** $||z(\tau)-z(\tau-1)||/||z(\tau-1)||\leq \epsilon$ **then**<br/>
         &emsp;&emsp;Output the resource allocation $z$<br/>
         &emsp;&emsp;Break<br/>
     &emsp;**end if**<br/>
@@ -47,7 +47,7 @@ max_{f_m \geq 0, y \geq \phi} \mu_{CP}(f_m,y) = max_{f_m \geq 0, y \geq \phi} \a
 
 $
 
-where $\alpha_f$ and $\alph_v$ denote weighted factors to represent the trade-off between the resource cost and content revenue.  $\phi$ denotes the content cost of CP, such as caching cost and backhaul cost; $T_{n,thr}$ represents the maximum delay required by user $n$. The final term implies that we should ensure that users enjoy their video streaming service with a tolerable delay.
+where $\alpha_f$ and $\alpha_v$ denote weighted factors to represent the trade-off between the resource cost and content revenue.  $\phi$ denotes the content cost of CP, such as caching cost and backhaul cost; $T_{n,thr}$ represents the maximum delay required by user $n$. The final term implies that we should ensure that users enjoy their video streaming service with a tolerable delay.
 
 ## Stage 3: Content Demand Model for Users
 Taking the transmission rate and content quality level into account, the optimization problem for user $n$ can be stated as follows:
