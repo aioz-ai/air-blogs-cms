@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2021-10-30"
-title: Smart Transcoding (part 3) three-stage STACKELBERG game.
+title: Smart Transcoding (part 3) Three-stage STACKELBERG game.
 description: A series of Smart Transcoding based on AI.
 series_position: 14
 author_github: https://github.com/Gazeal
@@ -40,23 +40,27 @@ INIT: Initialize the maximum number of iterations $\mathbb{T}$ and set iteration
 ## Stage 2: Content Price Model for CP
 The profit of CP is determined by the quality of content required by users and the amount of computing resources consumed. Let $q_{nf} \in \{0, 1\}$ denotes whether user $n$ selects the content file $f$ or not. If user $n$ selects content file $f$ , $q_{nf} = 1$; otherwise, $q_{nf} = 0$.  To maximize its profit, CP needs to find its content price $y$ and the resource computation cost $f_m$. The CP optimization problem can be written as:
 
-$
-
-max_{f_m \geq 0, y \geq \phi} \mu_{CP}(f_m,y) = max_{f_m \geq 0, y \geq \phi} \alpha_v(y-\phi)\sum^N_{n=1}
-\sum^F_{f=1}\sum^L_{l=1}\beta_nq_{nf}B_{fl} = \alpha_f\sum^M_{m=1}z_ma_mf_m+\sum^M_{m=1}min\{f_m,\sum^N_{n=1}\frac{\beta_n\sum^F_{f=1}\sum^L_{l=1}q_{nf}B_{fl}}{T_{n,thr}}\}
-
-$
+$$
+max_{f_m \geq 0, y \geq \phi} \mu_{CP}(f_m,y)
+\\
+= max_{f_m \geq 0, y \geq \phi} \alpha_v(y-\phi)\sum^N_{n=1}
+\sum^F_{f=1}\sum^L_{l=1}\beta_nq_{nf}B_{fl}
+\\
+=\alpha_f\sum^M_{m=1}z_ma_mf_m+\sum^M_{m=1}min\{f_m,\sum^N_{n=1}\frac{\beta_n\sum^F_{f=1}\sum^L_{l=1}q_{nf}B_{fl}}{T_{n,thr}}\}
+$$
 
 where $\alpha_f$ and $\alpha_v$ denote weighted factors to represent the trade-off between the resource cost and content revenue.  $\phi$ denotes the content cost of CP, such as caching cost and backhaul cost; $T_{n,thr}$ represents the maximum delay required by user $n$. The final term implies that we should ensure that users enjoy their video streaming service with a tolerable delay.
 
 ## Stage 3: Content Demand Model for Users
 Taking the transmission rate and content quality level into account, the optimization problem for user $n$ can be stated as follows:
 
-$
-
-max_{p_{mn} \geq 0, \beta_n \geq 0} \mu^n_{user}(p_{mn},\beta_n) =max_{p_{mn} \geq 0, \beta_n \geq 0} - \mu_pz_mp_{mn}-\mu_vy\beta_n\sum^F_{f=1}\sum^L_{l=1}q_{nf}B_{fl}+min\{\mathcal{R}_m,\frac{\beta_n\sum^F_{f=1}\sum^L_{l=1}q_{nf}B_{fl}}{T_{n,thr}}\}
-
-$
+$$
+max_{p_{mn} \geq 0, \beta_n \geq 0} \mu^n_{user}(p_{mn},\beta_n)
+\\
+=max_{p_{mn} \geq 0, \beta_n \geq 0} - \mu_pz_mp_{mn}-\mu_vy\beta_n\sum^F_{f=1}\sum^L_{l=1}q_{nf}B_{fl}
+\\
++min\{\mathcal{R}_m,\frac{\beta_n\sum^F_{f=1}\sum^L_{l=1}q_{nf}B_{fl}}{T_{n,thr}}\}
+$$
 
 where $\mu_p$ and $\mu_v$ are weighted factors representing the power and content costs, respectively. We also assume that $\mu_p$ and $\mu_v$ are greater than zero. The final term implies that we must strike a balance between transmission rate and video content quality levels.
 

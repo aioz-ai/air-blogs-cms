@@ -191,16 +191,15 @@ module.exports = {
     }
   ],
 
-  "impactStudies": {
-    "Beetlebot-H": {
+  "impact_studies": {
+    "Beetlebot_H": {
       "beta": false,
-      "delivery_guarantee": null,
       "description": "BeelteBot is an intelligent mobile delivery robot, which can flexibly function in both indoor and outdoor environments. Our ambition is to change the way of food and packages delivery with advancing AI & Robotics technologies.",
       "major_fields": [
         "Computer Vision", "Robotics", "Machine Learning"
       ],
       "function_category": "robotics",
-      "id": "beetlebot-H",
+      "id": "beetlebot_H",
       "logo_path": "/img/logos1/docker.svg",
       "name": "BeetleBot-H",
       "tech_stack": [
@@ -214,17 +213,16 @@ module.exports = {
       "short_description": "",
       "status": "prod-ready",
       "title": "BeetleBot-H (Healthcare)",
-      "type": "impact-studies",
+      "type": "impact_studies",
     },
-    "NEA-Foodwaste": {
+    "NEA_Foodwaste": {
       "beta": false,
-      "delivery_guarantee": null,
       "description": "A Foodwaste analytics solution, designed for Singapore National Environmental Agency.",
       "major_fields": [
         "Computer Vision", "Machine Learning"
       ],
       "function_category": "robotics",
-      "id": "NEA-Foodwaste",
+      "id": "NEA_Foodwaste",
       "logo_path": "/img/logos1/docker.svg",
       "name": "NEA-Foodwaste",
       "tech_stack": [
@@ -238,13 +236,12 @@ module.exports = {
       "short_description": "",
       "status": "prod-ready",
       "title": "NEA Foodwaste Analysis",
-      "type": "impact-studies",
+      "type": "impact_studies",
     },
   },
   "inhouse": {
     "onekyc": {
       "beta": true,
-      "delivery_guarantee": "best_effort",
       "description": "Digital Know Your Customer with 3 steps: Facial Verification, Liveness Detection, and Information Extraction",
       "major_fields": [
         "Computer Vision", "NLP"
@@ -267,7 +264,6 @@ module.exports = {
     },
     "aicx": {
       "beta": true,
-      "delivery_guarantee": "best_effort",
       "description": "Enhacing customer experience with Intelligent Video Analytics.",
       "major_fields": [
         "Computer Vision", "Machine Learning", "Federated Learning"
@@ -289,17 +285,39 @@ module.exports = {
       "title": "AICX: AI-powered Customer Experience",
       "type": "in-house",
     },
-  },
-  "caseStudies": {
-    "sml-traffic-nalysis":  {
+    "smart_parking": {
       "beta": true,
-      "delivery_guarantee": null,
+      "description": "Intelligent Parking System.",
+      "major_fields": [
+        "Computer Vision", "Machine Learning"
+      ],
+      "function_category": "ALPR",
+      "id": "smart_parking",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "smart_parking",
+      "tech_stack": [
+        "Tensorflow",
+        "TensorRT",
+        "PyTorch Lightning"
+      ],
+      "computing_solutions": [
+        "On-Edge", "Cloud"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "Smart Parking System",
+      "type": "in-house",
+    },
+  },
+  "case_studies": {
+    "sml_traffic_nalysis":  {
+      "beta": true,
       "description": "Smart Traffic Analysis with IVA (Intelligent Video Analytics).",
       "major_fields": [
         "Computer Vision"
       ],
       "function_category": "video-analytics",
-      "id": "sml-traffic-nalysis",
+      "id": "sml_traffic_nalysis",
       "logo_path": "/img/logos1/docker.svg",
       "name": "traffic-analysis",
       "tech_stack": [
@@ -310,7 +328,7 @@ module.exports = {
       "short_description": "",
       "status": "prod-ready",
       "title": "Smart Traffic Analysis",
-      "type": "case-studies",
+      "type": "case_studies",
     },
   }
 };
