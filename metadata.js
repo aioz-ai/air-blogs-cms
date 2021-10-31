@@ -191,142 +191,278 @@ module.exports = {
     }
   ],
 
-  "impactStudies": {
-    "Beetlebot-H": {
-      "beta": false,
-      "config_examples": {
-      },
-      "delivery_guarantee": null,
+  "impact_studies": {
+    "Beetlebot_H": {
       "description": "BeelteBot is an intelligent mobile delivery robot, which can flexibly function in both indoor and outdoor environments. Our ambition is to change the way of food and packages delivery with advancing AI & Robotics technologies.",
       "major_fields": [
         "Computer Vision", "Robotics", "Machine Learning"
       ],
-      "features": [
-      ],
       "function_category": "robotics",
-      "id": "beetlebot-H",
-      "input_types": [
-        "log"
-      ],
+      "id": "beetlebot_H",
       "logo_path": "/img/logos1/docker.svg",
       "name": "BeetleBot-H",
-      "noun": "BeetleBot-H",
-      "operating_systems": [
+      "tech_stack": [
         "ROS",
         "Tensorflow",
         "Deepstream"
       ],
-      "service_providers": [
+      "computing_solutions": [
         "On-Edge", "Cloud", "NVIDIA Jetson", "Qualcomm RB5"
       ],
       "short_description": "",
       "status": "prod-ready",
       "title": "BeetleBot-H (Healthcare)",
-      "type": "impact-studies",
-      "unsupported_operating_systems": [
-      ],
-      "write_to_description": ""
+      "type": "impact_studies",
     },
-    "NEA-Foodwaste": {
-      "beta": false,
-      "config_examples": {
-      },
-      "delivery_guarantee": null,
+    "NEA_Foodwaste": {
       "description": "A Foodwaste analytics solution, designed for Singapore National Environmental Agency.",
       "major_fields": [
-        "Computer Vision", "Machine Learning"
+        "Computer Vision", "Machine Learning", "IOT"
       ],
-      "features": [
-      ],
-      "function_category": "robotics",
-      "id": "NEA-Foodwaste",
-      "input_types": [
-        "log"
-      ],
+      "function_category": "IOT",
+      "id": "NEA_Foodwaste",
       "logo_path": "/img/logos1/docker.svg",
       "name": "NEA-Foodwaste",
-      "noun": "NEA-Foodwaste",
-      "operating_systems": [
+      "tech_stack": [
         "Tensorflow",
         "Pytorch",
         "TensorRT"
       ],
-      "service_providers": [
+      "computing_solutions": [
         "Cloud"
       ],
       "short_description": "",
       "status": "prod-ready",
       "title": "NEA Foodwaste Analysis",
-      "type": "impact-studies",
-      "unsupported_operating_systems": [
-      ],
-      "write_to_description": ""
+      "type": "impact_studies",
     },
   },
   "inhouse": {
     "onekyc": {
-      "beta": true,
-      "config_examples": {
-      },
-      "delivery_guarantee": "best_effort",
       "description": "Digital Know Your Customer with 3 steps: Facial Verification, Liveness Detection, and Information Extraction",
       "major_fields": [
         "Computer Vision", "NLP"
       ],
-      "features": [
-      ],
       "function_category": "kyc",
       "id": "OneKYC",
-      "input_types": [
-      ],
       "logo_path": "/img/logos1/docker.svg",
-      "name": "OneKYC",
-      "noun": "OneKYC",
-      "operating_systems": [
+      "name": "onekyc",
+      "tech_stack": [
         "Tensorflow",
         "Tensorflow Lite"
       ],
-      "service_providers": [
+      "computing_solutions": [
         "On-Edge", "Cloud", "Mobile"
       ],
       "short_description": "",
       "status": "prod-ready",
-      "title": "OneKYC",
+      "title": "OneKYC: Digital KYC Solution",
       "type": "in-house",
-      "unsupported_operating_systems": [
-      ],
     },
-  },
-  "caseStudies": {
-    "sml-traffic-nalysis":  {
-      "beta": true,
-      "config_examples": {
-      },
-      "delivery_guarantee": null,
-      "description": "Smart Traffic Analysis with IVA (Intelligent Video Analytics).",
+    "aicx": {
+      "description": "Enhacing customer experience with Intelligent Video Analytics.",
       "major_fields": [
-        "Computer Vision"
-      ],
-      "features": [
+        "Computer Vision", "Machine Learning", "Federated Learning"
       ],
       "function_category": "video-analytics",
-      "id": "sml-traffic-nalysis",
-      "input_types": [
-      ],
+      "id": "aicx",
       "logo_path": "/img/logos1/docker.svg",
-      "name": "BeetleBot-H",
-      "noun": "BeetleBot-H",
-      "operating_systems": [
+      "name": "aicx",
+      "tech_stack": [
+        "Tensorflow",
+        "TensorRT",
+        "PyTorch Lightning"
       ],
-      "service_providers": [
+      "computing_solutions": [
         "On-Edge", "Cloud"
       ],
       "short_description": "",
       "status": "prod-ready",
-      "title": "Smart Traffic Analysis",
-      "type": "case-studies",
-      "unsupported_operating_systems": [
+      "title": "AICX: AI-powered Customer Experience",
+      "type": "in-house",
+    },
+    "smart_parking": {
+      "description": "Intelligent Parking System.",
+      "major_fields": [
+        "Computer Vision", "Machine Learning"
       ],
+      "function_category": "ALPR",
+      "id": "smart_parking",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "smart_parking",
+      "tech_stack": [
+        "Tensorflow",
+        "TensorRT",
+        "PyTorch Lightning"
+      ],
+      "computing_solutions": [
+        "On-Edge", "Cloud"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "Smart Parking System",
+      "type": "in-house",
+    },
+    "beetlebot": {
+      "description": "Autonomous Last-miled Delivery Robot",
+      "major_fields": [
+        "Computer Vision", "Machine Learning", "Robotics"
+      ],
+      "function_category": "robotics",
+      "id": "beetlebot",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "beetlebot",
+      "tech_stack": [
+        "ROS",
+        "Tensorflow",
+        "SLAM"
+      ],
+      "computing_solutions": [
+        "On-Edge", "Cloud"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "BeetleBot",
+      "type": "in-house",
+    },
+    "smart_access_control": {
+      "description": "AI-powered Access Control with Face Verification",
+      "major_fields": [
+        "Computer Vision", "IOT"
+      ],
+      "function_category": "IOT",
+      "id": "smart_access_control",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "smart_access_control",
+      "tech_stack": [
+        "TensorRT",
+        "Tensorflow"
+      ],
+      "computing_solutions": [
+        "On-Edge", "Cloud"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "Smart Access Control",
+      "type": "in-house",
+    },
+    "smart_advertising": {
+      "description": "AI-powered Access Control with Face Verification",
+      "major_fields": [
+        "Computer Vision", "Machine Learning", "IOT"
+      ],
+      "function_category": "video-analytics",
+      "id": "smart_advertising",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "smart_advertising",
+      "tech_stack": [
+        "TensorRT",
+        "Tensorflow"
+      ],
+      "computing_solutions": [
+        "On-Edge", "Cloud"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "Smart Advertising",
+      "type": "in-house",
+    },
+  },
+  "case_studies": {
+    "sml_traffic_nalysis":  {
+      "description": "Smart Traffic Analysis with IVA (Intelligent Video Analytics).",
+      "major_fields": [
+        "Computer Vision"
+      ],
+      "function_category": "video-analytics",
+      "id": "sml_traffic_nalysis",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "sml_traffic_nalysis",
+      "tech_stack": [
+      ],
+      "computing_solutions": [
+        "On-Edge", "Cloud"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "SML Smart Traffic Analysis",
+      "type": "case_studies",
+    },
+    "cap_warehouse_va":  {
+      "description": "Warehouse Management with Video Analytics.",
+      "major_fields": [
+        "Computer Vision"
+      ],
+      "function_category": "video-analytics",
+      "id": "cap_warehouse_va",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "cap_warehouse_va",
+      "tech_stack": [
+      ],
+      "computing_solutions": [
+        "Cloud"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "Warehouse Video Analytics",
+      "type": "case_studies",
+    },
+    "avc_system":  {
+      "description": "Automatic Vehicle Classification System for Automatic Toll Station.",
+      "major_fields": [
+        "Computer Vision"
+      ],
+      "function_category": "video-analytics",
+      "id": "avc_system",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "avc_system",
+      "tech_stack": [
+      ],
+      "computing_solutions": [
+        "Cloud", "On-Edge"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "Automatic Vehicle Classification System",
+      "type": "case_studies",
+    },
+    "cvd_diagnosis":  {
+      "description": "Chronic Venous Disease (CVD) Smart Diagnosis",
+      "major_fields": [
+        "Medical Image Processing", "Computer Vision"
+      ],
+      "function_category": "medical-image",
+      "id": "cvd_diagnosis",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "cvd_diagnosis",
+      "tech_stack": [
+      ],
+      "computing_solutions": [
+        "Cloud", "On-Edge"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "CVD Smart Diagnosis",
+      "type": "case_studies",
+    },
+    "sml_exhibit_analytics":  {
+      "description": "SML Exhibition: AI-powered Event Analytics",
+      "major_fields": [
+        "Computer Vision"
+      ],
+      "function_category": "video-analytics",
+      "id": "sml_exhibit_analytics",
+      "logo_path": "/img/logos1/docker.svg",
+      "name": "sml_exhibit_analytics",
+      "tech_stack": [
+      ],
+      "computing_solutions": [
+        "Cloud", "On-Edge"
+      ],
+      "short_description": "",
+      "status": "prod-ready",
+      "title": "SML Exhibition: Smart Event Analytics",
+      "type": "case_studies",
     },
   }
 };

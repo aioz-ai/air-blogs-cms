@@ -4,7 +4,7 @@ title: Human Pose & Motion Capture exploration (part 2).
 description:  explore human pose estimation and motion capturing in 3D. 
 series_position: 2
 author_github: https://github.com/minhnhatvt
-tags: ["type: tutorial", "level: medium"]
+tags: ["type: insight", "level: medium"]
 ---
 
 In previous post, we have investigated the monocular pose estimation and 2D human pose estimation process. In this part, we explore human modelling, 3D pose estimation, and multi-person 3D pose estimation.
