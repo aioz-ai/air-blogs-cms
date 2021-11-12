@@ -4,7 +4,7 @@ title: AI-driven routing (part 4) Smart Routing Effectiveness.
 description: A series of Smart Routing based on AI.
 series_position: 9
 author_github: https://github.com/aioz-ai
-tags: ["type: insight", "level: advance"]
+tags: ["type: insight", "level: advance", "guides: smart_routing"]
 ---
 
 In previous parts, we have mentioned about hybrid smart routing using the AI-powered reinforcement learning. In this section, we show its effectiveness through empirical results.  Network Minds and AI Routers are considered to make analysis in this section.

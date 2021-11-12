@@ -4,7 +4,7 @@ title: AI-driven routing (part 1) Centralized Routing.
 description: A series of Smart Routing based on AI.
 series_position: 6
 author_github: https://github.com/aioz-ai
-tags: ["type: insight", "level: advance"]
+tags: ["type: insight", "level: advance", "guides: smart_routing"]
 ---
 
 With the introduction of Software-Defined Networking (SDN), Network Function Virtualization (NFV), and 5th-generation wireless technologies, networks throughout the world have recently undergone substantial reorganization and transformation (5G). The dominance of conventional ossified architectures is being eroded by emerging networking paradigms, which are lowering reliance on proprietary hardware. However, the associated increases in network flexibility and scalability pose new problems for network administration. Because network complexity is rising all the time, effective network control is becoming increasingly challenging. Current control techniques, in particular, rely heavily on manual procedures, which have inadequate scalability and resilience for the control of complex systems. As a result, there is an urgent need for more effective techniques of tackling networking issues.

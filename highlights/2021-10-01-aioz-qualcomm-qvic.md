@@ -10,21 +10,30 @@ tags: ["type: news","domain: robotics","tag: production","challenge","qvic"]
 ---
 
 import YoutubeEmbed from '@site/src/components/YoutubeEmbed';
+import Alert from '@site/src/components/Alert';
 
 **We are incredibly excited to announce that we have won the 1st Runner-up Winner at the QVIC 2020-2021 program, hosted by Qualcomm.**
 
 A quick recap of the challenge: 
-* From Feb to Sep 2020, we applied our solution proposal to the QVIC program. 
-* In Oct 2020, we were recognized as one of the top 10 companies during the shortlist pitching.
-* In Sep 2021, we completed the QVIC finale round and passed through 2 sessions of engineering pitching & business pitching. Finally, we have made it to the 2nd rank of the winners.
+<Alert type="info">
+<ul className="list--icons list--icons--checks list--indent">
+  <li> From Feb to Sep 2020, we applied our solution proposal to the QVIC program. </li>
+  <li> In Oct 2020, we were recognized as one of the top 10 companies during the shortlist pitching.</li>
+  <li> In Sep 2021, we completed the QVIC finale round and passed through 2 sessions of engineering pitching & business pitching. Finally, we have made it to the 1st Runner-up Winner.</li>
+</ul>
+</Alert>
+<br/>
 
+<ul className="list--icons--arrow text--pink text--bold list--indent">
 Over the course of a year, it is a long and difficult journey.
+This is a tremendous achievement for the entire company, and Congratulations to all AIOZ members.<br/><br/>
 
-This is a tremendous achievement for the entire company, and Congratulations to all AIOZ members.
+<i>
+There will still be many exciting challenges ahead that require each individual's significant contributions, and we will also address them as a great and cohesive team at AIOZ.
+</i>
+</ul>
 
-There will still be many exciting challenges ahead that require each individual's significant contributions, and we will also address them as a great and cohesive team at AIOZ. 
-
-Cheers!
+:tada: **Cheers!**
 
 <center><YoutubeEmbed embedId="OReeHcVK5vc"/></center>
 

@@ -4,7 +4,7 @@ title: Smart Routing.
 description: Smart Routing based on AI-driven.
 series_position: 5
 author_github: https://github.com/aioz-ai
-tags: ["type: insight", "level: advance"]
+tags: ["type: insight", "level: advance", "guides: smart_routing"]
 ---
 
 import Highlight from '@site/src/components/Highlight';
