@@ -3,7 +3,7 @@ last_modified_on: "2021-10-30"
 title: Smart Transcoding (part 3) Three-stage STACKELBERG game.
 description: A series of Smart Transcoding based on AI.
 series_position: 14
-author_github: https://github.com/Gazeal
+author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
 ---
 
