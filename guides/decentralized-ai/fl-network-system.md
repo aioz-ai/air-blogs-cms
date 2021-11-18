@@ -4,7 +4,7 @@ title: Network Sytem and data silos for Federated Learning.
 description: A detail description about network system for federated learning in reasearch.
 series_position: 3
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: tutorial", "level: advance", "guides: decai_fl"]
 ---
 
 ## Introduction for network system in federated learning

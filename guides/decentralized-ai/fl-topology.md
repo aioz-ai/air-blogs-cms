@@ -4,7 +4,7 @@ title: Topologies in Decentralized Federated Learning.
 description: A detail description about  topologies in Decentralized Federated Learning.
 series_position: 4
 author_github: https://github.com/aioz-ai  
-tags: ["type: tutorial", "level: advance"]
+tags: ["type: tutorial", "level: advance", "guides: decai_fl"]
 ---
 
 Data silos are nearly always available in the Cross-Silo configuration, have high-speed connectivity similar to the orchestrator, and exchange information with other silos more quickly than with the orchestrator. An inter-silo communication architecture focused on orchestrators would be ineffective since it overlooks rapid communication possibilities and makes the orchestrator a congestion candidate. A recent tendency is to replace communication between separate silos and an orchestrator with peer-to-peer communications. This setup conducts part of the local model update aggregations. In the section, we examine the mentioned scenario and how to develop the topology of communications.

@@ -191,8 +191,26 @@ module.exports = {
     }
   ],
 
+  "guides": {
+    "decai_aioznetwork": {
+      "logo_path": "/img/logos/aioz-ai.svg",
+    },
+    "decai_fl": {
+      "logo_path": "/img/logos/gfl.svg",
+    },
+    "smart_routing": {
+      "logo_path": "/img/logos/routing.svg",
+    },
+    "smart_caching": {
+      "logo_path": "/img/logos/caching.svg",
+    },
+    "smart_transcoding": {
+      "logo_path": "/img/logos/transcoding.svg",
+    },
+  },
+
   "impact_studies": {
-    "Beetlebot_H": {
+    "beetlebot_H": {
       "description": "BeelteBot is an intelligent mobile delivery robot, which can flexibly function in both indoor and outdoor environments. Our ambition is to change the way of food and packages delivery with advancing AI & Robotics technologies.",
       "major_fields": [
         "Computer Vision", "Robotics", "Machine Learning"
@@ -200,7 +218,7 @@ module.exports = {
       "function_category": "robotics",
       "id": "beetlebot_H",
       "logo_path": "/img/logos1/docker.svg",
-      "name": "BeetleBot-H",
+      "name": "beetlebot_H",
       "tech_stack": [
         "ROS",
         "Tensorflow",
@@ -433,7 +451,7 @@ module.exports = {
       ],
       "function_category": "medical-image",
       "id": "cvd_diagnosis",
-      "logo_path": "/img/logos1/docker.svg",
+      "logo_path": "/img/logos1/logdna.svg",
       "name": "cvd_diagnosis",
       "tech_stack": [
       ],

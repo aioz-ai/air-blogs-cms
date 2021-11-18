@@ -4,7 +4,7 @@ title: Introduction to Federated Learning.
 description: Introduction to decentralized federated learning.
 series_position: 2
 author_github: https://github.com/aioz-ai
-tags: ["type: tutorial", "level: medium"]
+tags: ["type: tutorial", "level: medium", "guides: decai_fl"]
 ---
 
 import Step from '@site/src/components/Step';
