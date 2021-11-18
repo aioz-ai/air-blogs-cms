@@ -4,7 +4,7 @@ title: Smart Transcoding (part 4) Effectiveness Evaluation.
 description: A series of Smart Transcoding based on AI.
 series_position: 15
 author_github: https://github.com/aioz-ai
-tags: ["type: insight", "level: advance"]
+tags: ["type: insight", "level: advance", "guides: smart_transcoding"]
 ---
 
 import CodeExplanation from '@site/src/components/CodeExplanation';
