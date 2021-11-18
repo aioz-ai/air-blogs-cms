@@ -5,6 +5,7 @@ description: A series of Smart Transcoding based on AI.
 series_position: 14
 author_github: https://github.com/aioz-ai
 tags: ["type: tutorial", "level: advance"]
+---
 
 import CodeExplanation from '@site/src/components/CodeExplanation';
 import Highlight from '@site/src/components/Highlight';
