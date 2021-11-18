@@ -3,7 +3,7 @@ last_modified_on: "2021-11-10"
 title: Smart Transcoding (part 4) Effectiveness Evaluation.
 description: A series of Smart Transcoding based on AI.
 series_position: 15
-author_github: https://github.com/Gazeal
+author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: advance"]
 ---
 
