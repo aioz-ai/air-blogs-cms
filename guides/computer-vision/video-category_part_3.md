@@ -1,5 +1,5 @@
 ---
-last_modified_on: "2021-12-03"
+last_modified_on: "2021-12-13"
 title: Video recognition and categorization (Part 3 - Applying RNN)
 description: A review about using RNN to solve the video classification task
 series_position: 8
