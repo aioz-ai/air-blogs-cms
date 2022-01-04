@@ -9,6 +9,10 @@ tags: ["type: insight", "level: basic", "guides: video_category"]
 In the previous blog, we had an overview of deep learning-based approach for video classification task. In this blog, we will analysis about its development and summarize some important frameworks.
 
 ## Developments In Video Classification
+Table I categorizes existing video classification methods according to their operating principles.
+
+![Fig-1](https://vision.aioz.io/thumbnail/11765117e984422db48b/1024/part5-figure1.png)  
+*<center>**Figure 1**: Summary of video classification approaches.</center>*
 
 According to the existing research, recently developed state-of-the-art deep learning models outperform earlier handcrafted classical techniques when it comes to video classification. This is mostly owing to the availability of large amounts of video data for training deep learning architectures. Apart from improved classification performance, the newly built models are mostly self-learning and do not require any human feature engineering. This extra benefit makes them more practical for usage in real-world scenarios. However, as compared to previously developed architectures, the higher performing recently developed architectures are deeper, resulting in a tradeoff in the computational complexity of the deep architectures.
 
