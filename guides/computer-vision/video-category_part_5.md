@@ -9,7 +9,7 @@ tags: ["type: insight", "level: basic", "guides: video_category"]
 In the previous blog, we had an overview of deep learning-based approach for video classification task. In this blog, we will analysis about its development and summarize some important frameworks.
 
 ## Developments In Video Classification
-Table I categorizes existing video classification methods according to their operating principles.
+Figure 1 shows a summary of video classification approaches based on their working principle.
 
 ![Fig-1](https://vision.aioz.io/thumbnail/11765117e984422db48b/1024/part5-figure1.png)  
 *<center>**Figure 1**: Summary of video classification approaches.</center>*
