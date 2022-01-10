@@ -37,7 +37,7 @@ To prepare the Kinetics dataset, please following below steps:
     mkdir "data_dir"
     python download.py "dataset_split".csv "data_dir"
     ```
-    In here, we chose Kinetics 400 version.
+    In here, we choose Kinetics 400 version.
     ```bash
     mkdir kinetics-400
     !python download.py "data/kinetics-400_train.csv" "kinetics-400"
@@ -226,4 +226,4 @@ Finally,
 train()
 ```
 
-Hopefully with the last video classification series, you can understand and have the most overview about this task so that you can develop with bolder ideas.
+Hopefully with the video classification series, you can understand and have the most overview about this task so that you can develop with bolder ideas.
