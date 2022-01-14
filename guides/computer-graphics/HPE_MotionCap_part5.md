@@ -78,8 +78,7 @@ We might wonder how the method solves the keypoint grouping task in such a simpl
 
 $$
 \tag{}
-\mathcal{L}_g &= \frac{1}{K} \sum_k\sum_j\left(\bar{h}_k-h_j(\mathbf{x}^*_{j,k}) \right)^2 \\
-& \quad +\frac{1}{K^2}\sum_k\sum_{k'}exp\left(-\frac{1}{2\sigma^2}(\bar{h}_k-\bar{h}_{k'})^2\right)
+\mathcal{L}_g = \frac{1}{K} \sum_k\sum_j\left(\bar{h}_k-h_j(\mathbf{x}^*_{j,k}) \right)^2 \quad +\frac{1}{K^2}\sum_k\sum_{k'}exp\left(-\frac{1}{2\sigma^2}(\bar{h}_k-\bar{h}_{k'})^2\right)
 $$
 
 where:
