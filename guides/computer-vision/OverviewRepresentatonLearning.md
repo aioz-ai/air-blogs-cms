@@ -45,7 +45,7 @@ Modern practice usually trains the model with proxy tasks. In this case, like in
 Besides being used in downstream tasks, good representation can also be used to visualize or study the properties of the input data [5].
 
 ![**Figure 5: Example visualization from VGG model.**](https://vision.aioz.io/f/602b82e636a24d8a9c41/?dl=1)
-*<center>**Figure 5: Example visualization from VGG model.</center>*
+*<center>**Figure 5**: Example visualization from VGG model.</center>*
 
 
 ## References
