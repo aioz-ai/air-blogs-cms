@@ -4,7 +4,7 @@ title: Abnormal Human Activity Recogition (Part 1 - Introduction)
 description: A review about Abnormal Human Activity Recogition.
 series_position: 14
 author_github: https://github.com/aioz-ai
-tags: ["type: insight", "level: easy", "guides: abnormal_recognition"]
+tags: ["type: insight", "level: easy", "guides: abnormal_activity_recognition"]
 ---
 Computer vision technology that can identify human behavior has gotten a lot of interest in recent years. Human motion recognition is still a difficulty in the field of computer vision, despite its widespread usage in a variety of applications.
 
