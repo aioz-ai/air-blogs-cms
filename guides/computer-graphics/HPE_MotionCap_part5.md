@@ -2,7 +2,7 @@
 last_modified_on: "2022-01-17"
 title: Human Pose & Motion Capture exploration (part 5).
 description:  explore human pose estimation and motion capturing.
-series_position: 5
+series_position: 6
 author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: medium"]
 ---
