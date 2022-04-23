@@ -24,12 +24,29 @@ Unlike normal Transformer, which needs encoder and decoder, Vision Transformer o
 
 Similar to BERT's `[class]` token, a learnable embedding $z_0^0 = \mathbf{x}_{\text{class}}$ is added at the beginning of the embedded patches sequence. And after $L$ encoder layers $z_0^0 \rightarrow \underbrace{\text{encoder} \rightarrow \text{encoder} \rightarrow \cdots}_{L} \rightarrow z_0^L$, the final $z_0^L$ is the image representation. During pretraining and fine-tuning, a MLP to classify $z_0^L$ is added at its position. Position embedding is the standard 1-D Positional Embedding. Note that all MLP in the encoder consists of 2 layers with a GELU non-linearity. 
 Formally, the ViT encoder is: 
+
+
 $$
 
-\mathbf{z}_{0} &=\left[\mathbf{x}_{\text {class }} ; \mathbf{x}_{p}^{1} \mathbf{E} ; \mathbf{x}_{p}^{2} \mathbf{E} ; \cdots ; \mathbf{x}_{p}^{N} \mathbf{E}\right]+\mathbf{E}_{\text {pos }}, & & \mathbf{E} \in \mathbb{R}^{\left(P^{2} \cdot C\right) \times D}, \mathbf{E}_{\text {pos }} \in \mathbb{R}^{(N+1) \times D} \\
-\mathbf{z}_{\ell}^{\prime} &=\operatorname{MSA}\left(\operatorname{LN}\left(\mathbf{z}_{\ell-1}\right)\right)+\mathbf{z}_{\ell-1}, & & \ell=1 \ldots L \\
-\mathbf{z}_{\ell} &=\operatorname{MLP}\left(\operatorname{LN}\left(\mathbf{z}_{\ell}^{\prime}\right)\right)+\mathbf{z}_{\ell}^{\prime}, & & \ell=1 \ldots L \\
-\mathbf{y} &=\operatorname{LN}\left(\mathbf{z}_{L}^{0}\right) & &
+\mathbf{z}_{0} =\left[\mathbf{x}_{\text {class }} ; \mathbf{x}_{p}^{1} \mathbf{E} ; \mathbf{x}_{p}^{2} \mathbf{E} ; \cdots ; \mathbf{x}_{p}^{N} \mathbf{E}\right] + \mathbf{E}_{\text {pos }}, \mathbf{E} \in \mathbb{R}^{\left(P^{2} \cdot C\right) \times D}, \mathbf{E}_{\text {pos }} \in \mathbb{R}^{(N+1) \times D}
+
+$$
+
+$$
+
+\mathbf{z}_{\ell}^{\prime} = \operatorname{MSA} \left(\operatorname{LN}\left(\mathbf{z}_{\ell-1}\right)\right)+\mathbf{z}_{\ell-1}, \ell=1 \ldots L 
+
+$$
+
+$$
+
+\mathbf{z}_{\ell} = \operatorname{MLP}\left(\operatorname{LN}\left(\mathbf{z}_{\ell}^{\prime}\right)\right)+\mathbf{z}_{\ell}^{\prime}, \ell=1 \ldots L 
+
+$$
+
+$$
+
+\mathbf{y} =\operatorname{LN}\left(\mathbf{z}_{L}^{0}\right)
 
 $$
 
