@@ -1,7 +1,7 @@
 ---
 last_modified_on: "2022-05-07"
-title: Human Pose & Motion Capture exploration (part 7)
-description: Study 2D-to-3D lifting based methods for 3D Human Pose Estimation
+title: Human Pose & Motion Capture exploration (part 8)
+description: Study 2D-to-3D lifting based methods for 3D Human Pose Estimation. Continue with Weight-sharing problem of GCN in pose estimation.
 series_position: 8
 author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: medium"]
