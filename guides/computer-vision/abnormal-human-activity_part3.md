@@ -40,4 +40,4 @@ Sparse models give descriptors with unique discrimination capabilities, making s
 * (Stephens and Bros, 2016). The streaklines approach is used to identify and differentiate particular human actions in a video. Each streakline is made up of numerous optical flow vectors that follow local movement in the scene.
 * (Zhang et al., 2016). Locality Sensitive Hashing Filters (LSHF) were developed by the authors to filter out aberrant actions by hashing ordinary activities into various feature buckets. The Particle Swarm Optimization (PSO) approach is used to improve the efficiency of anomaly identification in video. An online updating technique is also used to update dynamic scene variations in the movie to this framework.
 
-
+In the next blog, we will discuss about Three-Dimensional AbHAR in details.
