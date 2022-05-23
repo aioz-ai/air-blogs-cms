@@ -79,12 +79,12 @@ where $N_i$ is a set of vertex indices adjacient to $\mathbf{\bar{V}}_i$.
 Motion regularization consists of as-rigid-as-possible (ARAP) and least deformation loss. The least deformation term enforces the deformation
 from the rest shape to be as small as possible. And ARAP term enforces the deformation between consecutive frames to be small, hence the movement will be more natural.
 $$
-\begin{align*}
-    L_{ARAP} &= \sum_{i=1}^V\sum_{j\in N_i}|\|\mathbf{V}_{i,t}-\mathbf{V}_{j,t}\|_2 - \|\mathbf{V}_{i,t+1}-\mathbf{V}_{j,t+1}\|_2 | \\ 
-    L_{least} &= \sum_{i=1}^V\|\mathbf{V}_{i,t}-\mathbf{\bar{V}}_{i,t}\|_2
-\end{align*}
+    L_{ARAP} = \sum_{i=1}^V\sum_{j\in N_i}|\|\mathbf{V}_{i,t}-\mathbf{V}_{j,t}\|_2 - \|\mathbf{V}_{i,t+1}-\mathbf{V}_{j,t+1}\|_2 |     
 $$
 
+$$
+L_{least} = \sum_{i=1}^V\|\mathbf{V}_{i,t}-\mathbf{\bar{V}}_{i,t}\|_2
+$$
 
 ## Conclusion
 ![](https://vision.aioz.io/f/ac20089643784f85a1cd/?dl=1)
