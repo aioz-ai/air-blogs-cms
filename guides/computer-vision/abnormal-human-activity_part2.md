@@ -13,7 +13,7 @@ tags: ["type: insight", "level: easy", "guides: abnormal_activity_recognition"]
 Ambient Assistance Living (AAL), home monitoring when a single person is under observation for abnormal activity identification, is one of the principal applications of Single Person AbHAR. As a result, we've included single-person AbHAR techniques that assist aged health-care difficulties and AAL in this section.
 
 
-![Fig-1](https://vision.aioz.io/f/7da620e2b07b4c0b8054/?dl=1) *<center>**Table 1**:  Scene representation & feature abstraction techniques for two-dimensional single person abnormal human activity recognition (AbHAR) approaches [Source](https://www.sciencedirect.com/science/article/abs/pii/S0952197618301775).</center>*
+![Fig-1](https://vision.aioz.io/thumbnail/2c9f47efae8e40119ebf/1024/part2-table1.png) *<center>**Table 1**:  Scene representation & feature abstraction techniques for two-dimensional single person abnormal human activity recognition (AbHAR) approaches [Source](https://www.sciencedirect.com/science/article/abs/pii/S0952197618301775).</center>*
 
 Table 1 summarizes multiple ways for single person activity identification based on two-dimensional basics. For a better understanding of the process, it shows scene representation and feature extraction methodologies with individual important parts and constraints.
 
