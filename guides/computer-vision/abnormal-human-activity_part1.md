@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2022-03-07"
-title: Abnormal Human Activity Recogition (Part 1 - Introduction)
+title: Abnormal Human Activity Recognition (Part 1 - Introduction)
 description: A review about Abnormal Human Activity Recognition.
 series_position: 14
 author_github: https://github.com/aioz-ai

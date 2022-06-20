@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2022-05-16"
-title: Abnormal Human Activity Recogition (Part 3 - Two-Dimensional AbHAR (cont.))
+title: Abnormal Human Activity Recognition (Part 3 - Two-Dimensional AbHAR (cont.))
 description: A review about Abnormal Human Activity Recognition (2D AbHAR) (cont.)
 series_position: 18
 author_github: https://github.com/aioz-ai

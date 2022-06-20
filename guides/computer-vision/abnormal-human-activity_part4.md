@@ -35,3 +35,5 @@ Most wearable devices are cost-effective and simple to use, but they may not be 
 Table 2 provides an overview of wearable devices and 2D and 3D vision-based fall detection systems. It also demonstrates the conditions under which wearable and 2D & 3D vision-based system performances are good and unsatisfactory. The 3D vision system can identify a fall between two people with maximum accuracy using any combination of fall features such as absence of major movement, laying posture, lying on the ground, vertical speed, impact shock, and body shape change.
 
 ![Table-2](https://vision.aioz.io/thumbnail/dcb5e83ba6f54552bde1/1024/part4-table2.PNG) *<center>**Table 2**:  Effectiveness of wearable devices and visual systems for fall detection.</center>*
+
+In the next blog, we will discuss about "Depth based fall detection" works in detail.
