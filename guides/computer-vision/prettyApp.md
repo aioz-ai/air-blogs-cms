@@ -31,7 +31,7 @@ The discriminator is just a binary image classifier which you should already be 
 
 Putting it all together, here is what a basic GAN architecture looks like: the generator makes fake images; we feed both the real images (training dataset) and the fake images into the discriminator in separate batches. The discriminator then tells whether an image is real or fake.
 ![Figure 4](https://drive.google.com/uc?export=view&id=141JUaa_zwNXqCKq54O7L2A-3meuaQ0s6)
-*<center>**Figure 4**. Discriminator input and output.</center>*
+*<center>**Figure 4**. The method.</center>*
 
 
 ---
