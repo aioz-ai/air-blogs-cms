@@ -2,7 +2,7 @@
 last_modified_on: "2022-08-07"
 title: Reproduce cartoon image
 description: Pretty interesting app for today's users.
-series_position: 18
+series_position: 20
 author_github: https://github.com/aioz-ai
 tags: ["type: application", "level: medium"]
 ---
