@@ -1,4 +1,3 @@
-
 ---
 last_modified_on: "2022-08-20"
 title: Convert weight TF lite from Pytorch for Android app
