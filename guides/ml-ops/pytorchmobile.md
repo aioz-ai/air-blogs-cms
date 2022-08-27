@@ -1,4 +1,3 @@
-
 ---
 last_modified_on: "2022-08-27"
 title: Pytorch Mobile
