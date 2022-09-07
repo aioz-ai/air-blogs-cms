@@ -33,9 +33,11 @@ In standard convolutions, we convolve the whole 3D filter with the input, which 
 
 To understand the efficiency of depthwise separable convolution, we need to investigate the reduction it brings in parameters and computations. First, the computation cost for standard convolution is   
 
-$  
+$$
+
 D_k \times D_k \times M \times N \times D_f \times D_f  
-$
+
+$$
 
 where:
 - D_k = kernel size,
@@ -43,16 +45,19 @@ where:
 - N = output channels,
 - D_f = feature map size 
 
-For depthwise conv, as we convolve one 2D filter for each channel, each channel requires $ D_k \times D_k \times D_f \times D_f $ multiplications, and M channels would require  $ M \times D_k \times D_k \times D_f \times D_f $.
+For depthwise conv, as we convolve one 2D filter for each channel, each channel requires $D_k \times D_k \times D_f \times D_f$ multiplications, and M channels would require  $M \times D_k \times D_k \times D_f \times D_f$.
 
-For pointwise convolution, it is exactly standard convolution with $D_k = 1$, thus requires 
-$ M \times N \times D_f \times D_f $ multiplications. 
+For pointwise convolution, it is exactly standard convolution with $D_k = 1$, thus requires $M \times N \times D_f \times D_f$ multiplications. 
 
 Hence, Dep-Sep-Conv in total requires 
-$ 
+
+$$
+
 M \times D_k \times D_k \times D_f \times D_f + M \times N \times D_f \times D_f
-$
-corresponds to a reduction of $ \frac{1}{N} + \frac{1}{D_K^2} $ compared to standard conv.
+
+$$
+
+corresponds to a reduction of $\frac{1}{N} + \frac{1}{D_K^2}$ compared to standard conv.
 
 Indeed, by replacing every convolution layer in the hourglass module to depthwise separable convolution layer, we reduced the running time by half and the number of parameters more than 10 times. 
 
