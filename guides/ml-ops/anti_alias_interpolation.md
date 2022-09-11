@@ -1,7 +1,7 @@
 ---
 last_modified_on: "2022-09-11"
 title: Model Compression Part 2.
-description: Explore techniques used in a specific task: Anti-alias
+description: Explore techniques used in a specific task, the Anti-alias
 series_position: 5
 author_github: https://github.com/aioz-ai
 tags: ["type: practical", "level: advance"]
