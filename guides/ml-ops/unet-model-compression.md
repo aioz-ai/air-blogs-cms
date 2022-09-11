@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2022-09-03"
-title: Model Compression.
+title: Model Compression Part 1.
 description: Explore techniques that can possibly be replaced within the layers of the standard U-Net. 
 series_position: 4
 author_github: https://github.com/aioz-ai
