@@ -102,11 +102,7 @@ The results we get are quite good when the model can run on low-profile mobile d
 
 ![Figure 4](https://drive.google.com/uc?export=view&id=1YEjk_C1PNL_wxSKvMSd8FloyekXLjnzt)*<center>**Figure 4**. App demo android for AnimeGanv2.</center>*
 
-Table 1: performance speed and image size chart.
-| size image | 640x640 | 400x400 | 300x300 | 256x256 |
-| --------   | --------| --------|---------|---------|
-| times      |    9s   |    4s   |    2s   |    2s   |
-
+With an image input 640x640, the model achieves 9s on mobile android device.
 Due to the nature of the AnimeGanv2 model, it will be good for large images, this inadvertently affects the execution speed of the model because currently pytorch mobile only supports running on the CPU.
 
 
