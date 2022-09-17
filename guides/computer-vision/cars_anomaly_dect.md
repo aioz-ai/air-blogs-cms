@@ -10,7 +10,7 @@ tags: ["type: practical", "level: advance"]
 import CodeExplanation from '@site/src/components/CodeExplanation';  
 import Highlight from '@site/src/components/Highlight';
 
-HourglassThere are many traffic accidents every year, and this leads to the increasing demand for an automatic system that could help the experts find and analyze the moment before the accident happened. AI City Challenge 2020 decided to organize a track that fully focuses on traffic anomaly detection, especially detecting crashing and stalling. In this short tutorial, I will present a method proposed by Tran et. al. [1] that utilizes a generative network and some car detection networks to create a simple 3 phases system.
+:hourglass: There are many traffic accidents every year, and this leads to the increasing demand for an automatic system that could help the experts find and analyze the moment before the accident happened. AI City Challenge 2020 decided to organize a track that fully focuses on traffic anomaly detection, especially detecting crashing and stalling. In this short tutorial, I will present a method proposed by Tran et. al. [1] that utilizes a generative network and some car detection networks to create a simple 3 phases system.
 
 
 ## Overview 
@@ -50,7 +50,7 @@ I have introduced a simple system for traffic anomaly detection proposed by [1].
 ## References
 [1] Tran et al., &#34;iTASK - Intelligent Traffic Analysis Software Kit,&#34; 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), 2020, pp. 2607-2616, doi: 10.1109/CVPRW50498.2020.00314.
 
-[2] Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 2015. Faster R-CNN: towards real-time object detection with region proposal networks. In Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 1 (NIPS&#39;15). MIT Press, Cambridge, MA, USA, 91–99.
+[2] Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 2015. Faster R-CNN: towards real-time object detection with region proposal networks. In Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 1 (NIPS&#39;15). MIT Press, Cambridge, MA, USA, 91ï¿½99.
 
 
 [3] Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., ... &amp; Bengio, Y. (2014). Generative adversarial nets. Advances in neural information processing systems, 27.
