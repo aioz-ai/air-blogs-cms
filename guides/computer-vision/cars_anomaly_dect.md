@@ -33,11 +33,13 @@ For motion encoding and background extraction, we can average the images of the 
 ## Vehicle detection
 ![](https://vision.aioz.io/f/33a857b111854203ac43/?dl=1)
 **Figure 3: The example output of the detection model in each context.**
+
 To detect a stalled vehicle, we only need to find which vehicle does not move anymore in the video. Naively, we would want to train a neural network to detect vehicles in this phase. However, the range of values of the pixel varies widely. There are night videos, day videos, and big and small vehicles mixed into each other videos. Using the knowledge from the training dataset, the authors of [1] proposed that we should train at least 3 (exactly 3 in the paper) neural networks for each of the aforementioned scenarios. This phase requires heavily finetuning labor. We will need to train multiple state-of-the-art models, such as Faster-R CNN [2], to find the best one for each scenario. After that, the output, which contains bounding boxes for multiple vehicles, is used to construct a moving path. At this point, we can just write a simple heuristic to check the stalling condition: if a bounding box is stopping for M frames, then its vehicle is stalled. 
 
 ## Forward prediction 
 ![](https://vision.aioz.io/f/0e0e98923ef044df810f/?dl=1)
 **Figure 4: The example output of the detection model in each context.**
+
 At the same time we run the vehicle detection process, we also use a generative network to produce the expected next frame. For example, normally a vehicle moves in a straight line on a straight road, if the vehicle is moving weirdly, such as turning around multiple times, then we know that an anomaly is happening. To know what is normal and what is not, [1] proposes using a generative adversarial network (GAN) [3] trained on a normal scenario so that when it predicts the next frame, we can compare the normal knowledge it has and the real behavior of the vehicle. If two frames strongly disagree with each other, we know an anomaly may happen in this frame. The agreement degree is defined using Peak Signal-to-Noise Ratio (PSNR) [4] to calculate the likelihood of two frames. A higher value of PSNR means the pair of images are similar. If PSNR falls below a certain threshold, an anomaly is likely to happen.
 As you can see, this phase heavily depends on the ability of the GAN that we choose, so careful engineering is needed. 
 
@@ -48,9 +50,9 @@ Unlike stalling detection, crashing detection may start earlier than when PSNR d
 I have introduced a simple system for traffic anomaly detection proposed by [1]. While the system is simple conceptually, it is clear that this requires a lot of effort in fine-tuning and engineering, and in the worst-case scenario, such as the context is too hard for the vehicle detection network to work, or the data is too unfit for GAN training, this system will immediately fall apart. However, it is worth noting that this is the first step for anomaly detection, and with the improvement of computer vision recently, we can positively hope that this system will work in real scenarios soon. 
 
 ## References
-[1] Tran et al., &#34;iTASK - Intelligent Traffic Analysis Software Kit,&#34; 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), 2020, pp. 2607-2616, doi: 10.1109/CVPRW50498.2020.00314.
+[1] Tran et al., &#34;iTASK - Intelligent Traffic Analysis Software Kit; 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), 2020, pp. 2607-2616, doi: 10.1109/CVPRW50498.2020.00314.
 
-[2] Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 2015. Faster R-CNN: towards real-time object detection with region proposal networks. In Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 1 (NIPS&#39;15). MIT Press, Cambridge, MA, USA, 91�99.
+[2] Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 2015. Faster R-CNN: towards real-time object detection with region proposal networks. In Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 1 (NIPS&#39;15). MIT Press, Cambridge, MA, USA, 9199.
 
 
 [3] Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., ... &amp; Bengio, Y. (2014). Generative adversarial nets. Advances in neural information processing systems, 27.
