@@ -1,142 +1,144 @@
 ---
-title: 'Port model with pytorch mobile'
-author: AIOZ AI
-authorURL: 'https://github.com/aioz-ai'
-authorImageURL: 'https://avatars.githubusercontent.com/u/53249292?s=200&v=4'
-tags: [ai, ml-ops]
+last_modified_on: "2022-09-17"  
+id:  animegan-pytorch
+title: Port model with Pytorch mobile
+description: Port model with Pytorch mobile.      
+author_github: https://github.com/aioz-ai     
+tags: ["type: ai-mobile", "ai", "edge-computing", "pytorch", "mobile"]
 ---
+
 ## I. Ví dụ: AnimeGanv2
-### Mô tả bài toán: 
-Hệ thống sử dụng mô hình GAN chuyển đổi hình ảnh face người thật thành hình ảnh mang phong cách Anime. 
+### Mô tả bài toán:
+* Hệ thống sử dụng mô hình GAN chuyển đổi hình ảnh face người thật thành hình ảnh mang phong cách Anime.
 
 ![Figure 1](https://drive.google.com/uc?export=view&id=1Yxq4rpcTXmWY3_9MSk9jVU6WvpFtlshW)
 
 
 ### Convert weight python to weight android:
-Để chuyển đổi mô hình Deep Learning để chạy trên các device mobile. Chúng ta cần thực hiện công việc convert weight theo định dạng dành cho android hoặc ios. 
+Để chuyển đổi mô hình Deep Learning để chạy trên các device mobile. Chúng ta cần thực hiện công việc convert weight theo định dạng dành cho android hoặc ios.
+```python
+import torch
+from model import Generator
+
+model = Generator()
+model.load_state_dict(torch.load('weights/animeganv2.pt', map_location='cpu' ))
+model.eval()
+
+example = torch.rand(1, 3, 256, 256)
+traced_script_module = torch.jit.trace(model, example)
+
+// Weight ios
+traced_script_module = torch.jit.trace(model, example)
+traced_script_module.save("animeganv2_ios.pt")
+
+// Weight android
+traced_script_module_optimized = optimize_for_mobile(traced_script_module)
+traced_script_module_optimized._save_for_lite_interpreter("animeganv2_android.ptl")
 ```
-    import torch
-    from model import Generator
 
-    model = Generator()
-    model.load_state_dict(torch.load('weights/animeganv2.pt', map_location='cpu' ))
-    model.eval()
-
-    example = torch.rand(1, 3, 256, 256)
-    traced_script_module = torch.jit.trace(model, example)
-    
-    // Weight ios
-    traced_script_module = torch.jit.trace(model, example)
-    traced_script_module.save("animeganv2_ios.pt")
-    
-    // Weight android
-    traced_script_module_optimized = optimize_for_mobile(traced_script_module)
-    traced_script_module_optimized._save_for_lite_interpreter("animeganv2_android.ptl")
-```
-
-Note: 
+Note:
 * Mô hình animeganv2 chỉ yêu cầu một input tensor (N, C, W, H).
 * Pytorch mobile cho phép sử dụng input với nhiều kích thước.
-* Hiện tại pytorch mobile chưa hỗ trợ trên GPU vì vậy khi convert hạn chế sử dụng lệnh .cuda(). Nếu không khi build app android sẽ có báo lỗi. 
+* Hiện tại pytorch mobile chưa hỗ trợ trên GPU vì vậy khi convert hạn chế sử dụng lệnh .cuda(). Nếu không khi build app android sẽ có báo lỗi.
 
-### Inference python: 
+### Inference python:
 Dưới đây là phần code inference model khi thử nghiệm trên 1 hình ảnh.
-```
-    import cv2
-    import torch
-    import numpy as np
-    from model import Generator
-   
-    net = Generator()
-    net.load_state_dict(torch.load("weight.pt", map_location="cpu" ))
-    net.eval()
+```python
+import cv2
+import torch
+import numpy as np
+from model import Generator
 
-    frame = cv2.imread('img.png')
-    frame = cv2.resize(frame, (512, 512))
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB).astype(np.float32)/ 127.5 - 1.0 
+net = Generator()
+net.load_state_dict(torch.load("weight.pt", map_location="cpu" ))
+net.eval()
 
-    frame = torch.from_numpy(frame).cuda()
-    frame = frame.permute(2, 0, 1).unsqueeze(0)
-    with torch.no_grad():
-        out = net(frame, False)
-    out = out.squeeze(0).permute(1, 2, 0).cpu()
-    out = ((out + 1.) * 127.5).numpy().clip(0, 255).astype(np.uint8)
-    out = cv2.resize(out, (512, 512))
-    out = cv2.cvtColor(out, cv2.COLOR_RGB2BGR)
+frame = cv2.imread('img.png')
+frame = cv2.resize(frame, (512, 512))
+frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB).astype(np.float32)/ 127.5 - 1.0
 
-    cv2.imshow('Frame',out)
-    cv2.waitKey(0)
+frame = torch.from_numpy(frame).cuda()
+frame = frame.permute(2, 0, 1).unsqueeze(0)
+with torch.no_grad():
+    out = net(frame, False)
+out = out.squeeze(0).permute(1, 2, 0).cpu()
+out = ((out + 1.) * 127.5).numpy().clip(0, 255).astype(np.uint8)
+out = cv2.resize(out, (512, 512))
+out = cv2.cvtColor(out, cv2.COLOR_RGB2BGR)
+
+cv2.imshow('Frame',out)
+cv2.waitKey(0)
 ```
 
 ### Inference android:
-#### - Install thư viên (xử lý ở file build.gradle): 
-```
-    implementation 'org.pytorch:pytorch_android_lite:1.10.0'
-    implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
+#### - Install thư viên (xử lý ở file build.gradle):
+```java
+implementation 'org.pytorch:pytorch_android_lite:1.10.0'
+implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
 ```
 #### - Thiết lập hệ thống (xử lý ở file MainActivity.java)
-##### 1. Input image: 
+##### 1. Input image:
 - Công việc này cho phép chuẩn bị sẳn các hình ảnh mặc định để khi build app có thể đưa ra sự lựa chọn cho người dùng.
 - Hình ảnh bình thước để có thể sử dụng trong android studio (java) cần phải chuyển đổi về định dạng bitmap.
 - Note: đặt hình ảnh ở thư mục: ./app/src/main/assets/
-```
+```java
 ...
    private int mImageIndex = 0;
    private String[] mTestImages = {"test1.png", "test2.jpg", "test3.png"};
    ...
    try {
-         mBitmap = BitmapFactory.decodeStream(getAssets().open(mTestImages[mImageIndex]));
-       } catch (IOException e) {
-            Log.e("Load image", "Error reading assets", e);
-            finish();
-            }
+        mBitmap = BitmapFactory.decodeStream(getAssets().open(mTestImages[mImageIndex]));
+    } catch (IOException e) {
+        Log.e("Load image", "Error reading assets", e);
+        finish();
+    }
 ...
 ```
 ##### 2. Load weight .ptl:
 - Weight sao khi được convert theo định dạng của android thì cũng được load lên theo một cách riêng biệt, khi sử dụng chúng ta sẽ dùng hàm mModule cùng thư viện LiteModuleLoader.
 - Note: đặt weight ở folder:  ./app/src/main/assets/
 
-```
+```java
 ...
-  try {
-            mModule = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "animegan_android.ptl"));
-        } catch (IOException e) {
-            Log.e("Load model", "Error reading assets", e);
-            finish();
-        }
+    try {
+        mModule = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "animegan_android.ptl"));
+    } catch (IOException e) {
+        Log.e("Load model", "Error reading assets", e);
+        finish();
+    }
 ...
 ```
 ##### 3. Xử lý input:
 - Khi tiếp nhận input, đặt tính của mô hình này sẽ càng tốt khi hình ảnh đầu vào có kích thước lớn tuy nhiên khi hình ảnh có kích thước lớn thì tốc độ xử lý của mô hình sẽ chậm đi:
 
-```
+```java
 ...
-    Bitmap resizedBitmap = Bitmap.createScaledBitmap(mBitmap, mInputWidth, mInputHeight, true);
+Bitmap resizedBitmap = Bitmap.createScaledBitmap(mBitmap, mInputWidth, mInputHeight, true);
 ```
 - Model nhận input phải là tensor, đồng thời phải ở định dạng dtype = float32 về khoảng từ [0;1], tensor sẽ được định hình thành (N, C, W, H):
-```
-    Tensor inputTensor = TensorImageUtils.bitmapToFloat32Tensor(resizedBitmap, NO_MEAN_RGB, NO_STD_RGB);
+```java
+Tensor inputTensor = TensorImageUtils.bitmapToFloat32Tensor(resizedBitmap, NO_MEAN_RGB, NO_STD_RGB);
 ...
 ```
 với các thông số:
-```
-    static float[] NO_MEAN_RGB = new float[] {0.0f, 0.0f, 0.0f};
-    static float[] NO_STD_RGB = new float[] {1.0f, 1.0f, 1.0f};
+```java
+static float[] NO_MEAN_RGB = new float[] {0.0f, 0.0f, 0.0f};
+static float[] NO_STD_RGB = new float[] {1.0f, 1.0f, 1.0f};
 ```
 ##### 4. Model xử lý:
 - Sao khi thiết lập giá trị input xong, chung ta sẽ đưa thông tin vào model thông qua công thức
-```
-    IValue img = IValue.from(inputTensor);
-    Tensor outputTensor = mModule.forward(img).toTensor();
+```java
+IValue img = IValue.from(inputTensor);
+Tensor outputTensor = mModule.forward(img).toTensor();
 ```
 - Đang ở định dạng IValue để có thể chuyển đổi cần sử dụng .toTensor();
 - Đồng thời để chuyển đổi về FloatArray thì sử dụng thêm .getDataAsFloatArray();
-```
-    float[] outputs = outputTensor.getDataAsFloatArray();
+```java
+float[] outputs = outputTensor.getDataAsFloatArray();
 ```
 ##### 5. Hậu xử lý output:
-- Để chuyển đổi FloatArray hiện tại thành hình ảnh RGB chúng ta sử dụng hàm, hàm này hỗ trợ chuyển đổi [0:1] sang [0, 255]: 
-```
+- Để chuyển đổi FloatArray hiện tại thành hình ảnh RGB chúng ta sử dụng hàm, hàm này hỗ trợ chuyển đổi [0:1] sang [0, 255]:
+```java
 public static Bitmap bitmapFromRGBImageAsFloatArray(float[] data, int width, int height){
 
     Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
@@ -184,10 +186,10 @@ App android cho bài toán AnimeGanv2 đạt được kết quả sau:
 ---
 
 ## II. Face-moving
-### Mô tả bài toán: 
-Bài toán này tiếp nhận 2 input cho mô hình: 
+### Mô tả bài toán:
+Bài toán này tiếp nhận 2 input cho mô hình:
 * input 1: image face.
-* input 2: image face to video. 
+* input 2: image face to video.
 
 Mô hình kp_detector tiếp nhận input 1 và input 2 để rút trình thông tin value và jacobian:
 * output 1: kp_source_value
@@ -201,12 +203,12 @@ Mô hình generator tiếp nhận 7 input bao gồm: input 1 và output 1-6. Out
 ![Figure 1](https://drive.google.com/uc?export=view&id=1BVfk3lApCgE1BeQkmMHdPN3hcKgzpzQv)
 
 ### Convert weight python to weight android:
-* Tương tự như bài AnimeGanv2, chúng ta phải thực hiện công việc convert weight sang định dạng android. 
-* Tuy nhiên mô hình này cần 2 model để xử lý nên phải convert 2 weights. 
+* Tương tự như bài AnimeGanv2, chúng ta phải thực hiện công việc convert weight sang định dạng android.
+* Tuy nhiên mô hình này cần 2 model để xử lý nên phải convert 2 weights.
 
 Phần load weight và chia tách weight:
 
-```
+```python
 import matplotlib
 matplotlib.use('Agg')
 import os, sys
@@ -243,15 +245,15 @@ if __name__ == "__main__":
                              **config['model_params']['common_params'])
     if not opt.cpu:
         kp_detector.cuda()
-    
+
     if opt.cpu:
         checkpoint = torch.load(opt.checkpoint, map_location=torch.device('cpu'))
     else:
         checkpoint = torch.load(opt.checkpoint)
- 
+
     generator.load_state_dict(checkpoint['generator'])
     kp_detector.load_state_dict(checkpoint['kp_detector'], strict=False)
-    
+
     if not opt.cpu:
         generator = DataParallelWithCallback(generator)
         kp_detector = DataParallelWithCallback(kp_detector)
@@ -259,8 +261,8 @@ if __name__ == "__main__":
     generator.eval()
     kp_detector.eval()
 ```
-Convert weight của model KP_detector: 
-```
+Convert weight của model KP_detector:
+```python
 ...
     torch.save(kp_detector.module.state_dict(), './weights/conkp_detector-vox-cpk.pth')
 
@@ -276,13 +278,13 @@ Convert weight của model KP_detector:
     traced_script_module_optimized._save_for_lite_interpreter("./weights/model.ptl")
 ```
 Convert weight của model Generator:
-```
+```python
 ...
     torch.save(generator.module.state_dict(), './weights/congenerator-vox-cpk.pth')
 
     model_generator = OcclusionAwareGenerator(**config['model_params']['generator_params'],
                                               **config['model_params']['common_params'])
-    
+
     model_generator.load_state_dict(torch.load('./weights/congenerator-vox-cpk.pth'), strict=False)
     model_generator = model_generator.eval()
 
@@ -303,15 +305,15 @@ Convert weight của model Generator:
 ```
 
 Note:
-* Model Kp_detector chỉ yêu cầu 1 input còn model Generator lại yêu cầu nhiều input hơn. nên có thể sử dụng lệnh như sau: 
-```
+* Model Kp_detector chỉ yêu cầu 1 input còn model Generator lại yêu cầu nhiều input hơn. nên có thể sử dụng lệnh như sau:
+```python
     traced_script_module = torch.jit.trace(model_generator, (example, kp_source_value, kp_source_jacobian, kp_driving_value, kp_driving_jacobian, kp_driving_initial_value, kp_driving_initial_jacobian), strict=False)
 ```
-* Vì thư viện LiteModuleLoader của android studio chỉ hỗ trợ nhiều input là dạng Ivalue vì vậy phải tách nhỏ các input thành từng biến đọc lập. Tuy nhiên output của mô hình lại cho phép chưa nhiều nội dụng. 
+* Vì thư viện LiteModuleLoader của android studio chỉ hỗ trợ nhiều input là dạng Ivalue vì vậy phải tách nhỏ các input thành từng biến đọc lập. Tuy nhiên output của mô hình lại cho phép chưa nhiều nội dụng.
 
-### Inference python: 
-Dưới đây là code inference mô hình với đầu vào là 1 hình ảnh và 1 video. 
-```
+### Inference python:
+Dưới đây là code inference mô hình với đầu vào là 1 hình ảnh và 1 video.
+```python
 import matplotlib
 matplotlib.use('Agg')
 import os, sys
@@ -350,22 +352,22 @@ def load_checkpoints(config_path, checkpoint_path, cpu=False):
                              **config['model_params']['common_params'])
     if not cpu:
         kp_detector.cuda()
-    
+
     if cpu:
         checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'))
     else:
         checkpoint = torch.load(checkpoint_path)
- 
+
     generator.load_state_dict(checkpoint['generator'])
     kp_detector.load_state_dict(checkpoint['kp_detector'])
-    
+
     if not cpu:
         generator = DataParallelWithCallback(generator)
         kp_detector = DataParallelWithCallback(kp_detector)
 
     generator.eval()
     kp_detector.eval()
-    
+
     return generator, kp_detector
 
 
@@ -391,15 +393,15 @@ def make_animation(source_image, driving_video, generator, kp_detector, relative
             driving_frame = driving[:, :, frame_idx]
             if not cpu:
                 driving_frame = driving_frame.cuda()
-   
+
 
             kp_driving = kp_detector(driving_frame)
             kp_driving_value = kp_driving['value']
             kp_driving_jacobian = kp_driving['jacobian']
 
-            out = generator(source_image = source, 
-                            kp_source_value=kp_source_value, kp_source_jacobian=kp_source_jacobian, 
-                            kp_driving_value=kp_driving_value, kp_driving_jacobian=kp_driving_jacobian, 
+            out = generator(source_image = source,
+                            kp_source_value=kp_source_value, kp_source_jacobian=kp_source_jacobian,
+                            kp_driving_value=kp_driving_value, kp_driving_jacobian=kp_driving_jacobian,
                             kp_driving_init_value=kp_driving_init_value, kp_driving_init_jacobian=kp_driving_init_jacobian)
 
 
@@ -439,18 +441,18 @@ if __name__ == "__main__":
     parser.add_argument("--source_image", default='sup-mat/source.png', help="path to source image")
     parser.add_argument("--driving_video", default='sup-mat/source.png', help="path to driving video")
     parser.add_argument("--result_video", default='result.mp4', help="path to output")
- 
+
     parser.add_argument("--relative", dest="relative", action="store_true", help="use relative or absolute keypoint coordinates")
     parser.add_argument("--adapt_scale", dest="adapt_scale", action="store_true", help="adapt movement scale based on convex hull of keypoints")
 
-    parser.add_argument("--find_best_frame", dest="find_best_frame", action="store_true", 
+    parser.add_argument("--find_best_frame", dest="find_best_frame", action="store_true",
                         help="Generate from the frame that is the most alligned with source. (Only for faces, requires face_aligment lib)")
 
     parser.add_argument("--best_frame", dest="best_frame", type=int, default=None,  
                         help="Set frame to start from.")
- 
+
     parser.add_argument("--cpu", dest="cpu", action="store_true", help="cpu mode.")
- 
+
 
     parser.set_defaults(relative=False)
     parser.set_defaults(adapt_scale=False)
@@ -486,179 +488,179 @@ if __name__ == "__main__":
 
 ```
 ### Inference android:
-#### - Install thư viên (xử lý ở file build.gradle): 
-```
-    implementation 'org.pytorch:pytorch_android_lite:1.10.0'
-    implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
+#### - Install thư viên (xử lý ở file build.gradle):
+```java
+implementation 'org.pytorch:pytorch_android_lite:1.10.0'
+implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
 ```
 #### - Thiết lập hệ thống (xử lý ở file MainActivity.java)
-##### 1. Input image: 
-* Bài toán này yêu cầu đến 2 input đầu vào 1 là hình ảnh face và 1 video face đang chuyển động. 
-* Note: 
+##### 1. Input image:
+* Bài toán này yêu cầu đến 2 input đầu vào 1 là hình ảnh face và 1 video face đang chuyển động.
+* Note:
     - đặt hình ảnh ở thư mục: ./app/src/main/assets/
     - đặt video ở thư mục: ./app/src/main/res/raw/
-```
-    private int mImageIndex = 0;
-    private String[] mTestImages = {"test1.png", "test2.png"};
-    private int mTestVideoIndex = 0;
-    private final String[] mTestVideos = {"video1", "video2", "video3"};
-    ...
-    try {
-            mBitmap = BitmapFactory.decodeStream(getAssets().open(mTestImages[mImageIndex]));
-        } catch (IOException e) {
-            Log.e("Load image", "Error reading assets", e);
-            finish();
-        }
-    ...
-    private Uri getMedia(String mediaName) {
-        return Uri.parse("android.resource://" + getPackageName() + "/raw/" + mediaName);
+```java
+private int mImageIndex = 0;
+private String[] mTestImages = {"test1.png", "test2.png"};
+private int mTestVideoIndex = 0;
+private final String[] mTestVideos = {"video1", "video2", "video3"};
+...
+try {
+        mBitmap = BitmapFactory.decodeStream(getAssets().open(mTestImages[mImageIndex]));
+    } catch (IOException e) {
+        Log.e("Load image", "Error reading assets", e);
+        finish();
     }
-    ...
-    mVideoUri = getMedia(mTestVideos[mTestVideoIndex]);
-    ...
+...
+private Uri getMedia(String mediaName) {
+    return Uri.parse("android.resource://" + getPackageName() + "/raw/" + mediaName);
+}
+...
+mVideoUri = getMedia(mTestVideos[mTestVideoIndex]);
+...
 ```
-##### 2. Load weights: 
-   - Model KP_detector: 
+##### 2. Load weights:
+   - Model KP_detector:
+```java
+if (mModule_kp == null) {
+    try {
+        mModule_kp = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "kp_detector.ptl"));
+    } catch (IOException e) {
+        Log.e("Load weight kp detector", "Error reading assets", e);
+        finish();
+    }
+}
 ```
-    if (mModule_kp == null) {
-            try {
-                mModule_kp = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "kp_detector.ptl"));
-            } catch (IOException e) {
-                Log.e("Load weight kp detector", "Error reading assets", e);
-                finish();
-            }
-        }
-```
-   - Model Generator: 
-```
-    if (mModule_gan == null) {
-            try {
-                mModule_gan = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "generator_final_v2.ptl"));
-            } catch (IOException e) {
-                Log.e("Load weight Generator", "Error reading assets", e);
-                finish();
-            }
-        }
+   - Model Generator:
+```java
+if (mModule_gan == null) {
+    try {
+        mModule_gan = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "generator_final_v2.ptl"));
+    } catch (IOException e) {
+        Log.e("Load weight Generator", "Error reading assets", e);
+        finish();
+    }
+}
 ```
 ##### 3. Function model:
 Để dễ dàng hỗ trợ khi code hệ thống, chúng ta sẽ viết các hàm riêng cho model kp_detector và generator. Các bước như resize, convert bitmaptotensor và run model sẽ tương tự như bài toán animegan.
 
-* Model Kp_detector: 
+* Model Kp_detector:
      - Input: bitmap
-     - Output: Ivalue 
-```
-    ...
-    public IValue model_kp_detector(Bitmap bitmap){
-        Bitmap resizedBitmap_kp = Bitmap.createScaledBitmap(bitmap,
-                                                            PrePostProcessor.mInputWidth,
-                                                            PrePostProcessor.mInputHeight,
-                                                        true);
-        Tensor inputTensor_img = TensorImageUtils.bitmapToFloat32Tensor(resizedBitmap_kp,
-                                                                        PrePostProcessor.NO_MEAN_RGB,
-                                                                        PrePostProcessor.NO_STD_RGB);
+     - Output: Ivalue
+```java
+...
+public IValue model_kp_detector(Bitmap bitmap){
+    Bitmap resizedBitmap_kp = Bitmap.createScaledBitmap(bitmap,
+                                                        PrePostProcessor.mInputWidth,
+                                                        PrePostProcessor.mInputHeight,
+                                                    true);
+    Tensor inputTensor_img = TensorImageUtils.bitmapToFloat32Tensor(resizedBitmap_kp,
+                                                                    PrePostProcessor.NO_MEAN_RGB,
+                                                                    PrePostProcessor.NO_STD_RGB);
 
-        if (mModule_kp == null) {
-            try {
-                mModule_kp = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "kp_detector.ptl"));
-            } catch (IOException e) {
-                Log.e("Load weight kp detector", "Error reading assets", e);
-                finish();
-            }
+    if (mModule_kp == null) {
+        try {
+            mModule_kp = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "kp_detector.ptl"));
+        } catch (IOException e) {
+            Log.e("Load weight kp detector", "Error reading assets", e);
+            finish();
         }
-        final IValue output_kp = mModule_kp.forward(IValue.from(inputTensor_img));
-
-        return output_kp;
     }
-    ...
+    final IValue output_kp = mModule_kp.forward(IValue.from(inputTensor_img));
+
+    return output_kp;
+}
+...
 ```
 
-- Model Generator: 
+- Model Generator:
      - Input[1]: bitmap
      - Input[2-3]: Ivalue kp_source (value, jacobian)
      - Input[4-5]: Ivalue kp_driving (value, jacobian)
      - Input[6-7]: Ivalue kp_driving_initial (value, jacobian)
      - Output: bitmap
-```
-    ...
-    public Bitmap model_generator(Bitmap mBitmap,
-                                  IValue kp_source,
-                                  IValue kp_driving,
-                                  IValue kp_driving_initial) {
-        Bitmap resizedBitmap_kp = Bitmap.createScaledBitmap(mBitmap,
-                                                            PrePostProcessor.mInputWidth,
-                                                            PrePostProcessor.mInputHeight,
-                                                        true);
-        Tensor source_image = TensorImageUtils.bitmapToFloat32Tensor(resizedBitmap_kp,
-                                                                    PrePostProcessor.NO_MEAN_RGB,
-                                                                    PrePostProcessor.NO_STD_RGB);
+```java
+...
+public Bitmap model_generator(Bitmap mBitmap,
+                                IValue kp_source,
+                                IValue kp_driving,
+                                IValue kp_driving_initial) {
+    Bitmap resizedBitmap_kp = Bitmap.createScaledBitmap(mBitmap,
+                                                        PrePostProcessor.mInputWidth,
+                                                        PrePostProcessor.mInputHeight,
+                                                    true);
+    Tensor source_image = TensorImageUtils.bitmapToFloat32Tensor(resizedBitmap_kp,
+                                                                PrePostProcessor.NO_MEAN_RGB,
+                                                                PrePostProcessor.NO_STD_RGB);
 
-        Tensor value_kp_source = kp_source.toDictStringKey().get("value").toTensor();
-        Tensor jacobian_kp_source = kp_source.toDictStringKey().get("jacobian").toTensor();
+    Tensor value_kp_source = kp_source.toDictStringKey().get("value").toTensor();
+    Tensor jacobian_kp_source = kp_source.toDictStringKey().get("jacobian").toTensor();
 
-        Tensor value_kp_driving = kp_driving.toDictStringKey().get("value").toTensor();
-        Tensor jacobian_kp_driving = kp_driving.toDictStringKey().get("jacobian").toTensor();
+    Tensor value_kp_driving = kp_driving.toDictStringKey().get("value").toTensor();
+    Tensor jacobian_kp_driving = kp_driving.toDictStringKey().get("jacobian").toTensor();
 
-        Tensor value_kp_driving_initial = kp_driving_initial.toDictStringKey().get("value").toTensor();
-        Tensor jacobian_kp_driving_initial = kp_driving_initial.toDictStringKey().get("jacobian").toTensor();
+    Tensor value_kp_driving_initial = kp_driving_initial.toDictStringKey().get("value").toTensor();
+    Tensor jacobian_kp_driving_initial = kp_driving_initial.toDictStringKey().get("jacobian").toTensor();
 
-        if (mModule_gan == null) {
-            try {
-                mModule_gan = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "generator_final_v2.ptl"));
-            } catch (IOException e) {
-                Log.e("Object Detection", "Error reading assets", e);
-                finish();
-            }
+    if (mModule_gan == null) {
+        try {
+            mModule_gan = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "generator_final_v2.ptl"));
+        } catch (IOException e) {
+            Log.e("Object Detection", "Error reading assets", e);
+            finish();
         }
-
-        final IValue output_gan = mModule_gan.forward(
-                IValue.from(source_image),
-                IValue.from(value_kp_source),
-                IValue.from(jacobian_kp_source),
-                IValue.from(value_kp_driving),
-                IValue.from(jacobian_kp_driving),
-                IValue.from(value_kp_driving_initial),
-                IValue.from(jacobian_kp_driving_initial)
-        );
-        float[] outputs = output_gan.toTensor().getDataAsFloatArray();
-
-        Bitmap results = bitmapFromRGBImageAsFloatArray(outputs , PrePostProcessor.mInputWidth, PrePostProcessor.mInputHeight);
-
-        return results;
     }
-    ...
+
+    final IValue output_gan = mModule_gan.forward(
+            IValue.from(source_image),
+            IValue.from(value_kp_source),
+            IValue.from(jacobian_kp_source),
+            IValue.from(value_kp_driving),
+            IValue.from(jacobian_kp_driving),
+            IValue.from(value_kp_driving_initial),
+            IValue.from(jacobian_kp_driving_initial)
+    );
+    float[] outputs = output_gan.toTensor().getDataAsFloatArray();
+
+    Bitmap results = bitmapFromRGBImageAsFloatArray(outputs , PrePostProcessor.mInputWidth, PrePostProcessor.mInputHeight);
+
+    return results;
+}
+...
 ```
 ##### 4. Xuất thông tin từ video:
-Bài tóan này yêu cầu thông tin hình ảnh lấy ra từ video vì vậy phải sử dụng thư viện media để lấy thông tin: 
-```
-    ...
-    mVideoUri = getMedia(mTestVideos[0]);
-    MediaMetadataRetriever mmr = new MediaMetadataRetriever();
-    mmr.setDataSource(this.getApplicationContext(), mVideoUri);
-    String stringDuration = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
-    double durationMs = Double.parseDouble(stringDuration);
+Bài tóan này yêu cầu thông tin hình ảnh lấy ra từ video vì vậy phải sử dụng thư viện media để lấy thông tin:
+```java
+...
+mVideoUri = getMedia(mTestVideos[0]);
+MediaMetadataRetriever mmr = new MediaMetadataRetriever();
+mmr.setDataSource(this.getApplicationContext(), mVideoUri);
+String stringDuration = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
+double durationMs = Double.parseDouble(stringDuration);
 
-    int durationTo = (int) Math.ceil(durationMs / 50);
-    for( i = 0; i < durationTo; i ++){
-        int from = i * 100;
-        int to = (i + 1) * 100;
-        if (i == durationTo - 1)
-            to = (int) Math.ceil(durationMs) - (i * 100);
-        long timeUs = 100 * (from + (int) ((to - from) * i));
-        Bitmap bitmap = mmr.getFrameAtTime(timeUs, MediaMetadataRetriever.OPTION_CLOSEST);
-    ...
+int durationTo = (int) Math.ceil(durationMs / 50);
+for( i = 0; i < durationTo; i ++){
+    int from = i * 100;
+    int to = (i + 1) * 100;
+    if (i == durationTo - 1)
+        to = (int) Math.ceil(durationMs) - (i * 100);
+    long timeUs = 100 * (from + (int) ((to - from) * i));
+    Bitmap bitmap = mmr.getFrameAtTime(timeUs, MediaMetadataRetriever.OPTION_CLOSEST);
+...
 ```
 ##### 5. Kết quả đặt được:
-* Xét mô hình xử lý 1 frame ảnh trong video sẽ tiêu tổn mất 8s. 
+* Xét mô hình xử lý 1 frame ảnh trong video sẽ tiêu tổn mất 8s.
 ![Figure 1](https://drive.google.com/uc?export=view&id=1TegHwqVVEuN5wUL-6F3ZtTYPI5Gl01Qm)
 
 ---
-## III. Upscale 
-### Mô tả bài toán: 
-Bài toán sử dụng input là 1 hình ảnh face bị mờ, không rõ nét khi sử dụng mô hình sẽ qua hai model mtcnn và gpen để làm cho hình ảnh được nét hơn. 
+## III. Upscale
+### Mô tả bài toán:
+Bài toán sử dụng input là 1 hình ảnh face bị mờ, không rõ nét khi sử dụng mô hình sẽ qua hai model mtcnn và gpen để làm cho hình ảnh được nét hơn.
 ![Figure 1](https://drive.google.com/uc?export=view&id=1VMOCJENU9jzo3kri1C3AvSKYKNhWSfuh)
 
 ### Install library:
-* opencv: 
+* opencv:
 ```
     https://www.youtube.com/watch?v=psoeNfFAKL8
 ```
@@ -666,243 +668,243 @@ Bài toán sử dụng input là 1 hình ảnh face bị mờ, không rõ nét k
 ```
     https://github.com/pytorch/vision/pull/2897
 ```
-### Inference python: 
+### Inference python:
 Dưới đây là phần code inference model với 1 hình ảnh.
-```
-    import cv2
-    import torch
-    import torchvision
-    import numpy as np
-    import IPython.display as ipd
-    from PIL import Image
+```python
+import cv2
+import torch
+import torchvision
+import numpy as np
+import IPython.display as ipd
+from PIL import Image
 
-    im_pth = "tmp_of.jpg"
-    img = cv2.cvtColor(cv2.imread(im_pth), cv2.COLOR_BGR2RGB)
+im_pth = "tmp_of.jpg"
+img = cv2.cvtColor(cv2.imread(im_pth), cv2.COLOR_BGR2RGB)
 
-    mtcnn = torch.jit.load("task_2/mtcnn_end2endNHWC.pt")
-    gpen = torch.jit.load("task_2/Gpen512_end2endNHWCVer2.pt")
+mtcnn = torch.jit.load("task_2/mtcnn_end2endNHWC.pt")
+gpen = torch.jit.load("task_2/Gpen512_end2endNHWCVer2.pt")
 
-    ref512 = torch.tensor(
-        [[202.04068428, 242.88396346],
-         [309.43024555, 242.28998092],
-         [256.07679966, 303.95917038],
-         [211.95977493, 366.82819474],
-         [300.89112491, 366.33630952]]).numpy()
+ref512 = torch.tensor(
+    [[202.04068428, 242.88396346],
+        [309.43024555, 242.28998092],
+        [256.07679966, 303.95917038],
+        [211.95977493, 366.82819474],
+        [300.89112491, 366.33630952]]).numpy()
 
-    img_t = torch.from_numpy(img).unsqueeze(0)
-    with torch.no_grad():
-      boxe, landmark = mtcnn(img_t)  
+img_t = torch.from_numpy(img).unsqueeze(0)
+with torch.no_grad():
+    boxe, landmark = mtcnn(img_t)  
 
-    # Cv2 process
-    src_pts = landmark[0][0].numpy()
+# Cv2 process
+src_pts = landmark[0][0].numpy()
 
-    tfm = cv2.getAffineTransform(src_pts[0:3], ref512[0:3])
-    tfm_inv = cv2.getAffineTransform(ref512[0:3], src_pts[0:3])
-    of = cv2.warpAffine(img, tfm, (512, 512), flags=3)
+tfm = cv2.getAffineTransform(src_pts[0:3], ref512[0:3])
+tfm_inv = cv2.getAffineTransform(ref512[0:3], src_pts[0:3])
+of = cv2.warpAffine(img, tfm, (512, 512), flags=3)
 
-    gpen_img_t = torch.from_numpy(of).unsqueeze(0)
+gpen_img_t = torch.from_numpy(of).unsqueeze(0)
 
-    with torch.no_grad():
-      ef = gpen(gpen_img_t)  
+with torch.no_grad():
+    ef = gpen(gpen_img_t)  
 
-    # CV2 process
-    ef = ef[0].numpy()
-    
-    tmp_mask = cv2.warpAffine(mask, tfm_inv, (512, 512), flags=3)
-    gpen_im = cv2.warpAffine(ef, tfm_inv, (512, 512), flags=3)
-    out_k = cv2.convertScaleAbs(img  - img * tmp_mask + gpen_im * tmp_mask)
-    end = Image.fromarray(out_k)
-    ipd.display(end)
+# CV2 process
+ef = ef[0].numpy()
+
+tmp_mask = cv2.warpAffine(mask, tfm_inv, (512, 512), flags=3)
+gpen_im = cv2.warpAffine(ef, tfm_inv, (512, 512), flags=3)
+out_k = cv2.convertScaleAbs(img  - img * tmp_mask + gpen_im * tmp_mask)
+end = Image.fromarray(out_k)
+ipd.display(end)
 ```
 ### Inference android:
-#### - Install thư viên (xử lý ở file build.gradle): 
+#### - Install thư viên (xử lý ở file build.gradle):
 
-```
-    implementation 'org.pytorch:pytorch_android_lite:1.10.0'
-    implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
-    implementation 'org.pytorch:torchvision_ops:0.10.0'
+```java
+implementation 'org.pytorch:pytorch_android_lite:1.10.0'
+implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
+implementation 'org.pytorch:torchvision_ops:0.10.0'
 ```
 #### - Thiết lập hệ thống (xử lý ở file MainActivity.java):
-##### 1. Input image: 
+##### 1. Input image:
 Tương tự như các bài toán khác, hình ảnh được cài đặt mặt định để thuận tiện cho việc lựa chọn của người dùng.
-```
-    private int mImageIndex = 0;
-    private String[] mTestImages = {"test1.jpg", "test2.jpg", "test3.png"};
-    ...
-    try {
-            mBitmap = BitmapFactory.decodeStream(getAssets().open(mTestImages[mImageIndex]));
-        } catch (IOException e) {
-            Log.e("Load image", "Error reading assets", e);
-            finish();
-        }
-    ...
+```java
+private int mImageIndex = 0;
+private String[] mTestImages = {"test1.jpg", "test2.jpg", "test3.png"};
+...
+try {
+        mBitmap = BitmapFactory.decodeStream(getAssets().open(mTestImages[mImageIndex]));
+    } catch (IOException e) {
+        Log.e("Load image", "Error reading assets", e);
+        finish();
+    }
+...
 ```
 ##### 2. Load weight:
-Bài toán này cũng yêu cầu 2 model riêng biệt để xử lý các công việc. 
-```
-    ...
-    try {
-            mModule_mtcnn = PyTorchAndroid.loadModuleFromAsset(getAssets(), "mtcnn_end2endNCHWLandmarkLite.ptl");
+Bài toán này cũng yêu cầu 2 model riêng biệt để xử lý các công việc.
+```java
+...
+try {
+    mModule_mtcnn = PyTorchAndroid.loadModuleFromAsset(getAssets(), "mtcnn_end2endNCHWLandmarkLite.ptl");
 
-            mModule_Gpen = PyTorchAndroid.loadModuleFromAsset(getAssets(), "Gpen512_end2endNCHWInOut_2Out.ptl");
+    mModule_Gpen = PyTorchAndroid.loadModuleFromAsset(getAssets(), "Gpen512_end2endNCHWInOut_2Out.ptl");
 
-        } catch (IOException e) {
-            Log.e("Load weight", "Error reading assets", e);
-            finish();
-        }
+} catch (IOException e) {
+    Log.e("Load weight", "Error reading assets", e);
+    finish();
+}
 ```
 ##### 3. Xử lý input và output của model:
 * Model Mtcnn:
     - input: Tensor([1, 3, 512, 512], dtype = uint8)
     - output: Tensor([1, 5, 2], dtype = float32)
-```
-    ...
-    Tensor inputTensor = TensorImageUtils.bitmapToFloat32Tensor(mBitmap, NO_MEAN_RGB_255, NO_STD_RGB_255);
+```java
+...
+Tensor inputTensor = TensorImageUtils.bitmapToFloat32Tensor(mBitmap, NO_MEAN_RGB_255, NO_STD_RGB_255);
 
-    IValue outputmtcnn = mModule_mtcnn.forward(IValue.from(inputTensor));
-    float landmark_para[] = outputmtcnn.toTensor().getDataAsFloatArray();
-    ...
+IValue outputmtcnn = mModule_mtcnn.forward(IValue.from(inputTensor));
+float landmark_para[] = outputmtcnn.toTensor().getDataAsFloatArray();
+...
 ```
 * Model Gpen:
      - input: Tensor([1, 3, 512, 512], dtype = uint8)
      - output[0]: Tensor([1, 3, 512, 512], dtype = float32)
      - output[1]: Tensor([512, 512, 3], dtype = float32)
-```
-    ...
-    Tensor gpen_img_t = TensorImageUtils.bitmapToFloat32Tensor(bmp, NO_MEAN_RGB_255, NO_STD_RGB_255);
+```java
+...
+Tensor gpen_img_t = TensorImageUtils.bitmapToFloat32Tensor(bmp, NO_MEAN_RGB_255, NO_STD_RGB_255);
 
-    IValue out_gpen = mModule_Gpen.forward(IValue.from(gpen_img_t));
-    Tensor out_gpen0 = out_gpen.toTuple()[0].toTensor();
-    Tensor out_gpen1 = out_gpen.toTuple()[1].toTensor();
-    ...
+IValue out_gpen = mModule_Gpen.forward(IValue.from(gpen_img_t));
+Tensor out_gpen0 = out_gpen.toTuple()[0].toTensor();
+Tensor out_gpen1 = out_gpen.toTuple()[1].toTensor();
+...
 ```
-với tham số: 
+với tham số:
+```java
+public final static float[] NO_MEAN_RGB_255 = new float[] {0.0f, 0.0f, 0.0f};
+public final static float[] NO_STD_RGB_255 = new float[] {1/255.f, 1/255.f, 1/255.f};
 ```
-    public final static float[] NO_MEAN_RGB_255 = new float[] {0.0f, 0.0f, 0.0f};
-    public final static float[] NO_STD_RGB_255 = new float[] {1/255.f, 1/255.f, 1/255.f};
-```
-##### 4. Xử lý thông tin với opencv: 
+##### 4. Xử lý thông tin với opencv:
 * Chuyển đổi bitmap to Mat:
 
-Để thực hiện các phép tính bằng thư viện opencv với input là hình ảnh, chúng ta cần chuyển đổi chúng về Mat. 
+Để thực hiện các phép tính bằng thư viện opencv với input là hình ảnh, chúng ta cần chuyển đổi chúng về Mat.
 Cụ thể bằng cách sử dụng hàm ***Utils.bitmapToMat***.  
-```
-    Mat scr_img = new Mat();
-    Bitmap bmp = mBitmap.copy(Bitmap.Config.ARGB_8888, true);
-    Utils.bitmapToMat(bmp, scr_img);
+```java
+Mat scr_img = new Mat();
+Bitmap bmp = mBitmap.copy(Bitmap.Config.ARGB_8888, true);
+Utils.bitmapToMat(bmp, scr_img);
 ```
 Lưu ý giá trị Mat lúc này đang ở định dạng ***CvType.8UC4***.
 * Chuyển đổi Mat to Bitmap:
 
-Ngược lại, khi thao tác trên opencv đã xong chúng ta muốn xử lý hình ảnh bằng bitmap cũng có thể sử dụng hàm ***Utils.matToBitmap*** để biến đổi. 
-```
-    Bitmap bmp = mBitmap.copy(Bitmap.Config.ARGB_8888, true);
-    Utils.matToBitmap(scr, bmp );
+Ngược lại, khi thao tác trên opencv đã xong chúng ta muốn xử lý hình ảnh bằng bitmap cũng có thể sử dụng hàm ***Utils.matToBitmap*** để biến đổi.
+```java
+Bitmap bmp = mBitmap.copy(Bitmap.Config.ARGB_8888, true);
+Utils.matToBitmap(scr, bmp );
 ```
 Lưu ý khi sử dụng hàm này cần phải xác định giá trị input thuộc định dạng ***CvType.8UC1, CvType.8UC3, CvType.8UC4***.
 
 * Chuyển đổi list array to Mat:
 
-Để xử lý các list array thuộc các định dạng byte hoặc float trên opencv chúng ta có thể sử dụng cách sao để chuyển đổi. 
-```
-    Mat scr = new Mat(512, 512, CvType.CV);
-    scr.put(0, 0, listarray);
+Để xử lý các list array thuộc các định dạng byte hoặc float trên opencv chúng ta có thể sử dụng cách sao để chuyển đổi.
+```java
+Mat scr = new Mat(512, 512, CvType.CV);
+scr.put(0, 0, listarray);
 ```
 Lưu ý cần xác định định dạng của input:
      - Nếu input là ByteArray thì nên dùng ***CvType.8UC3***.
      - Nếu input là FloatArray thì nên dùng ***CvType.32FC3***.
 
-* Chuyển đổi Mat to list array: 
+* Chuyển đổi Mat to list array:
 
-Ngược lại để chuyển đổi các biến Mat về định dạng list array nào đó có thể làm như sau: 
-Nếu là FloatArray (scr phải mang CvType.CV_32FC3): 
-```
-    float[] FloatArray = new float[(int) src.total() * scr.channels()];
-    scr.get(0, 0, FloatArray);
+Ngược lại để chuyển đổi các biến Mat về định dạng list array nào đó có thể làm như sau:
+Nếu là FloatArray (scr phải mang CvType.CV_32FC3):
+```java
+float[] FloatArray = new float[(int) src.total() * scr.channels()];
+scr.get(0, 0, FloatArray);
 ```   
-Nếu là ByteArray (scr phải mang CvType.CV_8UC3): 
+Nếu là ByteArray (scr phải mang CvType.CV_8UC3):
 
-``` 
-    byte[] ByteArray = new byte[(int) src.total() * scr.channels()];
-    scr.get(0, 0, ByteArray);
-``` 
-* Chuyển đổi kênh màu: 
+```java
+byte[] ByteArray = new byte[(int) src.total() * scr.channels()];
+scr.get(0, 0, ByteArray);
+```
+* Chuyển đổi kênh màu:
 
 Một cách khác để chuyển đổi kênh màu biến Mat, có thể lợi dụng cách này để chuyển đổi từ ***CvType.8UC4*** sang ***CvType.8UC3***.
+```java
+Mat dst = new Mat();
+Imgproc.cvtColor(scr_img, dst, Imgproc.COLOR_RGBA2RGB);
 ```
-    Mat dst = new Mat();
-    Imgproc.cvtColor(scr_img, dst, Imgproc.COLOR_RGBA2RGB);
-```
-Ngoài ra, còn rất nhiều lệnh chuyển đổi kênh màu khác, chúng ta có thể linh động để lựa chọn biến phù hợp nhất. 
+Ngoài ra, còn rất nhiều lệnh chuyển đổi kênh màu khác, chúng ta có thể linh động để lựa chọn biến phù hợp nhất.
 * Chuyển đổi CvType:
 
 Khác với cách chuyển đổi kênh màu chỉ có thể chuyển đổi CvType cùng loại như 8UC1, 8UC3, 8UC4 hoặc 32FC1, 32FC3.
 Chúng ta còn có thể sử dụng cách sau để chuyển đổi CvType giửa 2 kiểu khác nhau:
 
 Chuyển đổi 8UC3 sang 32FC3:
-```
-    Mat dst_img = new Mat();
-    dst.convertTo(dst_img, CvType.CV_32FC3, 1/255, 0);
+```java
+Mat dst_img = new Mat();
+dst.convertTo(dst_img, CvType.CV_32FC3, 1/255, 0);
 ```
 Chuyển đổi 32FC3 sang 8UC3:
+```java
+Mat dst_img = new Mat();
+dst.convertTo(dst_img, CvType.CV_8UC3, 255, 0);
 ```
-    Mat dst_img = new Mat();
-    dst.convertTo(dst_img, CvType.CV_8UC3, 255, 0);
-```
-* Các hàm tính toán cần dùng: 
+* Các hàm tính toán cần dùng:
 
-Một số hàm tính toán trong bài toàn cần dùng: 
+Một số hàm tính toán trong bài toàn cần dùng:
 1. hàm getAffineTransform():
-```
-    Mat warpMat = Imgproc.getAffineTransform( new MatOfPoint2f(srcTri), new MatOfPoint2f(dstTri) );
+```java
+Mat warpMat = Imgproc.getAffineTransform( new MatOfPoint2f(srcTri), new MatOfPoint2f(dstTri) );
 ```
 Trong đó: input và output điều là matrix [2x3].
 
 2. hàm warpAffine():
+```java
+Imgproc.warpAffine( src, warpDst, warpMat, warpDst.size() );
 ```
-    Imgproc.warpAffine( src, warpDst, warpMat, warpDst.size() );
-```
-Trong đó: 
+Trong đó:
     - src: Input image
     - warp_dst: Output image
     - warp_mat: Affine transform
     - warp_dst.size(): The desired size of the output image
 
 3. hàm convertScaleAbs():
+```java
+Core.convertScaleAbs(src, dst);
 ```
-    Core.convertScaleAbs(src, dst);
-```
-Trong đó: 
+Trong đó:
     - src: input array.
     - dst: output array.
-     
+
 4. hàm multiply():
+```java
+Core.multiply(src1, src2, dst);
 ```
-    Core.multiply(src1, src2, dst);
-```
-Trong đó: 
+Trong đó:
     - src1: first input array.
     - src2: second input array of the same size and the same type as src1.
     - dst:  output array of the same size and type as src1.
 
 5. hàm subtract():
-```
-    Core.subtract(src1, src2, dst);
+```java
+Core.subtract(src1, src2, dst);
 ```
 Trong đó:
     - src1: first input array or a scalar.
     - src2: second input array or a scalar.
     - dst:  output array of the same size and the same number of channels as the input array.
-     
+
 6. hàm add():
+```java
+Core.add(n3, n1, n4);
 ```
-    Core.add(n3, n1, n4);
-```
-Trong đó: 
+Trong đó:
     - src1: first input array or a scalar.
     - src2: second input array or a scalar.
     - dst: output array that has the same size and number of channels as the input array(s); the depth is defined by dtype or src1/src2.
-    
-###### 5. Kết quả đạt được: 
-hệ thống đạt được tốc độ 11s trên 1 tấm ảnh. 
+
+###### 5. Kết quả đạt được:
+hệ thống đạt được tốc độ 11s trên 1 tấm ảnh.
 ![Figure 1](https://drive.google.com/uc?export=view&id=1ZLDAfVSjFoSDhpLvtX8lthtga-XAHqgQ)
