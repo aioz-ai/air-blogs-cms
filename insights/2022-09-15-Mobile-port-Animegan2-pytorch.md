@@ -2,20 +2,20 @@
 last_modified_on: "2022-09-17"  
 id:  animegan-pytorch
 title: Port model with Pytorch mobile
-description: Template for Insights posts.      
+description: Port model with Pytorch mobile.      
 author_github: https://github.com/aioz-ai     
 tags: ["type: ai-mobile", "ai", "edge-computing", "pytorch", "mobile"]
 ---
 
 ## I. Ví dụ: AnimeGanv2
-### Mô tả bài toán: 
-* Hệ thống sử dụng mô hình GAN chuyển đổi hình ảnh face người thật thành hình ảnh mang phong cách Anime. 
+### Mô tả bài toán:
+* Hệ thống sử dụng mô hình GAN chuyển đổi hình ảnh face người thật thành hình ảnh mang phong cách Anime.
 
 ![Figure 1](https://drive.google.com/uc?export=view&id=1Yxq4rpcTXmWY3_9MSk9jVU6WvpFtlshW)
 
 
 ### Convert weight python to weight android:
-Để chuyển đổi mô hình Deep Learning để chạy trên các device mobile. Chúng ta cần thực hiện công việc convert weight theo định dạng dành cho android hoặc ios. 
+Để chuyển đổi mô hình Deep Learning để chạy trên các device mobile. Chúng ta cần thực hiện công việc convert weight theo định dạng dành cho android hoặc ios.
 ```python
 import torch
 from model import Generator
@@ -36,12 +36,12 @@ traced_script_module_optimized = optimize_for_mobile(traced_script_module)
 traced_script_module_optimized._save_for_lite_interpreter("animeganv2_android.ptl")
 ```
 
-Note: 
+Note:
 * Mô hình animeganv2 chỉ yêu cầu một input tensor (N, C, W, H).
 * Pytorch mobile cho phép sử dụng input với nhiều kích thước.
-* Hiện tại pytorch mobile chưa hỗ trợ trên GPU vì vậy khi convert hạn chế sử dụng lệnh .cuda(). Nếu không khi build app android sẽ có báo lỗi. 
+* Hiện tại pytorch mobile chưa hỗ trợ trên GPU vì vậy khi convert hạn chế sử dụng lệnh .cuda(). Nếu không khi build app android sẽ có báo lỗi.
 
-### Inference python: 
+### Inference python:
 Dưới đây là phần code inference model khi thử nghiệm trên 1 hình ảnh.
 ```python
 import cv2
@@ -55,7 +55,7 @@ net.eval()
 
 frame = cv2.imread('img.png')
 frame = cv2.resize(frame, (512, 512))
-frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB).astype(np.float32)/ 127.5 - 1.0 
+frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB).astype(np.float32)/ 127.5 - 1.0
 
 frame = torch.from_numpy(frame).cuda()
 frame = frame.permute(2, 0, 1).unsqueeze(0)
@@ -71,13 +71,13 @@ cv2.waitKey(0)
 ```
 
 ### Inference android:
-#### - Install thư viên (xử lý ở file build.gradle): 
+#### - Install thư viên (xử lý ở file build.gradle):
 ```java
 implementation 'org.pytorch:pytorch_android_lite:1.10.0'
 implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
 ```
 #### - Thiết lập hệ thống (xử lý ở file MainActivity.java)
-##### 1. Input image: 
+##### 1. Input image:
 - Công việc này cho phép chuẩn bị sẳn các hình ảnh mặc định để khi build app có thể đưa ra sự lựa chọn cho người dùng.
 - Hình ảnh bình thước để có thể sử dụng trong android studio (java) cần phải chuyển đổi về định dạng bitmap.
 - Note: đặt hình ảnh ở thư mục: ./app/src/main/assets/
@@ -137,7 +137,7 @@ Tensor outputTensor = mModule.forward(img).toTensor();
 float[] outputs = outputTensor.getDataAsFloatArray();
 ```
 ##### 5. Hậu xử lý output:
-- Để chuyển đổi FloatArray hiện tại thành hình ảnh RGB chúng ta sử dụng hàm, hàm này hỗ trợ chuyển đổi [0:1] sang [0, 255]: 
+- Để chuyển đổi FloatArray hiện tại thành hình ảnh RGB chúng ta sử dụng hàm, hàm này hỗ trợ chuyển đổi [0:1] sang [0, 255]:
 ```java
 public static Bitmap bitmapFromRGBImageAsFloatArray(float[] data, int width, int height){
 
@@ -186,10 +186,10 @@ App android cho bài toán AnimeGanv2 đạt được kết quả sau:
 ---
 
 ## II. Face-moving
-### Mô tả bài toán: 
-Bài toán này tiếp nhận 2 input cho mô hình: 
+### Mô tả bài toán:
+Bài toán này tiếp nhận 2 input cho mô hình:
 * input 1: image face.
-* input 2: image face to video. 
+* input 2: image face to video.
 
 Mô hình kp_detector tiếp nhận input 1 và input 2 để rút trình thông tin value và jacobian:
 * output 1: kp_source_value
@@ -203,8 +203,8 @@ Mô hình generator tiếp nhận 7 input bao gồm: input 1 và output 1-6. Out
 ![Figure 1](https://drive.google.com/uc?export=view&id=1BVfk3lApCgE1BeQkmMHdPN3hcKgzpzQv)
 
 ### Convert weight python to weight android:
-* Tương tự như bài AnimeGanv2, chúng ta phải thực hiện công việc convert weight sang định dạng android. 
-* Tuy nhiên mô hình này cần 2 model để xử lý nên phải convert 2 weights. 
+* Tương tự như bài AnimeGanv2, chúng ta phải thực hiện công việc convert weight sang định dạng android.
+* Tuy nhiên mô hình này cần 2 model để xử lý nên phải convert 2 weights.
 
 Phần load weight và chia tách weight:
 
@@ -245,15 +245,15 @@ if __name__ == "__main__":
                              **config['model_params']['common_params'])
     if not opt.cpu:
         kp_detector.cuda()
-    
+
     if opt.cpu:
         checkpoint = torch.load(opt.checkpoint, map_location=torch.device('cpu'))
     else:
         checkpoint = torch.load(opt.checkpoint)
- 
+
     generator.load_state_dict(checkpoint['generator'])
     kp_detector.load_state_dict(checkpoint['kp_detector'], strict=False)
-    
+
     if not opt.cpu:
         generator = DataParallelWithCallback(generator)
         kp_detector = DataParallelWithCallback(kp_detector)
@@ -261,7 +261,7 @@ if __name__ == "__main__":
     generator.eval()
     kp_detector.eval()
 ```
-Convert weight của model KP_detector: 
+Convert weight của model KP_detector:
 ```python
 ...
     torch.save(kp_detector.module.state_dict(), './weights/conkp_detector-vox-cpk.pth')
@@ -284,7 +284,7 @@ Convert weight của model Generator:
 
     model_generator = OcclusionAwareGenerator(**config['model_params']['generator_params'],
                                               **config['model_params']['common_params'])
-    
+
     model_generator.load_state_dict(torch.load('./weights/congenerator-vox-cpk.pth'), strict=False)
     model_generator = model_generator.eval()
 
@@ -305,14 +305,14 @@ Convert weight của model Generator:
 ```
 
 Note:
-* Model Kp_detector chỉ yêu cầu 1 input còn model Generator lại yêu cầu nhiều input hơn. nên có thể sử dụng lệnh như sau: 
+* Model Kp_detector chỉ yêu cầu 1 input còn model Generator lại yêu cầu nhiều input hơn. nên có thể sử dụng lệnh như sau:
 ```python
     traced_script_module = torch.jit.trace(model_generator, (example, kp_source_value, kp_source_jacobian, kp_driving_value, kp_driving_jacobian, kp_driving_initial_value, kp_driving_initial_jacobian), strict=False)
 ```
-* Vì thư viện LiteModuleLoader của android studio chỉ hỗ trợ nhiều input là dạng Ivalue vì vậy phải tách nhỏ các input thành từng biến đọc lập. Tuy nhiên output của mô hình lại cho phép chưa nhiều nội dụng. 
+* Vì thư viện LiteModuleLoader của android studio chỉ hỗ trợ nhiều input là dạng Ivalue vì vậy phải tách nhỏ các input thành từng biến đọc lập. Tuy nhiên output của mô hình lại cho phép chưa nhiều nội dụng.
 
-### Inference python: 
-Dưới đây là code inference mô hình với đầu vào là 1 hình ảnh và 1 video. 
+### Inference python:
+Dưới đây là code inference mô hình với đầu vào là 1 hình ảnh và 1 video.
 ```python
 import matplotlib
 matplotlib.use('Agg')
@@ -352,22 +352,22 @@ def load_checkpoints(config_path, checkpoint_path, cpu=False):
                              **config['model_params']['common_params'])
     if not cpu:
         kp_detector.cuda()
-    
+
     if cpu:
         checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'))
     else:
         checkpoint = torch.load(checkpoint_path)
- 
+
     generator.load_state_dict(checkpoint['generator'])
     kp_detector.load_state_dict(checkpoint['kp_detector'])
-    
+
     if not cpu:
         generator = DataParallelWithCallback(generator)
         kp_detector = DataParallelWithCallback(kp_detector)
 
     generator.eval()
     kp_detector.eval()
-    
+
     return generator, kp_detector
 
 
@@ -393,15 +393,15 @@ def make_animation(source_image, driving_video, generator, kp_detector, relative
             driving_frame = driving[:, :, frame_idx]
             if not cpu:
                 driving_frame = driving_frame.cuda()
-   
+
 
             kp_driving = kp_detector(driving_frame)
             kp_driving_value = kp_driving['value']
             kp_driving_jacobian = kp_driving['jacobian']
 
-            out = generator(source_image = source, 
-                            kp_source_value=kp_source_value, kp_source_jacobian=kp_source_jacobian, 
-                            kp_driving_value=kp_driving_value, kp_driving_jacobian=kp_driving_jacobian, 
+            out = generator(source_image = source,
+                            kp_source_value=kp_source_value, kp_source_jacobian=kp_source_jacobian,
+                            kp_driving_value=kp_driving_value, kp_driving_jacobian=kp_driving_jacobian,
                             kp_driving_init_value=kp_driving_init_value, kp_driving_init_jacobian=kp_driving_init_jacobian)
 
 
@@ -441,18 +441,18 @@ if __name__ == "__main__":
     parser.add_argument("--source_image", default='sup-mat/source.png', help="path to source image")
     parser.add_argument("--driving_video", default='sup-mat/source.png', help="path to driving video")
     parser.add_argument("--result_video", default='result.mp4', help="path to output")
- 
+
     parser.add_argument("--relative", dest="relative", action="store_true", help="use relative or absolute keypoint coordinates")
     parser.add_argument("--adapt_scale", dest="adapt_scale", action="store_true", help="adapt movement scale based on convex hull of keypoints")
 
-    parser.add_argument("--find_best_frame", dest="find_best_frame", action="store_true", 
+    parser.add_argument("--find_best_frame", dest="find_best_frame", action="store_true",
                         help="Generate from the frame that is the most alligned with source. (Only for faces, requires face_aligment lib)")
 
     parser.add_argument("--best_frame", dest="best_frame", type=int, default=None,  
                         help="Set frame to start from.")
- 
+
     parser.add_argument("--cpu", dest="cpu", action="store_true", help="cpu mode.")
- 
+
 
     parser.set_defaults(relative=False)
     parser.set_defaults(adapt_scale=False)
@@ -488,15 +488,15 @@ if __name__ == "__main__":
 
 ```
 ### Inference android:
-#### - Install thư viên (xử lý ở file build.gradle): 
+#### - Install thư viên (xử lý ở file build.gradle):
 ```java
 implementation 'org.pytorch:pytorch_android_lite:1.10.0'
 implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
 ```
 #### - Thiết lập hệ thống (xử lý ở file MainActivity.java)
-##### 1. Input image: 
-* Bài toán này yêu cầu đến 2 input đầu vào 1 là hình ảnh face và 1 video face đang chuyển động. 
-* Note: 
+##### 1. Input image:
+* Bài toán này yêu cầu đến 2 input đầu vào 1 là hình ảnh face và 1 video face đang chuyển động.
+* Note:
     - đặt hình ảnh ở thư mục: ./app/src/main/assets/
     - đặt video ở thư mục: ./app/src/main/res/raw/
 ```java
@@ -519,8 +519,8 @@ private Uri getMedia(String mediaName) {
 mVideoUri = getMedia(mTestVideos[mTestVideoIndex]);
 ...
 ```
-##### 2. Load weights: 
-   - Model KP_detector: 
+##### 2. Load weights:
+   - Model KP_detector:
 ```java
 if (mModule_kp == null) {
     try {
@@ -531,7 +531,7 @@ if (mModule_kp == null) {
     }
 }
 ```
-   - Model Generator: 
+   - Model Generator:
 ```java
 if (mModule_gan == null) {
     try {
@@ -545,9 +545,9 @@ if (mModule_gan == null) {
 ##### 3. Function model:
 Để dễ dàng hỗ trợ khi code hệ thống, chúng ta sẽ viết các hàm riêng cho model kp_detector và generator. Các bước như resize, convert bitmaptotensor và run model sẽ tương tự như bài toán animegan.
 
-* Model Kp_detector: 
+* Model Kp_detector:
      - Input: bitmap
-     - Output: Ivalue 
+     - Output: Ivalue
 ```java
 ...
 public IValue model_kp_detector(Bitmap bitmap){
@@ -574,7 +574,7 @@ public IValue model_kp_detector(Bitmap bitmap){
 ...
 ```
 
-- Model Generator: 
+- Model Generator:
      - Input[1]: bitmap
      - Input[2-3]: Ivalue kp_source (value, jacobian)
      - Input[4-5]: Ivalue kp_driving (value, jacobian)
@@ -630,7 +630,7 @@ public Bitmap model_generator(Bitmap mBitmap,
 ...
 ```
 ##### 4. Xuất thông tin từ video:
-Bài tóan này yêu cầu thông tin hình ảnh lấy ra từ video vì vậy phải sử dụng thư viện media để lấy thông tin: 
+Bài tóan này yêu cầu thông tin hình ảnh lấy ra từ video vì vậy phải sử dụng thư viện media để lấy thông tin:
 ```java
 ...
 mVideoUri = getMedia(mTestVideos[0]);
@@ -650,17 +650,17 @@ for( i = 0; i < durationTo; i ++){
 ...
 ```
 ##### 5. Kết quả đặt được:
-* Xét mô hình xử lý 1 frame ảnh trong video sẽ tiêu tổn mất 8s. 
+* Xét mô hình xử lý 1 frame ảnh trong video sẽ tiêu tổn mất 8s.
 ![Figure 1](https://drive.google.com/uc?export=view&id=1TegHwqVVEuN5wUL-6F3ZtTYPI5Gl01Qm)
 
 ---
-## III. Upscale 
-### Mô tả bài toán: 
-Bài toán sử dụng input là 1 hình ảnh face bị mờ, không rõ nét khi sử dụng mô hình sẽ qua hai model mtcnn và gpen để làm cho hình ảnh được nét hơn. 
+## III. Upscale
+### Mô tả bài toán:
+Bài toán sử dụng input là 1 hình ảnh face bị mờ, không rõ nét khi sử dụng mô hình sẽ qua hai model mtcnn và gpen để làm cho hình ảnh được nét hơn.
 ![Figure 1](https://drive.google.com/uc?export=view&id=1VMOCJENU9jzo3kri1C3AvSKYKNhWSfuh)
 
 ### Install library:
-* opencv: 
+* opencv:
 ```
     https://www.youtube.com/watch?v=psoeNfFAKL8
 ```
@@ -668,7 +668,7 @@ Bài toán sử dụng input là 1 hình ảnh face bị mờ, không rõ nét k
 ```
     https://github.com/pytorch/vision/pull/2897
 ```
-### Inference python: 
+### Inference python:
 Dưới đây là phần code inference model với 1 hình ảnh.
 ```python
 import cv2
@@ -717,7 +717,7 @@ end = Image.fromarray(out_k)
 ipd.display(end)
 ```
 ### Inference android:
-#### - Install thư viên (xử lý ở file build.gradle): 
+#### - Install thư viên (xử lý ở file build.gradle):
 
 ```java
 implementation 'org.pytorch:pytorch_android_lite:1.10.0'
@@ -725,7 +725,7 @@ implementation 'org.pytorch:pytorch_android_torchvision_lite:1.10.0'
 implementation 'org.pytorch:torchvision_ops:0.10.0'
 ```
 #### - Thiết lập hệ thống (xử lý ở file MainActivity.java):
-##### 1. Input image: 
+##### 1. Input image:
 Tương tự như các bài toán khác, hình ảnh được cài đặt mặt định để thuận tiện cho việc lựa chọn của người dùng.
 ```java
 private int mImageIndex = 0;
@@ -740,7 +740,7 @@ try {
 ...
 ```
 ##### 2. Load weight:
-Bài toán này cũng yêu cầu 2 model riêng biệt để xử lý các công việc. 
+Bài toán này cũng yêu cầu 2 model riêng biệt để xử lý các công việc.
 ```java
 ...
 try {
@@ -778,15 +778,15 @@ Tensor out_gpen0 = out_gpen.toTuple()[0].toTensor();
 Tensor out_gpen1 = out_gpen.toTuple()[1].toTensor();
 ...
 ```
-với tham số: 
+với tham số:
 ```java
 public final static float[] NO_MEAN_RGB_255 = new float[] {0.0f, 0.0f, 0.0f};
 public final static float[] NO_STD_RGB_255 = new float[] {1/255.f, 1/255.f, 1/255.f};
 ```
-##### 4. Xử lý thông tin với opencv: 
+##### 4. Xử lý thông tin với opencv:
 * Chuyển đổi bitmap to Mat:
 
-Để thực hiện các phép tính bằng thư viện opencv với input là hình ảnh, chúng ta cần chuyển đổi chúng về Mat. 
+Để thực hiện các phép tính bằng thư viện opencv với input là hình ảnh, chúng ta cần chuyển đổi chúng về Mat.
 Cụ thể bằng cách sử dụng hàm ***Utils.bitmapToMat***.  
 ```java
 Mat scr_img = new Mat();
@@ -796,7 +796,7 @@ Utils.bitmapToMat(bmp, scr_img);
 Lưu ý giá trị Mat lúc này đang ở định dạng ***CvType.8UC4***.
 * Chuyển đổi Mat to Bitmap:
 
-Ngược lại, khi thao tác trên opencv đã xong chúng ta muốn xử lý hình ảnh bằng bitmap cũng có thể sử dụng hàm ***Utils.matToBitmap*** để biến đổi. 
+Ngược lại, khi thao tác trên opencv đã xong chúng ta muốn xử lý hình ảnh bằng bitmap cũng có thể sử dụng hàm ***Utils.matToBitmap*** để biến đổi.
 ```java
 Bitmap bmp = mBitmap.copy(Bitmap.Config.ARGB_8888, true);
 Utils.matToBitmap(scr, bmp );
@@ -805,7 +805,7 @@ Lưu ý khi sử dụng hàm này cần phải xác định giá trị input thu
 
 * Chuyển đổi list array to Mat:
 
-Để xử lý các list array thuộc các định dạng byte hoặc float trên opencv chúng ta có thể sử dụng cách sao để chuyển đổi. 
+Để xử lý các list array thuộc các định dạng byte hoặc float trên opencv chúng ta có thể sử dụng cách sao để chuyển đổi.
 ```java
 Mat scr = new Mat(512, 512, CvType.CV);
 scr.put(0, 0, listarray);
@@ -814,28 +814,28 @@ Lưu ý cần xác định định dạng của input:
      - Nếu input là ByteArray thì nên dùng ***CvType.8UC3***.
      - Nếu input là FloatArray thì nên dùng ***CvType.32FC3***.
 
-* Chuyển đổi Mat to list array: 
+* Chuyển đổi Mat to list array:
 
-Ngược lại để chuyển đổi các biến Mat về định dạng list array nào đó có thể làm như sau: 
-Nếu là FloatArray (scr phải mang CvType.CV_32FC3): 
+Ngược lại để chuyển đổi các biến Mat về định dạng list array nào đó có thể làm như sau:
+Nếu là FloatArray (scr phải mang CvType.CV_32FC3):
 ```java
 float[] FloatArray = new float[(int) src.total() * scr.channels()];
 scr.get(0, 0, FloatArray);
 ```   
-Nếu là ByteArray (scr phải mang CvType.CV_8UC3): 
+Nếu là ByteArray (scr phải mang CvType.CV_8UC3):
 
 ```java
 byte[] ByteArray = new byte[(int) src.total() * scr.channels()];
 scr.get(0, 0, ByteArray);
-``` 
-* Chuyển đổi kênh màu: 
+```
+* Chuyển đổi kênh màu:
 
 Một cách khác để chuyển đổi kênh màu biến Mat, có thể lợi dụng cách này để chuyển đổi từ ***CvType.8UC4*** sang ***CvType.8UC3***.
 ```java
 Mat dst = new Mat();
 Imgproc.cvtColor(scr_img, dst, Imgproc.COLOR_RGBA2RGB);
 ```
-Ngoài ra, còn rất nhiều lệnh chuyển đổi kênh màu khác, chúng ta có thể linh động để lựa chọn biến phù hợp nhất. 
+Ngoài ra, còn rất nhiều lệnh chuyển đổi kênh màu khác, chúng ta có thể linh động để lựa chọn biến phù hợp nhất.
 * Chuyển đổi CvType:
 
 Khác với cách chuyển đổi kênh màu chỉ có thể chuyển đổi CvType cùng loại như 8UC1, 8UC3, 8UC4 hoặc 32FC1, 32FC3.
@@ -851,9 +851,9 @@ Chuyển đổi 32FC3 sang 8UC3:
 Mat dst_img = new Mat();
 dst.convertTo(dst_img, CvType.CV_8UC3, 255, 0);
 ```
-* Các hàm tính toán cần dùng: 
+* Các hàm tính toán cần dùng:
 
-Một số hàm tính toán trong bài toàn cần dùng: 
+Một số hàm tính toán trong bài toàn cần dùng:
 1. hàm getAffineTransform():
 ```java
 Mat warpMat = Imgproc.getAffineTransform( new MatOfPoint2f(srcTri), new MatOfPoint2f(dstTri) );
@@ -864,7 +864,7 @@ Trong đó: input và output điều là matrix [2x3].
 ```java
 Imgproc.warpAffine( src, warpDst, warpMat, warpDst.size() );
 ```
-Trong đó: 
+Trong đó:
     - src: Input image
     - warp_dst: Output image
     - warp_mat: Affine transform
@@ -874,15 +874,15 @@ Trong đó:
 ```java
 Core.convertScaleAbs(src, dst);
 ```
-Trong đó: 
+Trong đó:
     - src: input array.
     - dst: output array.
-     
+
 4. hàm multiply():
 ```java
 Core.multiply(src1, src2, dst);
 ```
-Trong đó: 
+Trong đó:
     - src1: first input array.
     - src2: second input array of the same size and the same type as src1.
     - dst:  output array of the same size and type as src1.
@@ -895,16 +895,16 @@ Trong đó:
     - src1: first input array or a scalar.
     - src2: second input array or a scalar.
     - dst:  output array of the same size and the same number of channels as the input array.
-     
+
 6. hàm add():
 ```java
 Core.add(n3, n1, n4);
 ```
-Trong đó: 
+Trong đó:
     - src1: first input array or a scalar.
     - src2: second input array or a scalar.
     - dst: output array that has the same size and number of channels as the input array(s); the depth is defined by dtype or src1/src2.
-    
-###### 5. Kết quả đạt được: 
-hệ thống đạt được tốc độ 11s trên 1 tấm ảnh. 
+
+###### 5. Kết quả đạt được:
+hệ thống đạt được tốc độ 11s trên 1 tấm ảnh.
 ![Figure 1](https://drive.google.com/uc?export=view&id=1ZLDAfVSjFoSDhpLvtX8lthtga-XAHqgQ)
