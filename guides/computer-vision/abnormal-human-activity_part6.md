@@ -2,7 +2,7 @@
 last_modified_on: "2022-09-26"
 title: Abnormal Human Activity Recognition (Part 6 - Three-Dimensional AbHAR) (cont.)
 description: A review about Abnormal Human Activity Recognition (3D AbHAR) (cont.).
-series_position: 23
+series_position: 24
 author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: easy", "guides: abnormal_activity_recognition"]
 ---  
