@@ -2,7 +2,7 @@
 last_modified_on: "2022-06-11"
 title: Character Animation and Skinning (part 1)
 description: Study 2D-to-3D lifting based methods for 3D Human Pose Estimation
-series_position: 10
+series_position: 12
 author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: medium"]
 ---
