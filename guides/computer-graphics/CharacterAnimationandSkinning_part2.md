@@ -2,7 +2,7 @@
 last_modified_on: "2022-07-30"
 title: Character Animation and Skinning (part 2)
 description: Study some animation and skinning techniques
-series_position: 12
+series_position: 13
 author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: medium"]
 ---
