@@ -195,7 +195,9 @@ Represent them on the thalamus by:
 ```
 # References
 [1] [Accuracy, Precision, Recall or F1?](https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9)
+
 [2] [Sklearn: Model Selection](https://scikit-learn.org/stable/auto_examples/model_selection/)
+
 [3] [Understanding AUC - ROC Curve](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
 
 
