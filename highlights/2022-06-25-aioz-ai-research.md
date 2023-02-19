@@ -1,7 +1,7 @@
 ---
-last_modified_on: "2021-04-12"
-title: "AIOZ AI Research in a nutshell (Mid 2022)"
-description: '🎉 AIOZ Publications @ Top-tier Conferences & Journal in Q1-Q2, 2022.'
+last_modified_on: "2022-04-12"
+title: "AIOZ AI Research in a nutshell (2022)"
+description: '🎉 AIOZ Publications @ Top-tier Conferences & Journal in 2022.'
 author_github: "https://github.com/aioz-ai"
 hide_on_release_notes: false
 pr_numbers: []

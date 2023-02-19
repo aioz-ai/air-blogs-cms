@@ -1,9 +1,8 @@
 ---
 title: 'Access Control System series - Part 1: An introduction to the future'
-author: Kim Tran
-image: 'https://github.com/aioz-ai/ai-docs-cms/blob/main/content/blog/assets/2021-04-16-access-control/Untitled.png?raw=true'
-authorURL: 'https://www.facebook.com/aiozai'
-authorImageURL: 'https://beetle.aioz.io/images/members/kim-tran.jpg'
+author: AI Labs
+authorURL: 'https://github.com/aioz-ai'
+authorImageURL: 'https://avatars.githubusercontent.com/u/53249292'
 tags: [access-control, face-recognition, identity-recognition, product]
 keywords: [smart-access-control, face-recognition, identity-recognition, aioz-ai, ai-product]
 ---

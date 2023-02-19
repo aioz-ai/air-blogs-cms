@@ -1,8 +1,8 @@
 ---
 title: 'AIOZ AI Application: Food Waste Analysis'
-author: Thu Nguyen
-authorURL: 'https://github.com/thunguyen285'
-authorImageURL: 'https://avatars.githubusercontent.com/u/82790711?v=4'
+author: AI Labs
+authorURL: 'https://github.com/aioz-ai'
+authorImageURL: 'https://avatars.githubusercontent.com/u/53249292'
 tags: [aioz-ai, food-waste, analytics]
 ---
 

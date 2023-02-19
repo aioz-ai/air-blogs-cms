@@ -1,8 +1,8 @@
 ---
 title: 'AI in Logistics and Supply Chain - Part 1: Smart Warehouse'
-author: Thu Nguyen
-authorURL: 'https://github.com/thunguyen285'
-authorImageURL: 'https://avatars.githubusercontent.com/u/82790711?v=4'
+author: AI Labs
+authorURL: 'https://github.com/aioz-ai'
+authorImageURL: 'https://avatars.githubusercontent.com/u/53249292'
 tags: [smart-warehouse, ai, logistics, supply-chain]
 ---
 

@@ -1,9 +1,8 @@
 ---
 title: 'Access Control System series - Part 2: How it works'
-author: Kim Tran
-image: 'https://drive.google.com/uc?export=view&id=1BJnKGkJa79CwwSOjPKrbI5JRO4tZG8l8'
-authorURL: 'https://www.facebook.com/aiozai'
-authorImageURL: 'https://beetle.aioz.io/images/members/kim-tran.jpg'
+author: AI Labs
+authorURL: 'https://github.com/aioz-ai'
+authorImageURL: 'https://avatars.githubusercontent.com/u/53249292'
 tags: [access-control, face-recognition, identity-recognition, product]
 keywords: [smart-access-control, face-recognition, identity-recognition, aioz-ai, ai-product]
 ---
