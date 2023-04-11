@@ -1,14 +1,14 @@
 ---
-last_modified_on: "2023-15-04"
-id: GDANCE
+last_modified_on: "2023-04-15"
+id: GDANCE2
 title: Music-Driven Group Choreography (Part 2)
-description: Methoology part, a group dance generation baseline of AIOZ-GDANCE
+description: Methodology part, a group dance generation baseline of AIOZ-GDANCE
 author_github: https://github.com/aioz-ai
 tags: ["type: research", "AI", "Computer Graphic"]
 ---
 In the previous post, we have introduced AIOZ-GDANCE, a new largescale in-the-wild dataset for music-driven group dance generation. On the basis of the new dataset, we introduce the first strong baseline for group dance generation that can jointly generate multiple dancing motions expressively and coherently.
 
-![](https://vision.aioz.io/f/779cd3f378f446b796be/?dl=1)*<center>**Figure 1**. The overall architecture of GDanceR. Our model takes in a music sequence and a set of initial positions, and then auto-regressively generates coherent group dance motions that are attuned to the input music. </center>* 
+![](https://vision.aioz.io/f/779cd3f378f446b796be/?dl=1)*<center>**Figure 1**. The overall architecture of GDanceR. Our model takes in a music sequence and a set of initial positions, and then auto-regressively generates coherent group dance motions that are attuned to the input music. </center>*
 
 
 
@@ -20,7 +20,7 @@ Given an input music audio sequence $\{m_1, m_2, ...,m_T\}$ with $t = \{1,..., T
 In general, the generated group dance motion should meet the two conditions: *(i)* consistency between the generated dancing motion and the input music in terms of style, rhythm, and beat; *(ii)* the motions and trajectories of dancers should be coherent without cross-body intersection between dancers. To that end, we propose the first baseline method, for group dance generation that can jointly generate multiple dancing motions expressively and coherently. Figure 1 shows the architecture of our proposed Music-driven 3D **G**roup **Dance** generato**R** (GDanceR), which consists of three main components:
 * Transformer Music Encoder.
 * Initial Pose Generator.
-* Group Motion Generator. 
+* Group Motion Generator.
 
 ### Transformer Music Encoder
 
@@ -34,13 +34,13 @@ $$
 where $\text{PE}$ denotes the Positional Encoding, and $W^u_a \in \mathbb{R}^{438 \times d_a}$ is the parameters of the linear projection layer. Then, the hidden audio information can be calculated using self-attention mechanism:
 $$
 \\ \mathbb{A} = \text{FF}(\text{softmax}\left(\frac{(U^q U^k)^T}{\sqrt{d_{k}}} \right) U^v ), \\
-U^q = U W^q_a, \quad U^k = U W^k_a, \quad U^v = UW^v_a 
+U^q = U W^q_a, \quad U^k = U W^k_a, \quad U^v = UW^v_a
 $$
 
 where $W^q_a, W^k_a \in \mathbb{R}^{d_a \times d_k}$, and  $W^v_a \in \mathbb{R}^{d_a \times d_v}$ are the parameters that transform the linear embedding audio $U$ into a query $U^q$, a key $U^k$, and a value $U^v$ respectively. $d_a$ is the dimension of the hidden audio representation while  $d_k$ is the dimension of the query and key, and $d_v$ is the dimension of value. $\text{FF}$ is a feed-forward neural network.
 
 ### Initial Pose Generator
-![](https://vision.aioz.io/f/3155b7d233554fbfab73/?dl=1)*<center>**Figure 2**.The Transformer Music Encoder encodes the acoustic and rhythmic information to generate the initial poses from the input positions. </center>* 
+![](https://vision.aioz.io/f/3155b7d233554fbfab73/?dl=1)*<center>**Figure 2**.The Transformer Music Encoder encodes the acoustic and rhythmic information to generate the initial poses from the input positions. </center>*
 
 
 
@@ -55,29 +55,29 @@ where $[;]$ is the concatenation operator, $\tau^i_0$ is the initial position of
 ### Group Motion Generator
 
 ![](https://vision.aioz.io/f/a79f22f06374466fb250/?dl=1)
-*<center>**Figure 3**. The Group Motion Generator auto-regressively generates coherent group dance motions based on the encoded acoustic information. </center>* 
+*<center>**Figure 3**. The Group Motion Generator auto-regressively generates coherent group dance motions based on the encoded acoustic information. </center>*
 
 
-To generate the group dance motion, we aim to synthesize the coherent motion of each dancer such that it aligns well with the input music. Furthermore, we also need to maintain global consistency between all dancers. As shown in Figure 3, our Group Generator comprises a Group Encoder to encode the group sequence information and an MLP Decoder to decode the hidden representation back to the human pose space. To effectively extract both the local motion and global information of the group dance sequence through time, we design our **Group Encoder** based on two factors: Recurrent Neural Network [3] to capture the temporal motion dynamics of each dancer, and Attention mechanism [2] to encode the spatial relationship of all dancers. 
+To generate the group dance motion, we aim to synthesize the coherent motion of each dancer such that it aligns well with the input music. Furthermore, we also need to maintain global consistency between all dancers. As shown in Figure 3, our Group Generator comprises a Group Encoder to encode the group sequence information and an MLP Decoder to decode the hidden representation back to the human pose space. To effectively extract both the local motion and global information of the group dance sequence through time, we design our **Group Encoder** based on two factors: Recurrent Neural Network [3] to capture the temporal motion dynamics of each dancer, and Attention mechanism [2] to encode the spatial relationship of all dancers.
 
 
 Specifically, at each time step, the pose of each dancer in the previous frame $y^i_{t-1}$ is sent to an LSTM unit to encode the hidden local motion representation $h^i_t$:
 $$
 {h^i_t=\text{LSTM}(y^i_{t-1},h^i_{t-1})}
 $$
-To ensure the motions of all dancers have global coherency and discourage strange effects such as cross-body intersection, we introduce the **Cross-entity Attention** mechanism. In particular, each individual motion representation is first linearly projected into a key vector $k^i$, a query vector $q^i$ and a value vector $v^i$ as follows: 
+To ensure the motions of all dancers have global coherency and discourage strange effects such as cross-body intersection, we introduce the **Cross-entity Attention** mechanism. In particular, each individual motion representation is first linearly projected into a key vector $k^i$, a query vector $q^i$ and a value vector $v^i$ as follows:
 \begin{equation}
     k^i = h^i W^{k}, \quad q^i = h^i W^{q}, \quad v^i = h^i W^{v},
 \end{equation}
 where $W^q, W^k \in \mathbb{R}^{d_h \times d_k}$, and  $W^v \in \mathbb{R}^{d_h \times d_v}$ are parameters that transform the hidden motion $h$ into a query, a key, and a value, respectively. $d_k$ is the dimension of the query and key while $d_v$ is the dimension of the value vector. To encode the relationship between dancers in the scene, our Cross-entity Attention also utilizes the Scaled Dot-Product Attention as in the Transformer [3].
 
-![](https://vision.aioz.io/f/ff5d7f4e917a47028e13/?dl=1)*<center>**Figure 4**. The Group Encoder learns to encode the relations among dancers through our proposed Cross-entity Attention mechanism. </center>* 
+![](https://vision.aioz.io/f/ff5d7f4e917a47028e13/?dl=1)*<center>**Figure 4**. The Group Encoder learns to encode the relations among dancers through our proposed Cross-entity Attention mechanism. </center>*
 
 In practice, we find that people having closer positions to each other tend to have higher correlation in their movement. Therefore, we adopt **Spacial Encoding** strategy to encode the spacial relationship between each pair of dancers. The Spacial Encoding between two entities based on their distance in the 3D space is defined as follows:
 $$
 e_{ij} = \exp\left(-\frac{\Vert \tau^i - \tau^j \Vert^2}{\sqrt{d_{\tau}}}\right),
 $$
-where $d_{\tau}$ is the dimension of the position vector $\tau$. Considering the query $q^i$, which represents the current entity information, and the key $k^j$, which represents other entity information, we inject the spatial relation information between these two entities onto their cross attention coefficient: 
+where $d_{\tau}$ is the dimension of the position vector $\tau$. Considering the query $q^i$, which represents the current entity information, and the key $k^j$, which represents other entity information, we inject the spatial relation information between these two entities onto their cross attention coefficient:
 $$
 \alpha_{ij} = \text{softmax}\left(\frac{(q^i)^\top k^j}{\sqrt{d_k}} + e_{ij}\right).
 $$
