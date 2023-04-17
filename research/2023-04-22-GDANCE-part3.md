@@ -1,6 +1,6 @@
 ---
-last_modified_on: "2023-22-04"
-id: GDANCE
+last_modified_on: "2023-04-22"
+id: GDANCE3
 title: Music-Driven Group Choreography (Part 3)
 description: Experimental results part of group dance choreography
 author_github: https://github.com/aioz-ai
