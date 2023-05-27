@@ -96,7 +96,6 @@ Dense Tensor            |  Sparse Tensor
 
 ## References
 
-<a id="1">[1]</a> 
-High-dimensional Convolutional Neural Networks for 3D Perception, Stanford University, Chapter 4. Sparse Tensor Networks.
+[1] High-dimensional Convolutional Neural Networks for 3D Perception, Stanford University, Chapter 4. Sparse Tensor Networks.
 
-<a id="2">[2]</a> Christopher Choy, JunYoung Gwak, and Silvio Savarese. 4D spatio-temporal ConvNets: Minkowski convolutional neural networks. In CVPR, 2019.
+[2] Christopher Choy, JunYoung Gwak, and Silvio Savarese. 4D spatio-temporal ConvNets: Minkowski convolutional neural networks. In CVPR, 2019.
