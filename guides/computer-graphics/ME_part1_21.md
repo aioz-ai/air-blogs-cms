@@ -1,14 +1,14 @@
 ---
 last_modified_on: "2023-05-21"
-title: Minkowski Engine - part 1
-description: 4D Spatio-Temporal ConvNets: Minkowski Convolutional Neural Networks
+title: Minkowski Engine - part 1).
+description: 4D Spatio-Temporal ConvNets: Minkowski Convolutional Neural Networks.
 series_position: 21
 author_github: https://github.com/aioz-ai
-tags: ["type: Optimization", "level: medium"]
+tags: ["type: insight", "level: medium"]
 ---
 
 import CodeExplanation from '@site/src/components/CodeExplanation';
-import Highlight from '@site/src/components/Highlight'; 
+import Highlight from '@site/src/components/Highlight';
 
 
 In many robotics systems and VR/AR applications, 3D-videos are readily-available sources of input (sequence of 3D scans such as a video from a depth camera, a sequence of LIDAR scans, or a multiple MRI scans of the same object or a body part). However, processing each frame of 3D-videos using convolutional networks or 3D percrption algorithms becomes inefficiently in memory and time. It is necessary to research methods for processing these 3-dimension input or high-dimensional tensors efficiently.
