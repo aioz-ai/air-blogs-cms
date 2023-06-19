@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2023-05-21"
-title: Minkowski Engine - part 1).
+title: Minkowski Engine - part 1
 description: "4D Spatio-Temporal ConvNets: Minkowski Convolutional Neural Networks."
 series_position: 21
 author_github: https://github.com/aioz-ai
