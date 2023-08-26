@@ -27,7 +27,7 @@ To have a deep understanding about object affordance detection, we introduce  a 
 Their framework aims to simultaneously find the object positions, object classes, and object affordances in images. Following the standard design in computer vision, the object position is defined by a rectangle with respect to the top-left corner of the image; the object class is defined over the rectangle; the affordances are encoded at every pixel inside the rectangle. The region of pixels on the object that has the same functionality is considered as one affordance. Ideally, they want to detect all relevant objects in the image and map each pixel in these objects to its most probable affordance label.
 
 ### AffordanceNet Architecture
-![](https://vision.aioz.io/f/d286a3b1eddf4ed8b781/?dl=1)*<center>**Figure 2**. An overview of our AffordanceNet framework ([source](https://arxiv.org/pdf/1709.07326.pdf))</center>* 
+![](https://vision.aioz.io/f/c916e068adb44d33adc6/)*<center>**Figure 2**. An overview of our AffordanceNet framework ([source](https://arxiv.org/pdf/1709.07326.pdf))</center>* 
 
 The AffordanceNet framework consists of the following components:
 - A deep CNN backbone (i.e., VGG) to extract image features.
