@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2023-26-08"
-title: Object Affordance Detection
+title: Object Affordance Detection (Part 2)
 description: Object Affordance Detection and its effectiveness
 series_position: 44
 author_github: https://github.com/aioz-ai
