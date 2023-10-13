@@ -59,7 +59,7 @@ $$
 \end{cases}
 $$
 
-where $b$ is the batch size, $i,j$ denote the silo, $u$ is the number of local updates, $\alpha_k > 0$ is a potentially varying learning rate at $k$-th round, $\textbf{A} \in \mathds{R}^{N \times N}$ is a consensus matrix with non-negative weights, and $\mathcal{N}_i^{+}$ is the in-neighbors set that silo $i$ has the connection to.
+where $b$ is the batch size, $i,j$ denote the silo, $u$ is the number of local updates, $\alpha_k > 0$ is a potentially varying learning rate at $k$-th round, $\textbf{A} \in R^{N \times N}$ is a consensus matrix with non-negative weights, and $\mathcal{N}_i^{+}$ is the in-neighbors set that silo $i$ has the connection to.
 
 ### 3.2 Multigraph for Federated Learning
 **Connectivity and Overlay**. We consider the \textit{connectivity} $\mathcal{G}_c = (\mathcal{V}, \mathcal{E}_c)$ as a graph that captures possible direct communications among silos. Based on its definition, the connectivity is often a fully connected graph and is also a directed graph. % whenever the upload and download are set during learning. 
