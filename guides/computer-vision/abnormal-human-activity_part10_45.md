@@ -1,4 +1,3 @@
-
 ---  
 last_modified_on: "2023-10-23"
 title: Abnormal Human Activity Recognition (Part 10 - Datasets)
