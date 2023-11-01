@@ -1,4 +1,3 @@
-
 ---
 last_modified_on: "2023-10-22"
 id: MultigraphDFL2
