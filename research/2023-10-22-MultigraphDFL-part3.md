@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2023-10-22"
-id: MultigraphDFL2
+id: MultigraphDFL3
 title: Reducing Training Time in Cross-Silo Federated Learning using Multigraph Topology (Part 3)
 description: Delay time, Cycle Time, and how to construct multigraph
 author_github: https://github.com/aioz-ai
