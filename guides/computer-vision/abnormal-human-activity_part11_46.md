@@ -2,7 +2,7 @@
 last_modified_on: "2023-11-13"
 title: Abnormal Human Activity Recognition (Part 11 - Overall Summary)
 description: A review about Abnormal Human Activity Recognition (the last part).
-series_position: 36
+series_position: 46
 author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: easy", "guides: abnormal_activity_recognition"]
 ---  
