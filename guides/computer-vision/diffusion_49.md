@@ -1,6 +1,6 @@
 ---
 last_modified_on: "2023-01-17"
-title: Diffusion Model: A breakthrough compared to Auto-encoder, GAN and Flow-based models
+title: "Diffusion Model: A breakthrough compared to Auto-encoder, GAN and Flow-based models"
 description: Introducing the differences and advantages of diffusion compared to previous models.
 series_position: 49
 author_github: https://github.com/aioz-ai
