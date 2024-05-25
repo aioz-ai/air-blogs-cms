@@ -1,4 +1,3 @@
-
 ---
 last_modified_on: "2024-03-20"
 title: Medical Image Classification Downstream tasks using Foundation Model (Part 2).
