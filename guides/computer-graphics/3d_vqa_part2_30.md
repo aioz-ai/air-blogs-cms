@@ -124,6 +124,3 @@ Some works use the EM@1 and EM@10 metrics for evaluation in 3d VQA, where EM@$k$
 
 **Captioning metric.**
 Inspired by image-dense captioning evaluation, translation machine metrics such as BLEU, ROUGE, and METEOR are used for evaluation in 3D VQA, in case there are many possible answers to a question. In addition, CIDEr is used to improve the human assessment. 
-
-
-</CodeExplanation>

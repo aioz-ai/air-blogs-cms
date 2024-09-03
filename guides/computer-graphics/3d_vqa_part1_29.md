@@ -59,5 +59,3 @@ Attention mechanisms (self-attention or cross-attention layers) can be used to r
 
 
 In the next part, we will discuss about state-of-the-art methods, datasets used and evaluated metric used in 3D VQA. 
-
-</CodeExplanation>
