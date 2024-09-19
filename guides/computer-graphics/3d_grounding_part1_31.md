@@ -83,5 +83,3 @@ $$
 *<center>**Figure 2**: General pipeline of one-stage framework. Unlike two-stage framework, the one-stage framework does not detect bounding box from the 3D encoder. The box is regressed by point feature, then classified to produce the final output</center>*
 
 In the next section, we will discuss state-of-the-art methods, commonly used datasets, and evaluation metrics in 3D VG.
-
-</CodeExplanation>
