@@ -7,7 +7,6 @@ author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: advance", "guides: smart_caching"]
 ---
 
-import CodeExplanation from '@site/src/components/CodeExplanation';
 import Highlight from '@site/src/components/Highlight';
 
 
@@ -75,4 +74,3 @@ The 3D Natural Reference (Nr3D) dataset is one of the datasets from ReferIt3D, a
 ## Metric
 
 It is necessary to compare the predicted object bounding box from the model with the ground-truth bounding box. Intersection over Union (IoU) is a common metric in object detection to measure the similarity between two bounding boxes. In 3D VG, the most used metric is Acc@kIoU, which determines the proportion of correct boxes that exceed the specified IoU@$k$. Commonly, $k$ is set at 0.25 or 0.5. 
-</CodeExplanation>
