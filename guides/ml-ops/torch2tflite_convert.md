@@ -256,5 +256,5 @@ Official Documentation:
 * https://github.com/onnx/tutorials
 * https://www.tensorflow.org/lite/guide/ops_compatibility
 * https://www.tensorflow.org/lite/guide/ops_select
-* https://www.tensorflow.org/lite/guide/inference#load_and_run_a_model_in_python
+* https://www.tensorflow.org/lite/guide/inference#run-python
 * https://www.tensorflow.org/lite/performance/post_training_quantization
