@@ -1,9 +1,9 @@
 ---
 last_modified_on: "2025-01-11"
-title: Federated Learning, A Paradigm Shift in Data Privacy.
+title: Federated Learning as a Paradigm Shift in Data Privacy.
 description: Explore the transformative power of federated learning in addressing data privacy challenges while understanding its limitations that require homomorphic encryption.
 series_position: 22
-author_github: [https://github.com/aioz-ai](https://github.com/aioz-ai)
+author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: intermediate", "guides: federated_learning"]
 ---
 
