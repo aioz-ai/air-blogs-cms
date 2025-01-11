@@ -1,4 +1,5 @@
 ---
+last_modified_on: "2025-01-11"
 title: Federated Learning: A Paradigm Shift in Data Privacy
 description: Explore the transformative power of federated learning in addressing data privacy challenges while understanding its limitations that require homomorphic encryption.
 series_position: 22
