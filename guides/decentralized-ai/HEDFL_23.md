@@ -3,10 +3,9 @@ last_modified_on: "2025-01-19"
 title: Homomorphic Encryption as the Pillar of Secure Collaboration.
 description: Discover how homomorphic encryption empowers federated learning by enabling secure computations on encrypted data.
 series_position: 23
-author_github: [https://github.com/aioz-ai](https://github.com/aioz-ai)
+author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: intermediate", "guides: federated_learning"]
 ---
-
 
 ## Introduction: Securing Federated Learning with Encryption
 
