@@ -1,12 +1,11 @@
 ---
-last_modified_on: "2025-01-25
+last_modified_on: "2025-01-25"
 title: Combining Federated Learning and Homomorphic Encryption.
 description: Explore how federated learning and homomorphic encryption work together to create a secure, privacy-preserving AI ecosystem.
 series_position: 24
 author_github: https://github.com/aioz-ai
 tags: ["type: insight", "level: intermediate", "guides: federated_learning"]
 ---
-
 
 The rapid adoption of artificial intelligence (AI) relies on balancing data utility with privacy. Federated learning (FL) and homomorphic encryption (HE) are two powerful technologies addressing this challenge. While FL decentralizes data processing, HE ensures that sensitive information remains encrypted during computations.
 
