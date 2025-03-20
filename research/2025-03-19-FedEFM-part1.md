@@ -2,7 +2,7 @@
 last_modified_on: "2025-03-19"
 id: FedEFM1
 title: FedEFM - Federated Endovascular Foundation Model with Unseen Data (Part 1)
-description: Introducing FedEFM: The Future of Federated Endovascular Foundation Models!
+description: Introducing FedEFM: The Future of Federated Endovascular Foundation Models.
 author_github: https://github.com/aioz-ai
 tags: ["type: research", "AI", "Medical", "Robotic"]
 ---
