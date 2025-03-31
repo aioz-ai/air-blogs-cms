@@ -54,7 +54,7 @@ The condition for diffusion is generated thanks to attention mechanism with a cu
 The motivation is similar to Beat-It, that is sparse key movements are generated first and then, connecting movements are filled in to generate a smooth dance sequence which fits the music beats and overall genre. 
 
 ![lodge](https://vision.aioz.io/f/cdd3870d14df44e391e4/)
-*</center>Overview framework for Lodge</center>*
+*<center>Overview framework for Lodge</center>*
 
 Lodge employs 2-stage coarse-to-fine grain process to generate long sequence conditioned on input music. It consists of 2 diffusion models: global diffusion and local diffusion (LD). The global diffusion model is trained to generate sparse characteristic dance primitives of 8 frames, which possess powerful expressiveness and rich semantic information. These dance primitives are further augmented (e.g., mirrored at where the beats repeat, aligned at the right beat) to align with the beats and structural information of the music. The parallel local diffusion independently generate short dance segments. Some dance primitives are used as the beggining and the end of the noise segments to guide the generation of dance segments. The complete dance sequence is achieved by concatenating them.
 
