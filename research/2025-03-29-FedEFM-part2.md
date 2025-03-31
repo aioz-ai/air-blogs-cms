@@ -20,58 +20,49 @@ Apart from X-ray images collected from our real robot, we also collect an EISimu
 
 ![](https://vision.aioz.io/f/ee55c6ed6f8b40f68f73/?dl=1)*<center>**Figure 2**. X-ray dataset used in our work.</center>*
 
-<!-- 
-<div style="display: flex; justify-content: center; text-align: center;">
-    <img src="https://vision.aioz.io/f/26a6324d5a584773b692/?dl=1" alt="Image 1" width="24%">
-    <p>Vessel 12</p>
-    <img src="https://vision.aioz.io/f/3ab99f8e24664b3d929e/?dl=1" alt="Image 2" width="24%">
-    <img src="https://vision.aioz.io/f/98b3d6c1f7634ee28e5f/?dl=1" alt="Image 3" width="30%">
-</div> -->
-
-
-<div style="display: flex; justify-content: center;">
-    <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/d04fa06a7c754812a996/?dl=1" alt="Vessel12" width="400"/>
+<div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem' }}>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/d04fa06a7c754812a996/?dl=1" alt="CathACtion" width="400" />
     <p>CathACtion</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/26a6324d5a584773b692/?dl=1" alt="Vessel12" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/26a6324d5a584773b692/?dl=1" alt="Vessel 12" width="400" />
     <p>Vessel 12</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/3ab99f8e24664b3d929e/?dl=1" alt="DRIVE" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/3ab99f8e24664b3d929e/?dl=1" alt="DRIVE" width="400" />
     <p>DRIVE</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/98b3d6c1f7634ee28e5f/?dl=1" alt="Image 3" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/98b3d6c1f7634ee28e5f/?dl=1" alt="SenNet" width="400" />
     <p>SenNet</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/a43093ca96354d8b9043/?dl=1" alt="Image 3" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/a43093ca96354d8b9043/?dl=1" alt="Medical Decathlon" width="400" />
     <p>Medical Decathlon</p>
   </div>
 </div>
 
-<div style="display: flex; justify-content: center;">
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/2192e49c36de41f58724/?dl=1" alt="Vessel12" width="400"/>
+<div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem', marginBottom: '1rem' }}>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/2192e49c36de41f58724/?dl=1" alt="EI Simulator" width="400" />
     <p>EI Simulator</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/6deb2119b0d54f55b852/?dl=1" alt="DRIVE" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/6deb2119b0d54f55b852/?dl=1" alt="EI Phantom" width="400" />
     <p>EI Phantom</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/4bb8d4ef5316486ca51d/?dl=1" alt="Image 3" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/4bb8d4ef5316486ca51d/?dl=1" alt="RANZCR" width="400" />
     <p>RANZCR</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/02c504080e444514ada7/?dl=1" alt="Image 3" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/02c504080e444514ada7/?dl=1" alt="Cath Animal" width="400" />
     <p>Cath Animal</p>
   </div>
 </div>
 
-<p align="center"><em><b>Figure 3.</b>Visualization of datasets used in our work</em></p>
+<p style={{ textAlign: 'center' }}><em><b>Figure 3.</b> Visualization of datasets used in our work</em></p>
 
 ## Motivation 
 
