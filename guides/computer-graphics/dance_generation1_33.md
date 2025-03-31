@@ -86,9 +86,9 @@ Dance generation models aim to produce realistic and coherent dance movements th
 
 | **Method** | **Approach** | **Strengths** | **Limitations** |
 |------------|-------------|--------------|----------------|
-| **FACT (ICCV 2021)** | Transformer-based, full attention model | - Generates fluid and coherent motion <br> - Captures music-motion correlations well | - Lacks physical interactions with the environment <br> - Deterministic generation (no diversity in outputs) |
-| **POPDG (CVPR 2024)** | Diffusion-based (DDPM), spatial-temporal attention mechanisms | - Generates diverse dances <br> - DS-Attention improves joint spatial relationships | - High training cost <br> - Lacks physical interactions with the floor |
-| **DISCO (CVPR 2024)** | Diffusion-based (Stable Diffusion + ControlNet), disentangled control over pose and background | - Enables controllable image/video generation <br> - Maintains stable backgrounds and detailed human attributes | - Struggles with fine hand poses <br> - Hard to generalize to multi-person interactions and human-object interactions |
+| **FACT (ICCV 2021)** | Transformer-based, full attention model | - Generates fluid and coherent motion  <br /> - Captures music-motion correlations well | - Lacks physical interactions with the environment  <br /> - Deterministic generation (no diversity in outputs) |
+| **POPDG (CVPR 2024)** | Diffusion-based (DDPM), spatial-temporal attention mechanisms | - Generates diverse dances  <br /> - DS-Attention improves joint spatial relationships | - High training cost  <br /> - Lacks physical interactions with the floor |
+| **DISCO (CVPR 2024)** | Diffusion-based (Stable Diffusion + ControlNet), disentangled control over pose and background | - Enables controllable image/video generation  <br /> - Maintains stable backgrounds and detailed human attributes | - Struggles with fine hand poses  <br /> - Hard to generalize to multi-person interactions and human-object interactions |
 
 ### Key Insights
 1. **FACT**: Uses transformers for music-motion alignment, offering fluid but deterministic outputs.
