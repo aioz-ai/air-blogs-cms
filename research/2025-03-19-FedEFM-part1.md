@@ -18,21 +18,21 @@ Gathering large-scale medical data is particularly challenging due to privacy co
 
 Despite its benefits, federated learning faces challenges such as ensuring stable convergence across different silos and handling heterogeneous data. In endovascular interventions, these challenges arise primarily from variations in data collected from different sources, leading to domain gaps in X-ray images. As illustrated in Figure 1, X-ray images from various endovascular datasets differ significantly. Additionally, due to privacy restrictions, datasets containing real human X-ray images tend to be smaller compared to those obtained from animal models, silicon phantoms, or simulated environments.
 
-<div style="display: flex; justify-content: center;">
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/e2cea79f94df4d148eb6/?dl=1" alt="Vessel12" width="400"/>
+<div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem' }}>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/e2cea79f94df4d148eb6/?dl=1" alt="Vessel12" width="400" />
     <p>Phantom X-ray</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/17f51c65171145ffb442/?dl=1" alt="DRIVE" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/17f51c65171145ffb442/?dl=1" alt="DRIVE" width="400" />
     <p>Animal X-ray</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/8d8cc2f6820f4b1486ff/?dl=1" alt="Image 3" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/8d8cc2f6820f4b1486ff/?dl=1" alt="Image 3" width="400" />
     <p>Human X-ray</p>
   </div>
-  <div style="text-align: center;">
-    <img src="https://vision.aioz.io/f/40d83350df914df78011/?dl=1" alt="Image 3" width="400"/>
+  <div style={{ textAlign: 'center' }}>
+    <img src="https://vision.aioz.io/f/40d83350df914df78011/?dl=1" alt="Image 3" width="400" />
     <p>Simulation X-ray</p>
   </div>
 </div>
