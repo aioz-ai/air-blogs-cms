@@ -15,7 +15,7 @@ In order to generate coherent dance sequence, many works choose Transformers and
 
 ### Bidirectional Autoregressive Diffusion Model for Dance Generation (BADM) (CVPR 2024)
 BADM is a diffusion framework aiming to generate a long dance sequence in an autoregressive manner. It still leverages diffusion process which pertubes the the dance sequence $\hat{x}$ and denoises until getting the full sequence $x$. 
-![BADM](https://vision.aioz.io/f/64cfe398b3d8405a82d1/)
+![BADM](https://vision.aioz.io/f/64cfe398b3d8405a82d1/?dl=1)
 *<center>Fig 1: Overview framework for BADM</center>*
 To generate outputs in an autoregressive manner, the model treats the dance sequence as K slices. The initial noisy sequence $z_T$ at time $T$ is sliced into $K$ slices, each of which is denoised with the help of previously generated slice $\hat{x}_{k - 1}$ and the subsequent noise part $z_{t(k + 1)}$, alongside with segmented feature $c_k$ and beat information $b_k$. The output of the denoising process is the denoised $k^{th}$ slice $\hat{x}_k$. These slices are concatenated and fed to a Local Information Decoder which is constructed by 1D convolution layers to form the complete sequence $\hat{x}$.
 
@@ -24,7 +24,7 @@ To generate outputs in an autoregressive manner, the model treats the dance sequ
 
 ### Bailando: 3D Dance Generation by Actor-Critic GPT with Choreographic Memory (CVPR 2022)
 Bailando proposes using a finite dictionary of quantized dancing units to ensure spatial consistency of dancing poses. It is made by encoding and quantizing 3D joint sequence to a codebook in an unsupervised manner using VQ-VAE, where each learned code is shown to represent a unique dancing pose. 
-![bailando](https://vision.aioz.io/f/516cce1624f9408194b2/)
+![bailando](https://vision.aioz.io/f/516cce1624f9408194b2/?dl=1)
 *<center>Overview framework for Bailando</center>*
 
 Given music features and starting pose codes, a GPT-like model (i.e., Actor-critic motion GPT trained with reinforcement learning and supervised learning) predicts the next pose code sequence in an autoregressive manner. The corresponding quantize features are derived by looking up pose codes in the momory codebook, which are then decoded to a dance sequence.  
@@ -42,7 +42,7 @@ These approaches often employ diffusion models, which learn a data distribution 
 ### Beat-It: Beat-Synchronized Multi-Condition 3D Dance Generation (ECCV 2024)
 Stemming from the motivation that real-world choreography often assigns sparse key poses to musical beats and then fill in the connecting movements to generate complete dance sequences, Beat-It proposes to explicitly incorporate beat and key pose guidance as conditions to diffusion process.
 
-![beatit](https://vision.aioz.io/f/e5d51a06b9ef43bd90a4/)
+![beatit](https://vision.aioz.io/f/e5d51a06b9ef43bd90a4/?dl=1)
 *<center> Overview framework for Beat-It </center>*
 
 The condition for diffusion is generated thanks to attention mechanism with a custom mask i.e., Beat-Aware mask ($M_d$). In typical keyframe masks, only few frames are marked as keys. Meanwhile, in Beat-Aware mask, not only the keyframes but their neighboring frames are also marked. Valid neighboring frames are decided with respect to how close their keyframes and how close are they to the music beat. Generated beats are ensured to align with music beat through a specific beat alignment loss, with the help of a pretrained beat distance predictor.
@@ -53,7 +53,7 @@ The condition for diffusion is generated thanks to attention mechanism with a cu
 ### Lodge: A Coarse to Fine Diffusion Network for Long Dance Generation Guided by the Characteristic Dance Primitives (CVPR 2024)
 The motivation is similar to Beat-It, that is sparse key movements are generated first and then, connecting movements are filled in to generate a smooth dance sequence which fits the music beats and overall genre. 
 
-![lodge](https://vision.aioz.io/f/cdd3870d14df44e391e4/)
+![lodge](https://vision.aioz.io/f/cdd3870d14df44e391e4/?dl=1)
 *<center>Overview framework for Lodge</center>*
 
 Lodge employs 2-stage coarse-to-fine grain process to generate long sequence conditioned on input music. It consists of 2 diffusion models: global diffusion and local diffusion (LD). The global diffusion model is trained to generate sparse characteristic dance primitives of 8 frames, which possess powerful expressiveness and rich semantic information. These dance primitives are further augmented (e.g., mirrored at where the beats repeat, aligned at the right beat) to align with the beats and structural information of the music. The parallel local diffusion independently generate short dance segments. Some dance primitives are used as the beggining and the end of the noise segments to guide the generation of dance segments. The complete dance sequence is achieved by concatenating them.
